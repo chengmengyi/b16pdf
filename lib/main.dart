@@ -1,3 +1,4 @@
+import 'package:b16pdf/b16_hep_djijdow/b16_applife_hep_fjeifje.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,6 +14,7 @@ void main() async{
     DeviceOrientation.portraitUp,
   ]);
   await GetStorage.init();
+  B16ApplifeHepFjeifje.instance.initLife();
 
   runApp(const MyApp());
 }
