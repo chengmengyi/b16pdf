@@ -19,12 +19,14 @@ abstract class B16RootPageQazmtr<T extends B16RootControllerFjesak>
 
   Color get b16BackgroundColorLxqvbi => Color(0xffF3F5F7);
 
+  Color get b16NavigationBarColorLxqvbi => Color(0xffF3F5F7);
+
   SystemUiOverlayStyle get b16SystemUiOverlayStyleGfrtpo =>
-      const SystemUiOverlayStyle(
+      SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.light,
-        systemNavigationBarColor: Color(0xffF3F5F7),
+        systemNavigationBarColor: b16NavigationBarColorLxqvbi,
         systemNavigationBarIconBrightness: Brightness.dark,
         systemNavigationBarDividerColor: Colors.transparent,
       );

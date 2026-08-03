@@ -1,3 +1,4 @@
+import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_page_kpnyra.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_launcher_feofke/b16_launcher_page_fjeijie.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_open_notification_page_rqmvza/b16_open_notification_page_kqmxve.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_open_overlay_permission_page_kxmqva/b16_open_overlay_permission_page_zqtwne.dart';
@@ -8,6 +9,7 @@ abstract final class B16RoutersAddressFjeifjeo {
   static const String b16OverlayPermissionRouteNqvwza =
       '/b16_open_overlay_permission';
   static const String b16NotificationRouteHqmwza = '/b16_open_notification';
+  static const String b16HomeRouteVqmxza = '/b16_home';
 
   static final List<GetPage<dynamic>> b16PagesRxqtma = [
     GetPage(name: b16LauncherRouteKfmoqa, page: B16LauncherPageFjeijie.new),
@@ -19,5 +21,6 @@ abstract final class B16RoutersAddressFjeifjeo {
       name: b16NotificationRouteHqmwza,
       page: B16OpenNotificationPageKqmxve.new,
     ),
+    GetPage(name: b16HomeRouteVqmxza, page: B16HomePageKpnyra.new),
   ];
 }
