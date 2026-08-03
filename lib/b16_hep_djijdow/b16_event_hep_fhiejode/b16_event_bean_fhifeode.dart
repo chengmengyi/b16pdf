@@ -1,4 +1,4 @@
-class B16EventBeanFhifeode{
+class B16EventBeanFhifeode {
   int b16EventCodeFhfemie;
   int? b16IntValueDjijie;
   String? b16StringValueDjijie;
