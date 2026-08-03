@@ -14,6 +14,7 @@ class B16LocalizedTextViewCxmpra extends StatelessWidget {
     this.b16MaxLinesPqmtva,
     this.b16OverflowFzrxke,
     this.b16SoftWrapCvnqwy,
+    this.b16Decorationfefjie,
   });
 
   final String b16ValueQzkmta;
@@ -26,6 +27,7 @@ class B16LocalizedTextViewCxmpra extends StatelessWidget {
   final int? b16MaxLinesPqmtva;
   final TextOverflow? b16OverflowFzrxke;
   final bool? b16SoftWrapCvnqwy;
+  final TextDecoration? b16Decorationfefjie;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,8 @@ class B16LocalizedTextViewCxmpra extends StatelessWidget {
           color: b16ColorDtkzma,
           fontSize: b16FontSizeRvxqle,
           fontWeight: b16FontWeightHncysp,
+          decoration: b16Decorationfefjie,
+          decorationColor: b16ColorDtkzma,
         );
     return Text(
       b16TranslateVnhxre ? b16ValueQzkmta.tr : b16ValueQzkmta,

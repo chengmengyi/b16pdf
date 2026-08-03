@@ -32,7 +32,7 @@ class B16AssetImageViewPzrxcu extends StatelessWidget {
       b16AssetPathHqnvta,
       width: b16WidthDtvqpl,
       height: b16HeightRnxkse,
-      fit: b16FitJzpwcu,
+      fit: b16FitJzpwcu ?? BoxFit.fill,
       alignment: b16AlignmentLqhmvx,
       color: b16TintColorYfsqwe,
       semanticLabel: b16SemanticLabelCknzra,

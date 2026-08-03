@@ -6,7 +6,7 @@ class B16PulseViewHqvzna extends StatefulWidget {
     required this.b16ChildPxnvta,
     this.b16LowerScaleGqmwre = 0.96,
     this.b16UpperScaleZkfydu = 1,
-    this.b16CycleDurationVctjpo = const Duration(milliseconds: 600),
+    this.b16CycleDurationVctjpo = const Duration(milliseconds: 400),
     this.b16CurveLqhebx = Curves.easeInOut,
   }) : assert(b16LowerScaleGqmwre > 0),
        assert(b16LowerScaleGqmwre <= b16UpperScaleZkfydu),

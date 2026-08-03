@@ -17,14 +17,14 @@ abstract class B16RootPageQazmtr<T extends B16RootControllerFjesak>
 
   bool get b16AllowRoutePopYmejcu => true;
 
-  Color get b16BackgroundColorLxqvbi => Colors.white;
+  Color get b16BackgroundColorLxqvbi => Color(0xffF3F5F7);
 
   SystemUiOverlayStyle get b16SystemUiOverlayStyleGfrtpo =>
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.light,
-        systemNavigationBarColor: Colors.white,
+        systemNavigationBarColor: Color(0xffF3F5F7),
         systemNavigationBarIconBrightness: Brightness.dark,
         systemNavigationBarDividerColor: Colors.transparent,
       );
