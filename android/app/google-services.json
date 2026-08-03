@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "972232079336",
+    "project_id": "b16pdf",
+    "storage_bucket": "b16pdf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972232079336:android:8eded76ff8e3224fc5965d",
+        "android_client_info": {
+          "package_name": "com.example.b16pdf"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG5coX6aKc9_9Qz3VSlv_TFhD7PLJbrfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
