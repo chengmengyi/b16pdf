@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract final class B16RoutersHepFjeifjoe {
@@ -33,5 +34,35 @@ abstract final class B16RoutersHepFjeifjoe {
 
   static void b16BackFtynwp<T>({T? b16ResultNcgkqe}) {
     Get.back<T>(result: b16ResultNcgkqe);
+  }
+
+  static Future<T?> b16ShowBottomSheetVxqprn<T>({
+    required Widget b16ChildQnwxza,
+    bool b16DismissibleMkrvte = true,
+    Color? b16BarrierColorHpxqwy,
+    bool b16ScrollControlledZnlqde = true,
+  }) {
+    return Get.bottomSheet<T>(
+      SafeArea(top: true, bottom: true, child: b16ChildQnwxza),
+      isScrollControlled: b16ScrollControlledZnlqde,
+      barrierColor: b16BarrierColorHpxqwy,
+      isDismissible: b16DismissibleMkrvte,
+    );
+  }
+
+  static Future<T?> b16ShowDialogCtmxqe<T>({
+    required Widget b16ChildWvprka,
+    bool b16BarrierDismissibleZxmqny = false,
+    bool b16UseSafeAreaYtqwlp = false,
+  }) {
+    return Get.dialog<T>(
+      Scaffold(
+        backgroundColor: Colors.transparent,
+        resizeToAvoidBottomInset: true,
+        body: b16ChildWvprka,
+      ),
+      useSafeArea: b16UseSafeAreaYtqwlp,
+      barrierDismissible: b16BarrierDismissibleZxmqny,
+    );
   }
 }
