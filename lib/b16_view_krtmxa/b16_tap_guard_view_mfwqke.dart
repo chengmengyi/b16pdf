@@ -41,6 +41,8 @@ class _B16TapGuardStateQzfnby extends State<B16TapGuardViewMfwqke> {
       borderRadius: widget.b16BorderRadiusTvqlna,
       enableFeedback: widget.b16EnableFeedbackXrpwdo,
       child: widget.b16ChildHnqvsa,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
     );
   }
 }

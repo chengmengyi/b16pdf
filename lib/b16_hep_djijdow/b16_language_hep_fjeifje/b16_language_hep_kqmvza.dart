@@ -16,6 +16,98 @@ final class B16LanguageOptionQxnvra {
 final class B16LanguageHepKqmvza extends Translations {
   B16LanguageHepKqmvza();
 
+  static const Map<String, String> _b16FileEnQxmvza = {
+    'Permission Required': 'Permission Required',
+    'Allow': 'Allow',
+    'Please allow storage access to continue.':
+        'Please allow storage access to continue.',
+    'Please allow camera access to continue.':
+        'Please allow camera access to continue.',
+    'Please allow access to continue.': 'Please allow access to continue.',
+    'Sort By': 'Sort By',
+    'Date(Newest First)': 'Date (Newest First)',
+    'Date(Oldest First)': 'Date (Oldest First)',
+    'Name(A-Z)': 'Name (A-Z)',
+    'Name(Z-A)': 'Name (Z-A)',
+    'Files': 'Files',
+    'Search...': 'Search...',
+    'All': 'All',
+    'Word': 'Word',
+    'Excel': 'Excel',
+    'To access features instantly, add the widget!':
+        'To access features instantly, add the widget!',
+    'Grant': 'Grant',
+    'Local Storage': 'Local Storage',
+    'Sort': 'Sort',
+    'Select': 'Select',
+    'No permissions granted': 'No permissions granted',
+    'Permission is required to access all files':
+        'Permission is required to access all files',
+    'Go to settings': 'Go to settings',
+    'Cancel': 'Cancel',
+    '{n} Selected': '{n} Selected',
+    'Select All': 'Select All',
+    'Delete': 'Delete',
+  };
+  static const Map<String, String> _b16FileZhCnQxmvza = {
+    'Permission Required': '需要权限',
+    'Allow': '允许',
+    'Please allow storage access to continue.': '请允许存储访问权限以继续。',
+    'Please allow camera access to continue.': '请允许相机访问权限以继续。',
+    'Please allow access to continue.': '请允许访问权限以继续。',
+    'Sort By': '排序方式',
+    'Date(Newest First)': '日期（最新优先）',
+    'Date(Oldest First)': '日期（最早优先）',
+    'Name(A-Z)': '名称（A-Z）',
+    'Name(Z-A)': '名称（Z-A）',
+    'Files': '文件',
+    'Search...': '搜索...',
+    'All': '全部',
+    'Word': 'Word',
+    'Excel': 'Excel',
+    'To access features instantly, add the widget!': '添加小组件，即刻使用各项功能！',
+    'Grant': '授权',
+    'Local Storage': '本地存储',
+    'Sort': '排序',
+    'Select': '选择',
+    'No permissions granted': '尚未授予权限',
+    'Permission is required to access all files': '访问所有文件需要相关权限',
+    'Go to settings': '前往设置',
+    'Cancel': '取消',
+    '{n} Selected': '已选择 {n} 项',
+    'Select All': '全选',
+    'Delete': '删除',
+  };
+  static const Map<String, String> _b16FileZhTwQxmvza = {
+    'Permission Required': '需要權限',
+    'Allow': '允許',
+    'Please allow storage access to continue.': '請允許儲存空間存取權限以繼續。',
+    'Please allow camera access to continue.': '請允許相機存取權限以繼續。',
+    'Please allow access to continue.': '請允許存取權限以繼續。',
+    'Sort By': '排序方式',
+    'Date(Newest First)': '日期（最新優先）',
+    'Date(Oldest First)': '日期（最舊優先）',
+    'Name(A-Z)': '名稱（A-Z）',
+    'Name(Z-A)': '名稱（Z-A）',
+    'Files': '檔案',
+    'Search...': '搜尋...',
+    'All': '全部',
+    'Word': 'Word',
+    'Excel': 'Excel',
+    'To access features instantly, add the widget!': '加入小工具，即刻使用各項功能！',
+    'Grant': '授權',
+    'Local Storage': '本機儲存空間',
+    'Sort': '排序',
+    'Select': '選取',
+    'No permissions granted': '尚未授予權限',
+    'Permission is required to access all files': '存取所有檔案需要權限',
+    'Go to settings': '前往設定',
+    'Cancel': '取消',
+    '{n} Selected': '已選取 {n} 項',
+    'Select All': '全選',
+    'Delete': '刪除',
+  };
+
   static const Locale b16FallbackLocaleCqnxwa = Locale('en');
 
   static const List<B16LanguageOptionQxnvra> b16LanguageOptionsVqmpze = [
@@ -132,6 +224,7 @@ final class B16LanguageHepKqmvza extends Translations {
   @override
   Map<String, Map<String, String>> get keys => const {
     'en': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'Your pocket file pro',
       'Unlock Full PDF Potential': 'Unlock Full PDF Potential',
@@ -146,6 +239,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Find {n} below and toggle the switch to ON.',
     },
     'fr': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'Vos fichiers toujours à portée de main',
       'Unlock Full PDF Potential': 'Libérez tout le potentiel de PDF',
@@ -160,6 +254,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trouvez {n} ci-dessous et activez l’interrupteur.',
     },
     'ja': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'ポケットの中のファイル管理',
       'Unlock Full PDF Potential': 'PDFの可能性を最大限に引き出す',
@@ -173,6 +268,7 @@ final class B16LanguageHepKqmvza extends Translations {
           '下から{n}を見つけて、スイッチをオンにしてください。',
     },
     'ko': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': '주머니 속 파일 전문가',
       'Unlock Full PDF Potential': 'PDF의 모든 기능을 활용하세요',
@@ -185,6 +281,7 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '아래에서 {n}을 찾아 스위치를 켜세요.',
     },
     'de': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'Ihre Dateien immer griffbereit',
       'Unlock Full PDF Potential': 'Das volle PDF-Potenzial ausschöpfen',
@@ -200,6 +297,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Suchen Sie unten nach {n} und schalten Sie den Schalter ein.',
     },
     'es': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'Tus archivos siempre a mano',
       'Unlock Full PDF Potential': 'Desbloquea todo el potencial de PDF',
@@ -214,6 +312,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Busca {n} abajo y activa el interruptor.',
     },
     'it': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'I tuoi file sempre a portata di mano',
       'Unlock Full PDF Potential': 'Sblocca tutto il potenziale di PDF',
@@ -228,6 +327,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trova {n} qui sotto e attiva l’interruttore.',
     },
     'pt': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'Seus arquivos sempre à mão',
       'Unlock Full PDF Potential': 'Libere todo o potencial do PDF',
@@ -242,6 +342,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Encontre {n} abaixo e ative o interruptor.',
     },
     'ru': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'Ваши файлы всегда под рукой',
       'Unlock Full PDF Potential': 'Раскройте весь потенциал PDF',
@@ -256,6 +357,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Найдите {n} ниже и включите переключатель.',
     },
     'zh_TW': {
+      ..._b16FileZhTwQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': '隨身檔案專家',
       'Unlock Full PDF Potential': '解鎖 PDF 的完整潛力',
@@ -267,6 +369,7 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，並將開關切換為開啟。',
     },
     'zh_CN': {
+      ..._b16FileZhCnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': '随身文件专家',
       'Unlock Full PDF Potential': '解锁 PDF 的全部潜力',
@@ -278,6 +381,7 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，并将开关切换为开启。',
     },
     'ar': {
+      ..._b16FileEnQxmvza,
       'PDF': 'PDF',
       'Your pocket file pro': 'خبير ملفاتك في جيبك',
       'Unlock Full PDF Potential': 'أطلق العنان لإمكانات PDF الكاملة',

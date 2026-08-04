@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class B16HomeChildPageCqmwze extends B16RootChildMxkqza {
   const B16HomeChildPageCqmwze({super.key});
@@ -32,116 +33,158 @@ class _B16HomeChildStatePqnvxa
     BuildContext b16ContextHqmwza,
     B16HomeChildControllerRkpxwe b16ControllerVqmxze,
   ) {
-    return Container(
-      padding: EdgeInsets.only(left: 16.w,right: 16.w),
-      child: Column(
-        children: [
-          _topWidget(b16ControllerVqmxze),
-          SizedBox(height: 12.h,),
-          _tabWidget(b16ControllerVqmxze),
-          _addSmallWidget(b16ControllerVqmxze),
-          SizedBox(height: 12.h,),
-          _pageWidget(b16ControllerVqmxze),
-        ],
+    return GetBuilder<B16HomeChildControllerRkpxwe>(
+      init: b16ControllerVqmxze,
+      builder: (b16ControllerQxmvza) => Container(
+        padding: EdgeInsets.only(left: 16.w, right: 16.w),
+        child: Column(
+          children: [
+            _topWidget(b16ControllerQxmvza),
+            SizedBox(height: 12.h),
+            _tabWidget(b16ControllerQxmvza),
+            _addSmallWidget(b16ControllerQxmvza),
+            SizedBox(height: 12.h),
+            _pageWidget(b16ControllerQxmvza),
+          ],
+        ),
       ),
     );
   }
 
-  _pageWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze)=>Expanded(
+  _pageWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze) => Expanded(
     child: PageView.builder(
       itemCount: B16FileTabTypeefie.values.length,
       controller: b16controllerVqmxze.pageController,
-      itemBuilder: (context,index){
-        return B16FilesListChildPageQxmvza(type: B16FileTabTypeefie.values[index],);
+      onPageChanged: b16controllerVqmxze.b16PageChangedHqmwza,
+      itemBuilder: (context, index) {
+        return B16FilesListChildPageQxmvza(
+          type: B16FileTabTypeefie.values[index],
+        );
       },
     ),
   );
 
-  _tabWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze)=>SizedBox(
+  _tabWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze) => SizedBox(
     width: double.infinity,
     height: 36.h,
     child: ListView.separated(
       itemCount: B16FileTabTypeefie.values.length,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context,index){
+      itemBuilder: (context, index) {
         var type = B16FileTabTypeefie.values[index];
-        return Container(
-          padding: EdgeInsets.only(left: 12.w,right: 12.w),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18.w),
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Color(0xffFF8E71),Color(0xffA77FF1)],
+        final b16SelectedQxmvza =
+            index == b16controllerVqmxze.b16SelectedTabIndexQmvnza;
+        return B16TapGuardViewMfwqke(
+          b16OnPressedJkcxwu: () {
+            b16controllerVqmxze.clickTabItem(type);
+          },
+          b16ChildHnqvsa: Container(
+            padding: EdgeInsets.only(left: 12.w, right: 12.w),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18.w),
+              color: b16SelectedQxmvza ? null : Colors.white,
+              gradient: b16SelectedQxmvza
+                  ? LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
+                    )
+                  : null,
+              border: Border.all(width: 1.w, color: Color(0xffEBEBEB)),
             ),
-            border: Border.all(
-              width: 1.w,
-              color: Color(0xffEBEBEB),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                B16AssetImageViewPzrxcu(
+                  b16SelectedQxmvza ? type.iconSel : type.iconUns,
+                  b16WidthDtvqpl: 16.w,
+                  b16HeightRnxkse: 16.w,
+                ),
+                SizedBox(width: 2.w),
+                B16LocalizedTextViewCxmpra(
+                  type.name.tr,
+                  b16FontSizeRvxqle: 14.sp,
+                  b16ColorDtkzma: b16SelectedQxmvza
+                      ? Colors.white
+                      : const Color(0xff4B5156),
+                  b16FontWeightHncysp: FontWeight.bold,
+                ),
+              ],
             ),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              B16AssetImageViewPzrxcu(type.iconSel,b16WidthDtvqpl: 16.w,b16HeightRnxkse: 16.w,),
-              SizedBox(width: 2.w,),
-              B16LocalizedTextViewCxmpra(type.name,b16FontSizeRvxqle: 14.sp,b16ColorDtkzma: Color(0xffffffff),b16FontWeightHncysp: FontWeight.bold,),
-            ],
           ),
         );
       },
-      separatorBuilder: (BuildContext context, int index) => SizedBox(width: 8.w,),
+      separatorBuilder: (BuildContext context, int index) =>
+          SizedBox(width: 8.w),
     ),
   );
 
-  _addSmallWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze)=>Stack(
+  _addSmallWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze) => Stack(
     alignment: Alignment.topLeft,
     children: [
       Container(
         width: double.infinity,
         height: 56.h,
         margin: EdgeInsets.only(top: 8.h),
-        padding: EdgeInsets.only(left: 76.w,right: 8.w),
+        padding: EdgeInsets.only(left: 76.w, right: 8.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.w),
-          border: Border.all(
-            width: 0.5.w,
-            color: Color(0xffEBEBEB),
-          ),
+          border: Border.all(width: 0.5.w, color: Color(0xffEBEBEB)),
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [Color(0xffFCF2F7),Color(0xffFEF3F6)],
+            colors: [Color(0xffFCF2F7), Color(0xffFEF3F6)],
           ),
         ),
         child: Row(
           children: [
             Expanded(
-              child: B16LocalizedTextViewCxmpra("To access features instantly, add the widget!",b16FontSizeRvxqle: 14.sp,b16ColorDtkzma: Colors.black,b16OverflowFzrxke: TextOverflow.ellipsis,b16MaxLinesPqmtva: 2,),
+              child: B16LocalizedTextViewCxmpra(
+                "To access features instantly, add the widget!".tr,
+                b16FontSizeRvxqle: 14.sp,
+                b16ColorDtkzma: Colors.black,
+                b16OverflowFzrxke: TextOverflow.ellipsis,
+                b16MaxLinesPqmtva: 2,
+              ),
             ),
-            SizedBox(width: 8.w,),
+            SizedBox(width: 8.w),
             Container(
-              padding: EdgeInsets.only(left: 16.w,right: 16.w,top: 4.h,bottom: 4.h),
+              padding: EdgeInsets.only(
+                left: 16.w,
+                right: 16.w,
+                top: 4.h,
+                bottom: 4.h,
+              ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18.w),
                 gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
-                  colors: [Color(0xffFD7734),Color(0xffF73A70)],
+                  colors: [Color(0xffFD7734), Color(0xffF73A70)],
                 ),
               ),
-              child: B16LocalizedTextViewCxmpra("Grant",b16FontSizeRvxqle: 14.sp,b16ColorDtkzma: Colors.white,b16FontWeightHncysp: FontWeight.bold,),
+              child: B16LocalizedTextViewCxmpra(
+                "Grant".tr,
+                b16FontSizeRvxqle: 14.sp,
+                b16ColorDtkzma: Colors.white,
+                b16FontWeightHncysp: FontWeight.bold,
+              ),
             ),
           ],
         ),
       ),
       Container(
         margin: EdgeInsets.only(left: 8.w),
-        child: B16AssetImageViewPzrxcu("b16_add_small_widget_iwiwd",b16WidthDtvqpl: 60.w,b16HeightRnxkse: 60.w,),
+        child: B16AssetImageViewPzrxcu(
+          "b16_add_small_widget_iwiwd",
+          b16WidthDtvqpl: 60.w,
+          b16HeightRnxkse: 60.w,
+        ),
       ),
     ],
   );
 
-  _topWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze)=>SafeArea(
+  _topWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze) => SafeArea(
     top: true,
     bottom: false,
     child: Column(
@@ -150,22 +193,28 @@ class _B16HomeChildStatePqnvxa
       children: [
         Row(
           children: [
-            B16LocalizedTextViewCxmpra("Files",b16FontSizeRvxqle: 28.sp,b16ColorDtkzma: Colors.black,b16FontWeightHncysp: FontWeight.bold,),
+            B16LocalizedTextViewCxmpra(
+              "Files".tr,
+              b16FontSizeRvxqle: 28.sp,
+              b16ColorDtkzma: Colors.black,
+              b16FontWeightHncysp: FontWeight.bold,
+            ),
             Expanded(
-              child: kDebugMode?
-              B16TapGuardViewMfwqke(
-                b16OnPressedJkcxwu: (){
-                  b16controllerVqmxze.test();
-                },
-                b16ChildHnqvsa: Container(
-                  width: double.infinity,
-                  height: 20.h,
-                ),
-              ):Container(),
+              child: kDebugMode
+                  ? B16TapGuardViewMfwqke(
+                      b16OnPressedJkcxwu: () {
+                        b16controllerVqmxze.test();
+                      },
+                      b16ChildHnqvsa: Container(
+                        width: double.infinity,
+                        height: 20.h,
+                      ),
+                    )
+                  : Container(),
             ),
           ],
         ),
-        SizedBox(height: 10.h,),
+        SizedBox(height: 10.h),
         Container(
           width: double.infinity,
           height: 48.h,
@@ -175,22 +224,26 @@ class _B16HomeChildStatePqnvxa
             gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Color(0xffFF8E71),Color(0xffA77FF1)],
+              colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
             ),
           ),
           child: Container(
             width: double.infinity,
             height: double.infinity,
             alignment: Alignment.centerLeft,
-            padding: EdgeInsets.only(left: 12.w,right: 12.w),
+            padding: EdgeInsets.only(left: 12.w, right: 12.w),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12.w),
             ),
             child: Row(
               children: [
-                B16AssetImageViewPzrxcu("b16_search_fjhiefje",b16WidthDtvqpl: 24.w,b16HeightRnxkse: 24.w,),
-                SizedBox(width: 8.w,),
+                B16AssetImageViewPzrxcu(
+                  "b16_search_fjhiefje",
+                  b16WidthDtvqpl: 24.w,
+                  b16HeightRnxkse: 24.w,
+                ),
+                SizedBox(width: 8.w),
                 Expanded(
                   child: TextField(
                     enabled: true,
@@ -198,25 +251,19 @@ class _B16HomeChildStatePqnvxa
                     controller: b16controllerVqmxze.textEditingController,
                     textInputAction: TextInputAction.search,
                     style: TextStyle(fontSize: 16.sp, color: Colors.black),
-                    onTap: (){
-
-                    },
+                    onTap: () {},
                     decoration: InputDecoration(
                       counterText: '',
                       isCollapsed: true,
-                      hintText: "Search...",
+                      hintText: "Search...".tr,
                       hintStyle: TextStyle(
                         fontSize: 16.sp,
                         color: Color(0xff858C92),
                       ),
                       border: InputBorder.none,
                     ),
-                    onChanged: (String b12allValueMqvtxn) {
-
-                    },
-                    onSubmitted: (String b12allValueMqvtxn) {
-
-                    },
+                    onChanged: b16controllerVqmxze.b16SearchFilesPqmxza,
+                    onSubmitted: b16controllerVqmxze.b16SearchFilesPqmxza,
                   ),
                 ),
               ],
