@@ -158,6 +158,23 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
     );
   }
 
+  void clickFileItem(FileToolsFileInfo b16FileInfoQxmvza) {
+    final String? b16RouteNameKqnvze = switch (b16FileInfoQxmvza.type) {
+      FileToolsDocumentType.pdf =>
+        B16RoutersAddressFjeifjeo.b16PreviewPdfRouteQxmvza,
+      FileToolsDocumentType.word =>
+        B16RoutersAddressFjeifjeo.b16PreviewWordRouteVqntza,
+      FileToolsDocumentType.excel =>
+        B16RoutersAddressFjeifjeo.b16PreviewExcelRouteRqmwza,
+      _ => null,
+    };
+    if (b16RouteNameKqnvze == null) return;
+    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(
+      b16RouteNameMcfzsq: b16RouteNameKqnvze,
+      b16ArgumentsXvedlu: {'file': b16FileInfoQxmvza},
+    );
+  }
+
   @override
   bool b16RegisterEventfeijif() => true;
 

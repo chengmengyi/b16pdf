@@ -73,7 +73,7 @@ class _B16FilesListChildStateVqnxre
           mainAxisSize: MainAxisSize.min,
           children: [
             B16AssetImageViewPzrxcu(
-              "b16_sort_fdwjidjow",
+              b16controllerVqnxre.b16SortTypePqnvza.b16IconKqnvxe,
               b16WidthDtvqpl: 20.w,
               b16HeightRnxkse: 20.w,
             ),
@@ -147,48 +147,53 @@ class _B16FilesListChildStateVqnxre
             itemBuilder: (context, index) {
               final b16FileQxmvza =
                   b16controllerVqnxre.b16VisibleFilesVqmwza[index];
-              return Container(
-                width: double.infinity,
-                height: 72.h,
-                alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(left: 16.w, right: 16.w),
-                child: Row(
-                  children: [
-                    B16AssetImageViewPzrxcu(
-                      _b16FileIconKqnvze(b16FileQxmvza),
-                      b16WidthDtvqpl: 32.w,
-                      b16HeightRnxkse: 32.w,
-                    ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          B16LocalizedTextViewCxmpra(
-                            b16FileQxmvza.name ?? '',
-                            b16FontSizeRvxqle: 14.sp,
-                            b16ColorDtkzma: Colors.black,
-                            b16FontWeightHncysp: FontWeight.bold,
-                            b16OverflowFzrxke: TextOverflow.ellipsis,
-                          ),
-                          B16LocalizedTextViewCxmpra(
-                            _b16FileDetailPqmwza(b16FileQxmvza),
-                            b16FontSizeRvxqle: 12.sp,
-                            b16ColorDtkzma: Color(0xff858C92),
-                            b16FontWeightHncysp: FontWeight.w500,
-                            b16OverflowFzrxke: TextOverflow.ellipsis,
-                          ),
-                        ],
+              return B16TapGuardViewMfwqke(
+                b16OnPressedJkcxwu: (){
+                  b16controllerVqnxre.clickFileItem(b16FileQxmvza);
+                },
+                b16ChildHnqvsa: Container(
+                  width: double.infinity,
+                  height: 72.h,
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.only(left: 16.w, right: 16.w),
+                  child: Row(
+                    children: [
+                      B16AssetImageViewPzrxcu(
+                        _b16FileIconKqnvze(b16FileQxmvza),
+                        b16WidthDtvqpl: 32.w,
+                        b16HeightRnxkse: 32.w,
                       ),
-                    ),
-                    SizedBox(width: 12.w),
-                    B16AssetImageViewPzrxcu(
-                      "b16_more_icon_fjioewjfoe",
-                      b16WidthDtvqpl: 24.w,
-                      b16HeightRnxkse: 24.w,
-                    ),
-                  ],
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            B16LocalizedTextViewCxmpra(
+                              b16FileQxmvza.name ?? '',
+                              b16FontSizeRvxqle: 14.sp,
+                              b16ColorDtkzma: Colors.black,
+                              b16FontWeightHncysp: FontWeight.bold,
+                              b16OverflowFzrxke: TextOverflow.ellipsis,
+                            ),
+                            B16LocalizedTextViewCxmpra(
+                              _b16FileDetailPqmwza(b16FileQxmvza),
+                              b16FontSizeRvxqle: 12.sp,
+                              b16ColorDtkzma: Color(0xff858C92),
+                              b16FontWeightHncysp: FontWeight.w500,
+                              b16OverflowFzrxke: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      B16AssetImageViewPzrxcu(
+                        "b16_more_icon_fjioewjfoe",
+                        b16WidthDtvqpl: 24.w,
+                        b16HeightRnxkse: 24.w,
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
