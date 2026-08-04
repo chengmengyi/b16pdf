@@ -113,8 +113,12 @@ class B16OpenOverlayPermissionPageZqtwne
                   alignment: Alignment.center,
                   margin: EdgeInsets.symmetric(horizontal: 16.w),
                   decoration: BoxDecoration(
-                    color: const Color(0xff067bf2),
                     borderRadius: BorderRadius.circular(24.w),
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Color(0xff06B3F2),Color(0xff002DF6)]
+                    ),
                   ),
                   child: B16LocalizedTextViewCxmpra(
                     'Continue'.tr,

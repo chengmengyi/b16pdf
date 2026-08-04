@@ -224,6 +224,10 @@ final class B16LanguageHepKqmvza extends Translations {
   @override
   Map<String, Map<String, String>> get keys => const {
     'en': {
+      'Welcome': 'Welcome',
+      'Choose your preferred language to get started.':
+          'Choose your preferred language to get started.',
+      'OK': 'OK',
       'Color': 'Color',
       'Width': 'Width',
       'Edit': 'Edit',
@@ -247,6 +251,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Find {n} below and toggle the switch to ON.',
     },
     'fr': {
+      'Welcome': 'Bienvenue',
+      'Choose your preferred language to get started.':
+          'Choisissez votre langue préférée pour commencer.',
+      'OK': 'OK',
       'Color': 'Couleur',
       'Width': 'Épaisseur',
       'Edit': 'Modifier',
@@ -270,6 +278,9 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trouvez {n} ci-dessous et activez l’interrupteur.',
     },
     'ja': {
+      'Welcome': 'ようこそ',
+      'Choose your preferred language to get started.': '使用する言語を選択してください。',
+      'OK': 'OK',
       'Color': '色',
       'Width': '太さ',
       'Edit': '編集',
@@ -292,6 +303,9 @@ final class B16LanguageHepKqmvza extends Translations {
           '下から{n}を見つけて、スイッチをオンにしてください。',
     },
     'ko': {
+      'Welcome': '환영합니다',
+      'Choose your preferred language to get started.': '시작하려면 선호하는 언어를 선택하세요.',
+      'OK': '확인',
       'Color': '색상',
       'Width': '두께',
       'Edit': '편집',
@@ -313,6 +327,10 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '아래에서 {n}을 찾아 스위치를 켜세요.',
     },
     'de': {
+      'Welcome': 'Willkommen',
+      'Choose your preferred language to get started.':
+          'Wählen Sie Ihre bevorzugte Sprache aus.',
+      'OK': 'OK',
       'Color': 'Farbe',
       'Width': 'Breite',
       'Edit': 'Bearbeiten',
@@ -337,6 +355,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Suchen Sie unten nach {n} und schalten Sie den Schalter ein.',
     },
     'es': {
+      'Welcome': 'Bienvenido',
+      'Choose your preferred language to get started.':
+          'Elige tu idioma preferido para comenzar.',
+      'OK': 'Aceptar',
       'Color': 'Color',
       'Width': 'Grosor',
       'Edit': 'Editar',
@@ -360,6 +382,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Busca {n} abajo y activa el interruptor.',
     },
     'it': {
+      'Welcome': 'Benvenuto',
+      'Choose your preferred language to get started.':
+          'Scegli la lingua che preferisci per iniziare.',
+      'OK': 'OK',
       'Color': 'Colore',
       'Width': 'Spessore',
       'Edit': 'Modifica',
@@ -383,6 +409,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trova {n} qui sotto e attiva l’interruttore.',
     },
     'pt': {
+      'Welcome': 'Bem-vindo',
+      'Choose your preferred language to get started.':
+          'Escolha seu idioma preferido para começar.',
+      'OK': 'OK',
       'Color': 'Cor',
       'Width': 'Espessura',
       'Edit': 'Editar',
@@ -406,6 +436,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Encontre {n} abaixo e ative o interruptor.',
     },
     'ru': {
+      'Welcome': 'Добро пожаловать',
+      'Choose your preferred language to get started.':
+          'Выберите предпочитаемый язык, чтобы начать.',
+      'OK': 'ОК',
       'Color': 'Цвет',
       'Width': 'Толщина',
       'Edit': 'Редактировать',
@@ -429,6 +463,9 @@ final class B16LanguageHepKqmvza extends Translations {
           'Найдите {n} ниже и включите переключатель.',
     },
     'zh_TW': {
+      'Welcome': '歡迎',
+      'Choose your preferred language to get started.': '選擇偏好的語言以開始使用。',
+      'OK': '確定',
       'Color': '顏色',
       'Width': '粗細',
       'Edit': '編輯',
@@ -449,6 +486,9 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，並將開關切換為開啟。',
     },
     'zh_CN': {
+      'Welcome': '欢迎',
+      'Choose your preferred language to get started.': '选择你偏好的语言以开始使用。',
+      'OK': '确定',
       'Color': '颜色',
       'Width': '粗细',
       'Edit': '编辑',
@@ -469,6 +509,10 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，并将开关切换为开启。',
     },
     'ar': {
+      'Welcome': 'مرحبًا',
+      'Choose your preferred language to get started.':
+          'اختر لغتك المفضلة للبدء.',
+      'OK': 'موافق',
       'Color': 'اللون',
       'Width': 'السُمك',
       'Edit': 'تعديل',
