@@ -1,13 +1,75 @@
+import 'dart:io';
+
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_preview_file/flutter_preview_file.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class B16PreviewExcelControllerMqptza extends B16RootControllerFjesak {
-  final FileToolsFileInfo b16FileInfoXqnvze =
+  late final ExcelFileController b16ExcelControllerKqnvze;
+  FileToolsFileInfo b16FileInfoXqnvze =
       Get.arguments['file'] as FileToolsFileInfo;
+  bool b16CanLoadViewerVqntza = false;
+  String get b16FileNameHqmwza {
+    if ((b16FileInfoXqnvze.name ?? '').isNotEmpty) {
+      return b16FileInfoXqnvze.name!;
+    }
+    return (b16FileInfoXqnvze.path ?? '').split(Platform.pathSeparator).last;
+  }
 
-  clickBack(){
-    B16RoutersHepFjeifjoe.b16BackFtynwp();
+  bool get b16IsEditingQxmvza => b16ExcelControllerKqnvze.isEditing;
+  bool get b16IsSavingRqmwza => b16ExcelControllerKqnvze.saving;
+  @override
+  void onInit() {
+    super.onInit();
+    b16ExcelControllerKqnvze = ExcelFileController(
+      filePath: b16FileInfoXqnvze.path ?? '',
+    );
+    b16ExcelControllerKqnvze.addListener(_b16ViewerChangedVqmxza);
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future<void>.delayed(const Duration(milliseconds: 160));
+      b16CanLoadViewerVqntza = true;
+      update();
+      await b16ExcelControllerKqnvze.initialize();
+    });
+  }
+
+  void _b16ViewerChangedVqmxza() => update();
+  Future<void> clickEdit() async {
+    if (b16IsSavingRqmwza) return;
+    b16IsEditingQxmvza
+        ? await b16ExcelControllerKqnvze.cancelEditing()
+        : await b16ExcelControllerKqnvze.enterEditMode();
+  }
+
+  Future<void> clickSave() async {
+    if (!b16IsEditingQxmvza || b16IsSavingRqmwza) return;
+    try {
+      await b16ExcelControllerKqnvze.save();
+      final b16PathKqnvze = b16FileInfoXqnvze.path ?? '';
+      final b16StatVqmxza = await File(b16PathKqnvze).stat();
+      b16FileInfoXqnvze = b16FileInfoXqnvze.copyWith(
+        size: b16StatVqmxza.size,
+        updateTime: b16StatVqmxza.modified.millisecondsSinceEpoch,
+      );
+      Fluttertoast.showToast(msg: 'Saved successfully'.tr);
+    } catch (b16ErrorQxmvza) {
+      Fluttertoast.showToast(msg: '$b16ErrorQxmvza');
+    }
+  }
+
+  void clickBack() => B16RoutersHepFjeifjoe.b16BackFtynwp();
+  @override
+  void onClose() {
+    b16ExcelControllerKqnvze.removeListener(_b16ViewerChangedVqmxza);
+    b16ExcelControllerKqnvze.dispose();
+    super.onClose();
   }
 }
