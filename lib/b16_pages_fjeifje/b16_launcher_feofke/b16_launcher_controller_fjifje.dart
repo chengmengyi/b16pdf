@@ -37,7 +37,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
       return;
     }
     b16NavigationStartedHqmwxe = true;
-    B16NewUserHepJfiejfo.instance.toPageAfterLauncher();
+    B16NewUserHepJfiejfo.instance.toPageAfterOverlay();
   }
 
   @override

@@ -224,6 +224,11 @@ final class B16LanguageHepKqmvza extends Translations {
   @override
   Map<String, Map<String, String>> get keys => const {
     'en': {
+      'This app has an update': 'This app has an update',
+      'Please upgrade to enjoy the latest functions.':
+          'Please upgrade to enjoy the latest functions.',
+      'All notifications': 'All notifications',
+      'Update now': 'Update now',
       'Welcome': 'Welcome',
       'Choose your preferred language to get started.':
           'Choose your preferred language to get started.',
@@ -251,6 +256,11 @@ final class B16LanguageHepKqmvza extends Translations {
           'Find {n} below and toggle the switch to ON.',
     },
     'fr': {
+      'This app has an update': 'Cette application a une mise à jour',
+      'Please upgrade to enjoy the latest functions.':
+          'Effectuez la mise à jour pour profiter des dernières fonctionnalités.',
+      'All notifications': 'Toutes les notifications',
+      'Update now': 'Mettre à jour',
       'Welcome': 'Bienvenue',
       'Choose your preferred language to get started.':
           'Choisissez votre langue préférée pour commencer.',
@@ -278,6 +288,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trouvez {n} ci-dessous et activez l’interrupteur.',
     },
     'ja': {
+      'This app has an update': 'アプリの更新があります',
+      'Please upgrade to enjoy the latest functions.': '最新機能を利用するには更新してください。',
+      'All notifications': 'すべての通知',
+      'Update now': '今すぐ更新',
       'Welcome': 'ようこそ',
       'Choose your preferred language to get started.': '使用する言語を選択してください。',
       'OK': 'OK',
@@ -303,6 +317,10 @@ final class B16LanguageHepKqmvza extends Translations {
           '下から{n}を見つけて、スイッチをオンにしてください。',
     },
     'ko': {
+      'This app has an update': '앱 업데이트가 있습니다',
+      'Please upgrade to enjoy the latest functions.': '최신 기능을 이용하려면 업데이트하세요.',
+      'All notifications': '모든 알림',
+      'Update now': '지금 업데이트',
       'Welcome': '환영합니다',
       'Choose your preferred language to get started.': '시작하려면 선호하는 언어를 선택하세요.',
       'OK': '확인',
@@ -327,6 +345,11 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '아래에서 {n}을 찾아 스위치를 켜세요.',
     },
     'de': {
+      'This app has an update': 'Für diese App ist ein Update verfügbar',
+      'Please upgrade to enjoy the latest functions.':
+          'Aktualisieren Sie die App, um die neuesten Funktionen zu nutzen.',
+      'All notifications': 'Alle Benachrichtigungen',
+      'Update now': 'Jetzt aktualisieren',
       'Welcome': 'Willkommen',
       'Choose your preferred language to get started.':
           'Wählen Sie Ihre bevorzugte Sprache aus.',
@@ -355,6 +378,11 @@ final class B16LanguageHepKqmvza extends Translations {
           'Suchen Sie unten nach {n} und schalten Sie den Schalter ein.',
     },
     'es': {
+      'This app has an update': 'Esta aplicación tiene una actualización',
+      'Please upgrade to enjoy the latest functions.':
+          'Actualiza para disfrutar de las funciones más recientes.',
+      'All notifications': 'Todas las notificaciones',
+      'Update now': 'Actualizar ahora',
       'Welcome': 'Bienvenido',
       'Choose your preferred language to get started.':
           'Elige tu idioma preferido para comenzar.',
@@ -382,6 +410,11 @@ final class B16LanguageHepKqmvza extends Translations {
           'Busca {n} abajo y activa el interruptor.',
     },
     'it': {
+      'This app has an update': 'È disponibile un aggiornamento',
+      'Please upgrade to enjoy the latest functions.':
+          'Aggiorna per utilizzare le funzioni più recenti.',
+      'All notifications': 'Tutte le notifiche',
+      'Update now': 'Aggiorna ora',
       'Welcome': 'Benvenuto',
       'Choose your preferred language to get started.':
           'Scegli la lingua che preferisci per iniziare.',
@@ -409,6 +442,11 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trova {n} qui sotto e attiva l’interruttore.',
     },
     'pt': {
+      'This app has an update': 'Este aplicativo tem uma atualização',
+      'Please upgrade to enjoy the latest functions.':
+          'Atualize para aproveitar os recursos mais recentes.',
+      'All notifications': 'Todas as notificações',
+      'Update now': 'Atualizar agora',
       'Welcome': 'Bem-vindo',
       'Choose your preferred language to get started.':
           'Escolha seu idioma preferido para começar.',
@@ -436,6 +474,11 @@ final class B16LanguageHepKqmvza extends Translations {
           'Encontre {n} abaixo e ative o interruptor.',
     },
     'ru': {
+      'This app has an update': 'Доступно обновление приложения',
+      'Please upgrade to enjoy the latest functions.':
+          'Обновите приложение, чтобы использовать новейшие функции.',
+      'All notifications': 'Все уведомления',
+      'Update now': 'Обновить сейчас',
       'Welcome': 'Добро пожаловать',
       'Choose your preferred language to get started.':
           'Выберите предпочитаемый язык, чтобы начать.',
@@ -463,6 +506,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Найдите {n} ниже и включите переключатель.',
     },
     'zh_TW': {
+      'This app has an update': '此應用程式有可用更新',
+      'Please upgrade to enjoy the latest functions.': '請更新以使用最新功能。',
+      'All notifications': '所有通知',
+      'Update now': '立即更新',
       'Welcome': '歡迎',
       'Choose your preferred language to get started.': '選擇偏好的語言以開始使用。',
       'OK': '確定',
@@ -486,6 +533,10 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，並將開關切換為開啟。',
     },
     'zh_CN': {
+      'This app has an update': '此应用有可用更新',
+      'Please upgrade to enjoy the latest functions.': '请更新以使用最新功能。',
+      'All notifications': '所有通知',
+      'Update now': '立即更新',
       'Welcome': '欢迎',
       'Choose your preferred language to get started.': '选择你偏好的语言以开始使用。',
       'OK': '确定',
@@ -509,6 +560,11 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，并将开关切换为开启。',
     },
     'ar': {
+      'This app has an update': 'يتوفر تحديث لهذا التطبيق',
+      'Please upgrade to enjoy the latest functions.':
+          'حدّث التطبيق للاستمتاع بأحدث الميزات.',
+      'All notifications': 'جميع الإشعارات',
+      'Update now': 'التحديث الآن',
       'Welcome': 'مرحبًا',
       'Choose your preferred language to get started.':
           'اختر لغتك المفضلة للبدء.',

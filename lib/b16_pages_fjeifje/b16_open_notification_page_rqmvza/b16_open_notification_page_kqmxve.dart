@@ -7,7 +7,6 @@ import 'package:b16pdf/b16_view_krtmxa/b16_pulse_view_hqvzna.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_switch_view_feifjie.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_tap_guard_view_mfwqke.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
@@ -35,13 +34,27 @@ class B16OpenNotificationPageKqmxve
         ),
         Column(
           children: [
-            SizedBox(height: 100.h,),
-            B16AssetImageViewPzrxcu("b16_notofication_top_images_fiefjoe",b16WidthDtvqpl: 145.w,b16HeightRnxkse: 150.h,),
-            SizedBox(height: 60.h,),
-            B16LocalizedTextViewCxmpra("This app has an update",b16FontSizeRvxqle: 24.sp,b16ColorDtkzma: Colors.black,b16FontWeightHncysp: FontWeight.bold,),
-            SizedBox(height: 10.h,),
-            B16LocalizedTextViewCxmpra("Please upgrade to enjoy the latest functions.",b16FontSizeRvxqle: 14.sp,b16ColorDtkzma: Color(0xff4B5156),b16FontWeightHncysp: FontWeight.w500,),
-            SizedBox(height: 40.h,),
+            SizedBox(height: 100.h),
+            B16AssetImageViewPzrxcu(
+              "b16_notofication_top_images_fiefjoe",
+              b16WidthDtvqpl: 145.w,
+              b16HeightRnxkse: 150.h,
+            ),
+            SizedBox(height: 60.h),
+            B16LocalizedTextViewCxmpra(
+              "This app has an update".tr,
+              b16FontSizeRvxqle: 24.sp,
+              b16ColorDtkzma: Colors.black,
+              b16FontWeightHncysp: FontWeight.bold,
+            ),
+            SizedBox(height: 10.h),
+            B16LocalizedTextViewCxmpra(
+              "Please upgrade to enjoy the latest functions.".tr,
+              b16FontSizeRvxqle: 14.sp,
+              b16ColorDtkzma: Color(0xff4B5156),
+              b16FontWeightHncysp: FontWeight.w500,
+            ),
+            SizedBox(height: 40.h),
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(12.w),
@@ -74,7 +87,11 @@ class B16OpenNotificationPageKqmxve
                           b16FontWeightHncysp: FontWeight.bold,
                           b16OverflowFzrxke: TextOverflow.ellipsis,
                         ),
-                        B16LocalizedTextViewCxmpra("All notifications",b16FontSizeRvxqle: 12.sp,b16ColorDtkzma: Color(0xff858C92),)
+                        B16LocalizedTextViewCxmpra(
+                          "All notifications".tr,
+                          b16FontSizeRvxqle: 12.sp,
+                          b16ColorDtkzma: Color(0xff858C92),
+                        ),
                       ],
                     ),
                   ),
@@ -85,8 +102,8 @@ class B16OpenNotificationPageKqmxve
             Spacer(),
             B16PulseViewHqvzna(
               b16ChildPxnvta: B16TapGuardViewMfwqke(
-                b16OnPressedJkcxwu: (){
-
+                b16OnPressedJkcxwu: () {
+                  b16ControllerKqmxve.clickUpdate();
                 },
                 b16ChildHnqvsa: Container(
                   width: double.infinity,
@@ -96,13 +113,13 @@ class B16OpenNotificationPageKqmxve
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24.w),
                     gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [Color(0xff06B3F2),Color(0xff002DF6)]
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Color(0xff06B3F2), Color(0xff002DF6)],
                     ),
                   ),
                   child: B16LocalizedTextViewCxmpra(
-                    'Update now',
+                    'Update now'.tr,
                     b16FontSizeRvxqle: 18.sp,
                     b16ColorDtkzma: Colors.white,
                     b16FontWeightHncysp: FontWeight.bold,

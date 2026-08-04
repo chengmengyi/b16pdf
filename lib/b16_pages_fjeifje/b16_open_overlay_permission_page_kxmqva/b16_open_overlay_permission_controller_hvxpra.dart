@@ -27,7 +27,7 @@ class B16OpenOverlayPermissionControllerHvxpra extends B16RootControllerFjesak {
               .requestOverlayPermission(
                 title: 'Almost there! Unlock your full potential'.tr,
                 desc: 'Find {n} below and toggle the switch to ON.'.tr,
-                overlayPermissionGuideLayout: '',
+                overlayPermissionGuideLayout: 'b16_overlay_layout_fjeifjei',
               );
       if (b16PermissionGrantedKqvxne) {
         b16OpenNotificationPagePqnvxe();

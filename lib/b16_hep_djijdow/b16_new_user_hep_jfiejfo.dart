@@ -10,17 +10,18 @@ class B16NewUserHepJfiejfo{
 
   //语言选择页没有点确定----启动app：悬浮窗->语言选择页->通知->首页
   //语言选择页点确定----启动app：悬浮窗->通知->首页
-  toPageAfterLauncher()async{
-    var checkOverlayPermission = await FlutterLocalNotificationPlugins.instance.checkOverlayPermission();
-    if(!checkOverlayPermission){
-      B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
-        b16RouteNameYweqpn:
-        B16RoutersAddressFjeifjeo.b16OverlayPermissionRouteNqvwza,
-      );
-      return;
-    }
-    toPageAfterOverlay();
-  }
+  //这个包测试一下没有悬浮窗的
+  // toPageAfterLauncher()async{
+  //   var checkOverlayPermission = await FlutterLocalNotificationPlugins.instance.checkOverlayPermission();
+  //   if(!checkOverlayPermission){
+  //     B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
+  //       b16RouteNameYweqpn:
+  //       B16RoutersAddressFjeifjeo.b16OverlayPermissionRouteNqvwza,
+  //     );
+  //     return;
+  //   }
+  //   toPageAfterOverlay();
+  // }
 
   toPageAfterOverlay(){
     if(B16LanguageSelectedFjiefjoe.b16ReadLanguageVqmxpe().isEmpty){
@@ -41,6 +42,7 @@ class B16NewUserHepJfiejfo{
         b16RouteNameYweqpn:
         B16RoutersAddressFjeifjeo.b16NotificationRouteHqmwza,
       );
+      return;
     }
     toHome();
   }
