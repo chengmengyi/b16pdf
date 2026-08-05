@@ -103,64 +103,79 @@ class B16ImagesResultPageVqntza
         SizedBox(height: 10.h),
         Row(
           children: [
-            Container(
-              width: 64.w,
-              height: 64.w,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16.w),
-                border: Border.all(
-                  width: 0.5.w,
-                  color: Color(0xffCFD6DC),
+            B16TapGuardViewMfwqke(
+              b16OnPressedJkcxwu: (){
+
+              },
+              b16ChildHnqvsa: Container(
+                width: 64.w,
+                height: 64.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.w),
+                  border: Border.all(
+                    width: 0.5.w,
+                    color: Color(0xffCFD6DC),
+                  ),
                 ),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  B16AssetImageViewPzrxcu("b16_retake_icon_jiwodw",b16WidthDtvqpl: 24.w,b16HeightRnxkse: 24.w,),
-                  SizedBox(height: 4.h,),
-                  B16LocalizedTextViewCxmpra("Retake",b16FontSizeRvxqle: 11.sp,b16ColorDtkzma: Color(0xff858C92),b16FontWeightHncysp: FontWeight.w500,),
-                ],
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    B16AssetImageViewPzrxcu("b16_retake_icon_jiwodw",b16WidthDtvqpl: 24.w,b16HeightRnxkse: 24.w,),
+                    SizedBox(height: 4.h,),
+                    B16LocalizedTextViewCxmpra("Retake",b16FontSizeRvxqle: 11.sp,b16ColorDtkzma: Color(0xff858C92),b16FontWeightHncysp: FontWeight.w500,),
+                  ],
+                ),
               ),
             ),
             SizedBox(width: 12.w,),
-            Container(
-              width: 64.w,
-              height: 64.w,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16.w),
-                border: Border.all(
-                  width: 0.5.w,
-                  color: Color(0xffCFD6DC),
+            B16TapGuardViewMfwqke(
+              b16OnPressedJkcxwu: (){
+
+              },
+              b16ChildHnqvsa: Container(
+                width: 64.w,
+                height: 64.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.w),
+                  border: Border.all(
+                    width: 0.5.w,
+                    color: Color(0xffCFD6DC),
+                  ),
                 ),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  B16AssetImageViewPzrxcu("b16_addpage_icon_dkwokow",b16WidthDtvqpl: 24.w,b16HeightRnxkse: 24.w,),
-                  SizedBox(height: 4.h,),
-                  B16LocalizedTextViewCxmpra("Add",b16FontSizeRvxqle: 11.sp,b16ColorDtkzma: Color(0xff858C92),b16FontWeightHncysp: FontWeight.w500,),
-                ],
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    B16AssetImageViewPzrxcu("b16_addpage_icon_dkwokow",b16WidthDtvqpl: 24.w,b16HeightRnxkse: 24.w,),
+                    SizedBox(height: 4.h,),
+                    B16LocalizedTextViewCxmpra("Add",b16FontSizeRvxqle: 11.sp,b16ColorDtkzma: Color(0xff858C92),b16FontWeightHncysp: FontWeight.w500,),
+                  ],
+                ),
               ),
             ),
             SizedBox(width: 12.w,),
             Expanded(
-              child: Container(
-                width: double.infinity,
-                height: 44.h,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Color(0xff067BF2),
-                  borderRadius: BorderRadius.circular(22.w),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    B16AssetImageViewPzrxcu("b16_sel_icon",b16WidthDtvqpl: 24.w,b16HeightRnxkse: 24.w,),
-                    SizedBox(width: 8.w),
-                    B16LocalizedTextViewCxmpra("Save PDF",b16FontSizeRvxqle: 16.sp,b16ColorDtkzma: Colors.white,b16FontWeightHncysp: FontWeight.bold,)
-                  ],
+              child: B16TapGuardViewMfwqke(
+                b16OnPressedJkcxwu: (){
+                  b16controllerKqmxve.clickSave();
+                },
+                b16ChildHnqvsa: Container(
+                  width: double.infinity,
+                  height: 44.h,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Color(0xff067BF2),
+                    borderRadius: BorderRadius.circular(22.w),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      B16AssetImageViewPzrxcu("b16_sel_icon",b16WidthDtvqpl: 24.w,b16HeightRnxkse: 24.w,),
+                      SizedBox(width: 8.w),
+                      B16LocalizedTextViewCxmpra("Save PDF",b16FontSizeRvxqle: 16.sp,b16ColorDtkzma: Colors.white,b16FontWeightHncysp: FontWeight.bold,)
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -187,6 +202,7 @@ class B16ImagesResultPageVqntza
           ),
         ],
       ),
+
     ),
   );
 
