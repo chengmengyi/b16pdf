@@ -1,10 +1,10 @@
 import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
-class B16NotificationListInfoDjiwjdiw {
-  const B16NotificationListInfoDjiwjdiw._();
+class B16NotificationContentHepHqmwza {
+  const B16NotificationContentHepHqmwza._();
 
-  static List<LocalNotificationContent> b12allGetNotificationDataListPqmvzr() {
+  static List<LocalNotificationContent> b16BuildContentsKqmwze() {
     return <LocalNotificationContent>[
       LocalNotificationContent(
         title: 'File size reduced'.tr,

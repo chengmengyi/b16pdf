@@ -9,179 +9,166 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter_custom_facebook/flutter_custom_facebook.dart';
 
-class B16FirebaseHepDjiwjow{
-  static final B16FirebaseHepDjiwjow _b16firebaseHepDjiwjow=B16FirebaseHepDjiwjow();
-  static B16FirebaseHepDjiwjow get instance => _b16firebaseHepDjiwjow;
+class B16FirebaseHepKqmwze {
+  B16FirebaseHepKqmwze._();
+  static final B16FirebaseHepKqmwze instance = B16FirebaseHepKqmwze._();
 
-  FirebaseRemoteConfig? _b12allRemoteConfigVmqxtr;
-  FirebaseAnalytics? _b12allFirebaseAnalyticsPqmvzr;
+  FirebaseRemoteConfig? _b16RemoteConfigQxnvza;
+  FirebaseAnalytics? _b16AnalyticsVqntza;
 
-  bool _apex09HasInitFacebook = false;
+  bool _b16FacebookInitializedHqmwza = false;
 
-  int b12allAdCooldownSecondsKqmvzr = 30;
-  bool krPhoneShowNotification=false,clickSearchShowAd=false,clickFileShowAd=false,commentOpShow=false;
-  int switch_per=0,switch_file=0;
+  int b16AdCooldownSecondsPqnvze = 30;
+  bool b16KoreanPhoneNotificationKqmwze = false;
+  bool b16SearchInterstitialEnabledQxnvza = false;
+  bool b16FileInterstitialEnabledVqntza = false;
+  bool b16CommentOverlayEnabledHqmwza = false;
+  int b16PermissionSwitchPqnvze = 0;
+  int b16FileSwitchRqmwza = 0;
 
-  Future<void> b12allInitFirebaseXmqvtr() async {
+  Future<void> b16InitializeFirebaseQxnvza() async {
     try {
       await Firebase.initializeApp();
-      _b12allFirebaseAnalyticsPqmvzr ??= FirebaseAnalytics.instance;
-      _b12allRemoteConfigVmqxtr = FirebaseRemoteConfig.instance;
-      await _b12allRemoteConfigVmqxtr?.setConfigSettings(
+      _b16AnalyticsVqntza ??= FirebaseAnalytics.instance;
+      _b16RemoteConfigQxnvza = FirebaseRemoteConfig.instance;
+      await _b16RemoteConfigQxnvza?.setConfigSettings(
         RemoteConfigSettings(
           fetchTimeout: const Duration(seconds: 10),
           minimumFetchInterval: const Duration(seconds: 1),
         ),
       );
-      await _b12allRemoteConfigVmqxtr?.fetchAndActivate();
-      b12allGetRemoteConfigVmqxtr();
-    } catch (b12allErrorPqmvzr) {
+      await _b16RemoteConfigQxnvza?.fetchAndActivate();
+      b16ApplyRemoteConfigVqntza();
+    } catch (b16ErrorQxnvza) {
       await Future.delayed(const Duration(milliseconds: 1000));
-      return b12allInitFirebaseXmqvtr();
+      return b16InitializeFirebaseQxnvza();
     }
   }
 
-  void b12allGetRemoteConfigVmqxtr() {
-    final int b12allNewOpenDurationSecondsKqmvzr =
-        _b12allRemoteConfigVmqxtr?.getInt('new_op_cd') ?? 0;
-    if (b12allNewOpenDurationSecondsKqmvzr > 0) {
+  void b16ApplyRemoteConfigVqntza() {
+    final int b16OpenCooldownQxnvza =
+        _b16RemoteConfigQxnvza?.getInt('new_op_cd') ?? 0;
+    if (b16OpenCooldownQxnvza > 0) {}
 
-    }
+    final String b16PdfAdConfigKqmwze =
+        _b16RemoteConfigQxnvza?.getString('pdf_ad_16') ?? '';
+    if (b16PdfAdConfigKqmwze.isNotEmpty) {}
 
-    final String b12allPdfAdConfigVmqxtr =
-        _b12allRemoteConfigVmqxtr?.getString('pdf_ad_16') ?? '';
-    if (b12allPdfAdConfigVmqxtr.isNotEmpty) {
-      // B12allFirebaseAdConfigXmqvtr.b12allSaveConfigPqmvzr(
-      //   b12allPdfAdConfigVmqxtr,
-      // );
-      // B12allAdUtilsFjiefje.b12allAdUtilsInstanceKqmvzr
-      //     .b12allRefreshRemoteAdConfigKqmvzr();
-    }
+    final String b16FacebookAdConfigVqntza =
+        _b16RemoteConfigQxnvza?.getString('pdf_adfb') ?? '';
+    if (b16FacebookAdConfigVqntza.isNotEmpty) {}
 
-    var pdf_adfb = _b12allRemoteConfigVmqxtr?.getString("pdf_adfb")??"";
-    if(pdf_adfb.isNotEmpty){
-      // B12allAdUtilsFjiefje.b12allAdUtilsInstanceKqmvzr.updateFacebookAdConfig(pdf_adfb);
-    }
+    b16ApplyAdCooldownConfigHqmwza();
 
-    b12allGetAdCooldownConfigVmqxtr();
+    final String b16ReferrerConfigPqnvze =
+        _b16RemoteConfigQxnvza?.getString('pr_refer') ?? '';
+    if (b16ReferrerConfigPqnvze.isNotEmpty) {}
 
-    final String b12allPrReferKqmvzr =
-        _b12allRemoteConfigVmqxtr?.getString('pr_refer') ?? '';
-    if (b12allPrReferKqmvzr.isNotEmpty) {
-      // B12allReferrferConfigXmqvtr.b12allSaveConfigPqmvzr(b12allPrReferKqmvzr);
-      // B12allUserUtilsFeojdd.b12allInstanceVmqxtr
-      //     .b12allSetReferrerConfigVmqxtr();
-    }
-
-    final String b12allRiskControlVmqxtr =
-        _b12allRemoteConfigVmqxtr?.getString('risk_control') ?? '';
-    if (b12allRiskControlVmqxtr.isNotEmpty) {
-      B16CheckUserJiwojdw.instance.b12allInitRiskVmqxtr(
-        b12allRiskControlVmqxtr,
+    final String b16RiskConfigRqmwza =
+        _b16RemoteConfigQxnvza?.getString('risk_control') ?? '';
+    if (b16RiskConfigRqmwza.isNotEmpty) {
+      B16UserCheckHepQxnvza.instance.b16InitializeRiskControlKqmwze(
+        b16RiskConfigRqmwza,
       );
     }
 
-    final String b12allPushTimePqmvzr =
-        _b12allRemoteConfigVmqxtr?.getString('push_time') ?? '';
-    if (b12allPushTimePqmvzr.isNotEmpty) {
-      B16NotificationTimeFjiefjoe.b16SaveDqnvya(b12allPushTimePqmvzr);
-      B16NotificationHepJsowkosw.instance.b12allRefreshIntervalTimeChangeNotificationPqmvzr();
+    final String b16PushTimeConfigQxnvza =
+        _b16RemoteConfigQxnvza?.getString('push_time') ?? '';
+    if (b16PushTimeConfigQxnvza.isNotEmpty) {
+      B16NotificationTimeFjiefjoe.b16SaveDqnvya(b16PushTimeConfigQxnvza);
+      B16NotificationHepPqnvze.instance.b16RefreshScheduleKqmwze();
     }
-    final int b12allMediaUniquePqmvzr =
-        _b12allRemoteConfigVmqxtr?.getInt('pr_md_unique') ?? 0;
-    if (b12allMediaUniquePqmvzr > 0) {
-      B16MediaUniqueConfigJidwjow.b16SaveDqnvya(b12allMediaUniquePqmvzr);
-      B16NotificationHepJsowkosw.instance.b12allInitMediaNotificationPqmvzr();
-    }
-
-    _apex09InitFacebook();
-
-    var krsamsung_push_time = _b12allRemoteConfigVmqxtr?.getInt("krsamsung_push_time")??0;
-    if(krsamsung_push_time>0){
-      krPhoneShowNotification=krsamsung_push_time==1;
-      B16NotificationHepJsowkosw.instance.initNotification();
+    final int b16MediaUniqueQxnvza =
+        _b16RemoteConfigQxnvza?.getInt('pr_md_unique') ?? 0;
+    if (b16MediaUniqueQxnvza > 0) {
+      B16MediaUniqueConfigJidwjow.b16SaveDqnvya(b16MediaUniqueQxnvza);
+      B16NotificationHepPqnvze.instance.b16InitializeMediaNotificationVqntza();
     }
 
-    switch_per=_b12allRemoteConfigVmqxtr?.getInt("switch_per")??0;
-    switch_file=_b12allRemoteConfigVmqxtr?.getInt("switch_file")??0;
-    _parseSwitchConfig();
+    _b16InitializeFacebookPqnvze();
+
+    final int b16KoreanPushModeKqmwze =
+        _b16RemoteConfigQxnvza?.getInt('krsamsung_push_time') ?? 0;
+    if (b16KoreanPushModeKqmwze > 0) {
+      b16KoreanPhoneNotificationKqmwze = b16KoreanPushModeKqmwze == 1;
+      B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza();
+    }
+
+    b16PermissionSwitchPqnvze =
+        _b16RemoteConfigQxnvza?.getInt('switch_per') ?? 0;
+    b16FileSwitchRqmwza = _b16RemoteConfigQxnvza?.getInt('switch_file') ?? 0;
+    _b16ParseSwitchConfigRqmwza();
   }
 
-  _parseSwitchConfig(){
-    try{
-      var switch_config = _b12allRemoteConfigVmqxtr?.getString("switch_config")??"";
-      var json = jsonDecode(switch_config);
-      clickSearchShowAd=json["search_int"]!=0;
-      clickFileShowAd=json["read_int"]!=0;
-      commentOpShow=json["comment_op"]!=0;
-    }catch(_){
+  void _b16ParseSwitchConfigRqmwza() {
+    try {
+      final String b16SwitchConfigQxnvza =
+          _b16RemoteConfigQxnvza?.getString('switch_config') ?? '';
+      final dynamic b16SwitchJsonVqntza = jsonDecode(b16SwitchConfigQxnvza);
+      b16SearchInterstitialEnabledQxnvza =
+          b16SwitchJsonVqntza['search_int'] != 0;
+      b16FileInterstitialEnabledVqntza = b16SwitchJsonVqntza['read_int'] != 0;
+      b16CommentOverlayEnabledHqmwza = b16SwitchJsonVqntza['comment_op'] != 0;
+    } catch (_) {}
+  }
 
+  void b16ApplyAdCooldownConfigHqmwza() {
+    final int b16RemoteCooldownQxnvza =
+        _b16RemoteConfigQxnvza?.getInt('kc_cd') ?? 0;
+    if (b16RemoteCooldownQxnvza > 0) {
+      b16AdCooldownSecondsPqnvze = b16RemoteCooldownQxnvza;
     }
   }
 
-  void b12allGetAdCooldownConfigVmqxtr() {
-    final int b12allRemoteCooldownSecondsPqmvzr =
-        _b12allRemoteConfigVmqxtr?.getInt('kc_cd') ?? 0;
-    if (b12allRemoteCooldownSecondsPqmvzr > 0) {
-      b12allAdCooldownSecondsKqmvzr = b12allRemoteCooldownSecondsPqmvzr;
-    }
-  }
-
-  Future<void> _apex09InitFacebook() async {
-    if (_apex09HasInitFacebook) {
+  Future<void> _b16InitializeFacebookPqnvze() async {
+    if (_b16FacebookInitializedHqmwza) {
       return;
     }
-    final String apex09FacebookConfig = _b12allRemoteConfigVmqxtr?.getString("pr_fb") ?? "";
-    if (apex09FacebookConfig.isEmpty) {
+    final String b16FacebookConfigQxnvza =
+        _b16RemoteConfigQxnvza?.getString('pr_fb') ?? '';
+    if (b16FacebookConfigQxnvza.isEmpty) {
       return;
     }
     try {
-      final dynamic apex09FacebookJson = jsonDecode(apex09FacebookConfig);
-      final bool apex09Result = await FlutterCustomFacebook.instance
+      final dynamic b16FacebookJsonVqntza = jsonDecode(b16FacebookConfigQxnvza);
+      final bool b16InitializedKqmwze = await FlutterCustomFacebook.instance
           .initFaceBook(
-        facebookId: apex09FacebookJson["app_id"],
-        facebookToken: apex09FacebookJson["token"],
-        facebookAppName: "PDF Editer",
-      );
-      _apex09HasInitFacebook = apex09Result;
-    } catch (_) {
-
-    }
+            facebookId: b16FacebookJsonVqntza['app_id'],
+            facebookToken: b16FacebookJsonVqntza['token'],
+            facebookAppName: "PDF Editer",
+          );
+      _b16FacebookInitializedHqmwza = b16InitializedKqmwze;
+    } catch (_) {}
   }
 
-  Future<void> apex09LogFacebookEvent(
-      double apex09Amount,
-      String apex09Currency,
-      ) async {
+  Future<void> b16LogFacebookPurchaseKqmwze(
+    double b16AmountQxnvza,
+    String b16CurrencyVqntza,
+  ) async {
     try {
-      if (!_apex09HasInitFacebook) {
+      if (!_b16FacebookInitializedHqmwza) {
         return;
       }
       FlutterCustomFacebook.instance.logPurchase(
-        amount: apex09Amount,
-        currency: apex09Currency,
+        amount: b16AmountQxnvza,
+        currency: b16CurrencyVqntza,
       );
-    } catch (_) {
-
-    }
+    } catch (_) {}
   }
 
-
-  Future<void> logFirebaseEvent({
-    required String name,
-    Map<String, Object>? params,
+  Future<void> b16LogAnalyticsEventVqntza({
+    required String b16NameQxnvza,
+    Map<String, Object>? b16ParametersKqmwze,
   }) async {
     try {
       if (Firebase.apps.isEmpty) {
-        await b12allInitFirebaseXmqvtr();
+        await b16InitializeFirebaseQxnvza();
       }
-      _b12allFirebaseAnalyticsPqmvzr ??= FirebaseAnalytics.instance;
-      await _b12allFirebaseAnalyticsPqmvzr?.logEvent(
-        name: name,
-        parameters: params,
+      _b16AnalyticsVqntza ??= FirebaseAnalytics.instance;
+      await _b16AnalyticsVqntza?.logEvent(
+        name: b16NameQxnvza,
+        parameters: b16ParametersKqmwze,
       );
-    } catch (_) {
-
-    }
+    } catch (_) {}
   }
 }
