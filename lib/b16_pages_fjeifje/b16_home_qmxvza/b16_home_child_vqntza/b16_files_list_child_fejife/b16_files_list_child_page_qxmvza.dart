@@ -148,7 +148,7 @@ class _B16FilesListChildStateVqnxre
               final b16FileQxmvza =
                   b16controllerVqnxre.b16VisibleFilesVqmwza[index];
               return B16TapGuardViewMfwqke(
-                b16OnPressedJkcxwu: (){
+                b16OnPressedJkcxwu: () {
                   b16controllerVqnxre.clickFileItem(b16FileQxmvza);
                 },
                 b16ChildHnqvsa: Container(
@@ -250,7 +250,7 @@ class _B16FilesListChildStateVqnxre
           SizedBox(height: 40.h),
           B16TapGuardViewMfwqke(
             b16OnPressedJkcxwu: () {
-              b16controllerVqnxre.b16LoadFilesPqnvze();
+              b16controllerVqnxre.clickRequestPermission();
             },
             b16ChildHnqvsa: Container(
               width: double.infinity,

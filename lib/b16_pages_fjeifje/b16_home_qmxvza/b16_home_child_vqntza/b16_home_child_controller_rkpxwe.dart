@@ -1,13 +1,16 @@
-import 'package:b16pdf/b16_dialog_fjifjie/b16_request_permission_dialog_djeifje/b16_request_permission_dialog_djeifje.dart';
+import 'dart:io';
+
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_permission_hep_qzmxva/b16_permission_hep_kqnvze.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_add_widget_storage_qxnvza.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 enum B16FileTabTypeefie {
@@ -35,6 +38,13 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
   PageController pageController = PageController();
   int b16SelectedTabIndexQmvnza = 0;
   bool b16ShowAddWidgetQxnvza = !B16AddWidgetStorageQxnvza.b16ReadAddedKqmwze();
+  bool b16RequestingStoragePermissionVqntza = false;
+
+  @override
+  void onReady() {
+    super.onReady();
+    b16RequestStoragePermissionHqmwza();
+  }
 
   Future<void> clickTabItem(B16FileTabTypeefie type) =>
       pageController.animateToPage(
@@ -61,19 +71,53 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
 
   @override
   void b16HandleEventhrifjei(B16EventBeanFhifeode b16EventQzmxva) {
-    if (b16EventQzmxva.b16EventCodeFhfemie !=
+    if (b16EventQzmxva.b16EventCodeFhfemie ==
         B16EventCodeQxmvza.b16WidgetAddedPqnvze) {
-      return;
+      b16ShowAddWidgetQxnvza = false;
+      update();
+    } else if (b16EventQzmxva.b16EventCodeFhfemie ==
+        B16EventCodeQxmvza.b16StoragePermissionRequestRqmwza) {
+      b16RequestStoragePermissionHqmwza();
     }
-    b16ShowAddWidgetQxnvza = false;
-    update();
+  }
+
+  Future<void> b16RequestStoragePermissionHqmwza() async {
+    if (b16RequestingStoragePermissionVqntza) return;
+    b16RequestingStoragePermissionVqntza = true;
+    try {
+      final Permission b16PermissionQxnvza =
+          await _b16StoragePermissionKqmwze();
+      final B16PermissionResultVqmxze b16ResultVqntza =
+          await B16PermissionHepKqnvze.instance.requestPermission(
+            b16PermissionQxmvza: b16PermissionQxnvza,
+          );
+      if (!b16ResultVqntza.b16IsGrantedHqmwza) return;
+      B16EventHepFjiejizx.instance.b16SendMsgFjijeio(
+        B16EventBeanFhifeode(
+          b16EventCodeFhfemie:
+              B16EventCodeQxmvza.b16StoragePermissionGrantedTqnvze,
+        ),
+      );
+    } finally {
+      b16RequestingStoragePermissionVqntza = false;
+    }
+  }
+
+  Future<Permission> _b16StoragePermissionKqmwze() async {
+    if (!Platform.isAndroid) return Permission.storage;
+    final b16AndroidInfoQxnvza = await DeviceInfoPlugin().androidInfo;
+    return b16AndroidInfoQxnvza.version.sdkInt >= 30
+        ? Permission.manageExternalStorage
+        : Permission.storage;
   }
 
   void test() {
     if (!kDebugMode) {
       return;
     }
-    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze);
+    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(
+      b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze,
+    );
   }
 
   @override

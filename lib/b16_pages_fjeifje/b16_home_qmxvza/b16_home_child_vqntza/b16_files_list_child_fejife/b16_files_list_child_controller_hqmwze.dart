@@ -4,6 +4,7 @@ import 'package:b16pdf/b16_dialog_fjifjie/b16_sort_bottom_dialog_fjiewfjoe/b16_s
 import 'package:b16pdf/b16_dialog_fjifjie/b16_sort_bottom_dialog_fjiewfjoe/b16_sort_bottom_dialog_fjiewfjoe_controller.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_permission_hep_qzmxva/b16_permission_hep_kqnvze.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
@@ -24,6 +25,8 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
   List<FileToolsFileInfo> b16AllFilesKqnvze = [];
   List<FileToolsFileInfo> b16VisibleFilesVqmwza = [];
   String b16SearchTextHqmxze = '';
+  bool b16LoadingFilesVqntza = false;
+  bool b16HasLoadedFilesKqmwze = false;
   late B16SortType b16SortTypePqnvza;
 
   B16FilesListChildControllerHqmwze({required this.type});
@@ -45,15 +48,6 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
       orElse: () => B16SortType.dateNew,
     );
     super.onInit();
-    _b16CheckInitialPermissionKqmwza();
-  }
-
-  Future<void> _b16CheckInitialPermissionKqmwza() async {
-    final b16PermissionVqmxza = await _b16StoragePermissionQxmvza();
-    b16ListStatePqmxza = await b16PermissionVqmxza.isGranted
-        ? B16FilesListStateQmvnza.loading
-        : B16FilesListStateQmvnza.noPermission;
-    update();
   }
 
   @override
@@ -62,32 +56,53 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
     b16LoadFilesPqnvze();
   }
 
-  Future<void> b16LoadFilesPqnvze({bool b16ShowLoadingQxmvza = true}) async {
+  Future<void> b16LoadFilesPqnvze({
+    bool b16ShowLoadingQxmvza = true,
+    bool b16ForceReloadVqntza = false,
+  }) async {
+    if (b16LoadingFilesVqntza ||
+        (b16HasLoadedFilesKqmwze && !b16ForceReloadVqntza)) {
+      refreshController.refreshCompleted();
+      return;
+    }
     final b16PermissionHqmwza = await _b16StoragePermissionQxmvza();
-    final b16ResultKqmwza = await B16PermissionHepKqnvze.instance
-        .requestPermission(b16PermissionQxmvza: b16PermissionHqmwza);
-    if (!b16ResultKqmwza.b16IsGrantedHqmwza) {
+    if (!await b16PermissionHqmwza.isGranted) {
       b16ListStatePqmxza = B16FilesListStateQmvnza.noPermission;
       refreshController.refreshCompleted();
       update();
       return;
     }
+    b16LoadingFilesVqntza = true;
     if (b16ShowLoadingQxmvza) {
       b16ListStatePqmxza = B16FilesListStateQmvnza.loading;
       update();
     }
-    b16AllFilesKqnvze = await FlutterPreviewFile.queryFileList(
-      FileToolsDocumentType.values[type.index],
-    );
-    _b16SortFilesHqmwza();
-    _b16ApplySearchVqmxze();
-    b16ListStatePqmxza = B16FilesListStateQmvnza.loaded;
-    refreshController.refreshCompleted();
-    update();
+    try {
+      b16AllFilesKqnvze = await FlutterPreviewFile.queryFileList(
+        FileToolsDocumentType.values[type.index],
+      );
+      _b16SortFilesHqmwza();
+      _b16ApplySearchVqmxze();
+      b16HasLoadedFilesKqmwze = true;
+      b16ListStatePqmxza = B16FilesListStateQmvnza.loaded;
+    } finally {
+      b16LoadingFilesVqntza = false;
+      refreshController.refreshCompleted();
+      update();
+    }
   }
 
   void b16RefreshFilesVqmwza() {
-    b16LoadFilesPqnvze(b16ShowLoadingQxmvza: false);
+    b16LoadFilesPqnvze(b16ShowLoadingQxmvza: false, b16ForceReloadVqntza: true);
+  }
+
+  void clickRequestPermission() {
+    B16EventHepFjiejizx.instance.b16SendMsgFjijeio(
+      B16EventBeanFhifeode(
+        b16EventCodeFhfemie:
+            B16EventCodeQxmvza.b16StoragePermissionRequestRqmwza,
+      ),
+    );
   }
 
   void _b16SortFilesHqmwza() {
@@ -190,6 +205,9 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
       update();
     } else if (b16EventQzmxva.b16EventCodeFhfemie ==
         B16EventCodeQxmvza.b16FileListRefreshHqmwza) {
+      b16LoadFilesPqnvze(b16ForceReloadVqntza: true);
+    } else if (b16EventQzmxva.b16EventCodeFhfemie ==
+        B16EventCodeQxmvza.b16StoragePermissionGrantedTqnvze) {
       b16LoadFilesPqnvze();
     }
   }
