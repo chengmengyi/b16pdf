@@ -7,6 +7,7 @@ import 'package:b16pdf/b16_pages_fjeifje/b16_open_overlay_permission_page_kxmqva
 import 'package:b16pdf/b16_pages_fjeifje/b16_preview_pdf_qxmvza/b16_preview_pdf_page_kqnvze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_preview_word_vqntza/b16_preview_word_page_pqmxze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_preview_excel_rqmwza/b16_preview_excel_page_xqnvze.dart';
+import 'package:b16pdf/b16_pages_fjeifje/b16_unstall_qxnvza/b16_unstall_page_kqmwze.dart';
 import 'package:get/get.dart';
 
 abstract final class B16RoutersAddressFjeifjeo {
@@ -20,6 +21,7 @@ abstract final class B16RoutersAddressFjeifjeo {
   static const String b16PreviewPdfRouteQxmvza = '/b16_preview_pdf';
   static const String b16PreviewWordRouteVqntza = '/b16_preview_word';
   static const String b16PreviewExcelRouteRqmwza = '/b16_preview_excel';
+  static const String b16UnstallRouteKqmwze = '/b16_unstall';
 
   static final List<GetPage<dynamic>> b16PagesRxqtma = [
     GetPage(name: b16LauncherRouteKfmoqa, page: B16LauncherPageFjeijie.new),
@@ -46,5 +48,6 @@ abstract final class B16RoutersAddressFjeifjeo {
       name: b16PreviewExcelRouteRqmwza,
       page: B16PreviewExcelPageXqnvze.new,
     ),
+    GetPage(name: b16UnstallRouteKqmwze, page: B16UnstallPageKqmwze.new),
   ];
 }

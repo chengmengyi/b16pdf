@@ -1,0 +1,201 @@
+import 'package:b16pdf/b16_pages_fjeifje/b16_unstall_qxnvza/b16_unstall_controller_vqntza.dart';
+import 'package:b16pdf/b16_root_fjield/b16_root_page_qazmtr.dart';
+import 'package:b16pdf/b16_view_krtmxa/b16_asset_image_view_pzrxcu.dart';
+import 'package:b16pdf/b16_view_krtmxa/b16_localized_text_view_cxmpra.dart';
+import 'package:b16pdf/b16_view_krtmxa/b16_media_padding_view_vnyqsl.dart';
+import 'package:b16pdf/b16_view_krtmxa/b16_tap_guard_view_mfwqke.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+class B16UnstallPageKqmwze
+    extends B16RootPageQazmtr<B16UnstallControllerVqntza> {
+  const B16UnstallPageKqmwze({super.key});
+
+  @override
+  B16UnstallControllerVqntza b16CreateControllerAhdwks() {
+    return B16UnstallControllerVqntza();
+  }
+
+  @override
+  Color get b16NavigationBarColorLxqvbi => Colors.white;
+
+  @override
+  Widget b16BuildContentRuznxe(
+    BuildContext b16ContextVqmwza,
+    B16UnstallControllerVqntza b16ControllerKqmxve,
+  ) {
+    return Column(
+      children: [
+        _titleWidget(),
+        SizedBox(height: 8.h),
+        _contentWidget(b16ControllerKqmxve),
+        _bottomWidget(b16ControllerKqmxve),
+        SizedBox(height: 20.h),
+      ],
+    );
+  }
+
+  Widget _contentWidget(B16UnstallControllerVqntza b16controllerKqmxve) =>
+      Expanded(
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                B16MediaPaddingViewVnyqsl(
+                  b16ChildQzpmwa: ListView.separated(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: b16controllerKqmxve.reasonList.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        width: double.infinity,
+                        height: 48.h,
+                        alignment: Alignment.centerLeft,
+                        padding: EdgeInsets.only(left: 16.w, right: 16.w),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: B16LocalizedTextViewCxmpra(
+                                b16controllerKqmxve.reasonList[index].tr,
+                                b16FontSizeRvxqle: 14.sp,
+                                b16ColorDtkzma: Colors.black,
+                                b16FontWeightHncysp: FontWeight.bold,
+                                b16OverflowFzrxke: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            SizedBox(width: 16.w),
+                            B16AssetImageViewPzrxcu(
+                              "b16_uns_icon",
+                              b16WidthDtvqpl: 24.w,
+                              b16HeightRnxkse: 24.w,
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) =>
+                        Container(
+                          width: double.infinity,
+                          height: 0.5.h,
+                          color: Color(0xffEBEBEB),
+                        ),
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 120.h,
+                  padding: EdgeInsets.all(16.w),
+                  margin: EdgeInsets.only(left: 16.w, right: 16.w),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.w),
+                    border: Border.all(width: 0.5.w, color: Color(0xffEBEBEB)),
+                  ),
+                  child: TextField(
+                    textAlign: TextAlign.start,
+                    enabled: true,
+                    controller: b16controllerKqmxve.textEditingController,
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: const Color(0xFF1A1D22),
+                      fontWeight: FontWeight.bold,
+                    ),
+                    decoration: InputDecoration(
+                      counterText: '',
+                      isCollapsed: true,
+                      hintText:
+                          'Please enter the reason for uninstalling All PDF'.tr,
+                      hintStyle: TextStyle(
+                        fontSize: 12.sp,
+                        color: const Color(0xFFB2B2B2),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+
+  Widget _bottomWidget(B16UnstallControllerVqntza b16controllerKqmxve) =>
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          B16TapGuardViewMfwqke(
+            b16ChildHnqvsa: Container(
+              width: double.infinity,
+              height: 50.h,
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 34.w, right: 34.w),
+              decoration: BoxDecoration(
+                color: Color(0xffDF2019),
+                borderRadius: BorderRadius.circular(22.w),
+              ),
+              child: B16LocalizedTextViewCxmpra(
+                "Don't uninstall for now".tr,
+                b16FontSizeRvxqle: 16.sp,
+                b16ColorDtkzma: Colors.white,
+                b16FontWeightHncysp: FontWeight.bold,
+              ),
+            ),
+          ),
+          SizedBox(height: 14.h),
+          B16TapGuardViewMfwqke(
+            b16OnPressedJkcxwu: () {
+              b16controllerKqmxve.clickUninstall();
+            },
+            b16ChildHnqvsa: B16LocalizedTextViewCxmpra(
+              "Uninstall".tr,
+              b16FontSizeRvxqle: 16.sp,
+              b16ColorDtkzma: Color(0xff8C8E9C),
+              b16FontWeightHncysp: FontWeight.bold,
+            ),
+          ),
+        ],
+      );
+
+  Widget _titleWidget() => Container(
+    width: double.infinity,
+    color: Colors.white,
+    child: SafeArea(
+      top: true,
+      bottom: false,
+      child: SizedBox(
+        width: double.infinity,
+        height: 44.h,
+        child: Stack(
+          children: [
+            B16TapGuardViewMfwqke(
+              b16OnPressedJkcxwu: () {},
+              b16ChildHnqvsa: Container(
+                width: 44.w,
+                height: 44.h,
+                alignment: Alignment.center,
+                child: B16AssetImageViewPzrxcu(
+                  "b16_close_icon",
+                  b16WidthDtvqpl: 24.w,
+                  b16HeightRnxkse: 24.w,
+                ),
+              ),
+            ),
+            Align(
+              child: B16LocalizedTextViewCxmpra(
+                "Why are you uninstalling?".tr,
+                b16FontSizeRvxqle: 18.sp,
+                b16ColorDtkzma: Colors.black,
+                b16FontWeightHncysp: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}

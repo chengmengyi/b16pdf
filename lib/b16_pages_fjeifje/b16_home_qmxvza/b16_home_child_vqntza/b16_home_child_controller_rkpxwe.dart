@@ -1,4 +1,5 @@
 import 'package:b16pdf/b16_dialog_fjifjie/b16_request_permission_dialog_djeifje/b16_request_permission_dialog_djeifje.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
@@ -72,11 +73,7 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
     if (!kDebugMode) {
       return;
     }
-    B16RoutersHepFjeifjoe.b16ShowDialogCtmxqe(
-      b16ChildWvprka: B16RequestPermissionDialogDjeifje(
-        permission: Permission.manageExternalStorage,
-      ),
-    );
+    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze);
   }
 
   @override
