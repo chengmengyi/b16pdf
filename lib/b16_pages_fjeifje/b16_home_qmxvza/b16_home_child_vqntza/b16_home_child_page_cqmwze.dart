@@ -1,3 +1,4 @@
+import 'package:b16pdf/b16_hep_djijdow/b16_add_widget_hep_qxnvza/b16_add_widget_hep_kqmvze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_files_list_child_fejife/b16_files_list_child_page_qxmvza.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_controller_rkpxwe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_child_mxkqza.dart';
@@ -42,7 +43,8 @@ class _B16HomeChildStatePqnvxa
             _topWidget(b16ControllerQxmvza),
             SizedBox(height: 12.h),
             _tabWidget(b16ControllerQxmvza),
-            _addSmallWidget(b16ControllerQxmvza),
+            if (b16ControllerQxmvza.b16ShowAddWidgetQxnvza)
+              _addSmallWidget(b16ControllerQxmvza),
             SizedBox(height: 12.h),
             _pageWidget(b16ControllerQxmvza),
           ],
@@ -148,26 +150,31 @@ class _B16HomeChildStatePqnvxa
               ),
             ),
             SizedBox(width: 8.w),
-            Container(
-              padding: EdgeInsets.only(
-                left: 16.w,
-                right: 16.w,
-                top: 4.h,
-                bottom: 4.h,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18.w),
-                gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [Color(0xffFD7734), Color(0xffF73A70)],
+            B16TapGuardViewMfwqke(
+              b16OnPressedJkcxwu: () {
+                B16AddWidgetHepKqmvze.instance.showAddWidgetDialog();
+              },
+              b16ChildHnqvsa: Container(
+                padding: EdgeInsets.only(
+                  left: 16.w,
+                  right: 16.w,
+                  top: 4.h,
+                  bottom: 4.h,
                 ),
-              ),
-              child: B16LocalizedTextViewCxmpra(
-                "Grant".tr,
-                b16FontSizeRvxqle: 14.sp,
-                b16ColorDtkzma: Colors.white,
-                b16FontWeightHncysp: FontWeight.bold,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18.w),
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [Color(0xffFD7734), Color(0xffF73A70)],
+                  ),
+                ),
+                child: B16LocalizedTextViewCxmpra(
+                  "Grant".tr,
+                  b16FontSizeRvxqle: 14.sp,
+                  b16ColorDtkzma: Colors.white,
+                  b16FontWeightHncysp: FontWeight.bold,
+                ),
               ),
             ),
           ],

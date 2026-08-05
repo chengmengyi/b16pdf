@@ -1,4 +1,5 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
 import 'package:flutter_app_lifecycle/app_state_observer.dart';
 import 'package:flutter_app_lifecycle/flutter_app_lifecycle.dart';
@@ -7,8 +8,6 @@ class B16ApplifeHepFjeifje {
   B16ApplifeHepFjeifje._();
 
   static final B16ApplifeHepFjeifje instance = B16ApplifeHepFjeifje._();
-  static const int b16LifecycleEventCodeQmrvza = 16001;
-
   bool b16ObserverStartedHqmxwe = false;
 
   void b16StartObserverKpvnza() {
@@ -21,7 +20,7 @@ class B16ApplifeHepFjeifje {
         call: (bool b16InBackgroundVqmwxe) {
           B16EventHepFjiejizx.instance.b16SendMsgFjijeio(
             B16EventBeanFhifeode(
-              b16EventCodeFhfemie: b16LifecycleEventCodeQmrvza,
+              b16EventCodeFhfemie: B16EventCodeQxmvza.b16AppLifecycleKqmwze,
               b16IntValueDjijie: b16InBackgroundVqmwxe ? 1 : 0,
             ),
           );

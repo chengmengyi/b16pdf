@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:b16pdf/b16_dialog_fjifjie/b16_sort_bottom_dialog_fjiewfjoe/b16_sort_bottom_dialog_fjiewfjoe.dart';
 import 'package:b16pdf/b16_dialog_fjifjie/b16_sort_bottom_dialog_fjiewfjoe/b16_sort_bottom_dialog_fjiewfjoe_controller.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_permission_hep_qzmxva/b16_permission_hep_kqnvze.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
@@ -180,13 +181,15 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
 
   @override
   void b16HandleEventhrifjei(B16EventBeanFhifeode b16EventQzmxva) async {
-    if (b16EventQzmxva.b16EventCodeFhfemie == 160101) {
+    if (b16EventQzmxva.b16EventCodeFhfemie ==
+        B16EventCodeQxmvza.b16FileSearchVqntza) {
       final b16PermissionKqnvze = await _b16StoragePermissionQxmvza();
       if (!await b16PermissionKqnvze.isGranted) return;
       b16SearchTextHqmxze = b16EventQzmxva.b16StringValueDjijie ?? '';
       _b16ApplySearchVqmxze();
       update();
-    } else if (b16EventQzmxva.b16EventCodeFhfemie == 160102) {
+    } else if (b16EventQzmxva.b16EventCodeFhfemie ==
+        B16EventCodeQxmvza.b16FileListRefreshHqmwza) {
       b16LoadFilesPqnvze();
     }
   }
