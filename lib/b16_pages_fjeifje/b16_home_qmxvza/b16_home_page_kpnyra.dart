@@ -124,7 +124,7 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
                 b16HeightRnxkse: 28.w,
               ),
               B16LocalizedTextViewCxmpra(
-                b16TypeVqmxze.b16TextKqmvza,
+                b16TypeVqmxze.b16TextKqmvza.tr,
                 b16FontSizeRvxqle: 12.sp,
                 b16ColorDtkzma: b16SelectedPqmwza
                     ? const Color(0xfff4411f)

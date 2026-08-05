@@ -1,4 +1,5 @@
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_tools_child_tqmvza/b16_tools_child_controller_hpnxwe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_add_widget_hep_qxnvza/b16_add_widget_hep_kqmvze.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_child_mxkqza.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_asset_image_view_pzrxcu.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_localized_text_view_cxmpra.dart';
@@ -219,37 +220,42 @@ class _B16ToolsChildStateMqnvxa
           ],
         ),
         SizedBox(height: 12.h),
-        Container(
-          width: double.infinity,
-          height: 56.h,
-          alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.w),
-            border: Border.all(width: 0.5.w, color: Color(0xffEBEBEB)),
-          ),
-          child: Row(
-            children: [
-              SizedBox(width: 12.w),
-              B16AssetImageViewPzrxcu(
-                "b16_add_widget_icon_fjiejfoe",
-                b16WidthDtvqpl: 32.w,
-                b16HeightRnxkse: 32.w,
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: B16LocalizedTextViewCxmpra(
-                  "Add Widget".tr,
-                  b16FontSizeRvxqle: 14.sp,
-                  b16ColorDtkzma: Colors.black,
-                  b16FontWeightHncysp: FontWeight.w500,
+        B16TapGuardViewMfwqke(
+          b16OnPressedJkcxwu: () {
+            B16AddWidgetHepKqmvze.instance.showAddWidgetDialog();
+          },
+          b16ChildHnqvsa: Container(
+            width: double.infinity,
+            height: 56.h,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.w),
+              border: Border.all(width: 0.5.w, color: Color(0xffEBEBEB)),
+            ),
+            child: Row(
+              children: [
+                SizedBox(width: 12.w),
+                B16AssetImageViewPzrxcu(
+                  "b16_add_widget_icon_fjiejfoe",
+                  b16WidthDtvqpl: 32.w,
+                  b16HeightRnxkse: 32.w,
                 ),
-              ),
-              B16AssetImageViewPzrxcu(
-                "b16_add_icon_fjoefe",
-                b16WidthDtvqpl: 24.w,
-                b16HeightRnxkse: 24.w,
-              ),
-            ],
+                SizedBox(width: 12.w),
+                Expanded(
+                  child: B16LocalizedTextViewCxmpra(
+                    "Add Widget".tr,
+                    b16FontSizeRvxqle: 14.sp,
+                    b16ColorDtkzma: Colors.black,
+                    b16FontWeightHncysp: FontWeight.w500,
+                  ),
+                ),
+                B16AssetImageViewPzrxcu(
+                  "b16_add_icon_fjoefe",
+                  b16WidthDtvqpl: 24.w,
+                  b16HeightRnxkse: 24.w,
+                ),
+              ],
+            ),
           ),
         ),
       ],

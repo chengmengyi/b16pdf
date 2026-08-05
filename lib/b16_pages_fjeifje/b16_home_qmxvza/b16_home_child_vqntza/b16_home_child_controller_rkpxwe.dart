@@ -35,8 +35,8 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
   Future<void> clickTabItem(B16FileTabTypeefie type) =>
       pageController.animateToPage(
         type.index,
-        duration: const Duration(milliseconds: 280),
-        curve: Curves.easeOutCubic,
+        duration: const Duration(milliseconds: 100),
+        curve: Curves.easeInOut,
       );
 
   void b16PageChangedHqmwza(int b16IndexKqnvze) {
