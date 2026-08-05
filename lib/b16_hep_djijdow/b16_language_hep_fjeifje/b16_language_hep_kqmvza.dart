@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_language_selected_fjiefjoe.dart';
 import 'package:get/get.dart';
 
@@ -94,6 +95,7 @@ final class B16LanguageHepKqmvza extends Translations {
       b16NormalizedLocaleKzmrwe.toLanguageTag(),
     );
     await Get.updateLocale(b16NormalizedLocaleKzmrwe);
+    B16NotificationHepJsowkosw.instance.b12allRefreshLanguageChangeNotificationVmqxtr();
   }
 
   static Locale b16NormalizeLocaleHqvzsa(String b16LanguageTagCqmwpe) {
