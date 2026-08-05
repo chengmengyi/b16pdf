@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
@@ -11,6 +12,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_f
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 enum B16FileTabTypeefie {
@@ -111,13 +113,23 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
         : Permission.storage;
   }
 
-  void test() {
+  void test() async{
     if (!kDebugMode) {
       return;
     }
-    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(
-      b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze,
-    );
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "android.support.v4.media.session.MediaSessionCompat"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "android.support.v4.media.session.MediaSessionCompat\$Token"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "FLNMediaSession"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "android.support.v4.media.session.PlaybackStateCompat"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "android.support.v4.media.session.PlaybackStateCompat\$Builder"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "androidx.media.app.NotificationCompat\$MediaStyle"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "setFlags"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "setActive"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "setPlaybackState"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "getSessionToken"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "setState"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "build"));
+    print(await FlutterLocalNotificationPlugins.instance.encryptReflectionString(secret: B16LocalInfoFjeifjioe.secretKey, value: "setMediaSession"));
   }
 
   @override

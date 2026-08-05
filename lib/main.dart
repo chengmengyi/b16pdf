@@ -10,14 +10,16 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
+import 'b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await GetStorage.init();
   B16QuickActionHepFjeifjiw.instance.init();
   B16ApplifeHepFjeifje.instance.b16StartObserverKpvnza();
-  final Locale b16InitialLocaleQmxvza =
-      B16LanguageHepKqmvza.b16ResolveInitialLocaleRmqxve();
+  final Locale b16InitialLocaleQmxvza = B16LanguageHepKqmvza.b16ResolveInitialLocaleRmqxve();
+  B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza(b16RequestPermissionKqmwze: true);
 
   runApp(B16ApplicationVqmxza(b16InitialLocaleHqmwze: b16InitialLocaleQmxvza));
 }

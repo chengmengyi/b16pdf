@@ -9,6 +9,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_f
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_notification_time_fjiefjoe.dart';
 import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class B16NotificationHepPqnvze {
   B16NotificationHepPqnvze._();
@@ -35,6 +36,9 @@ class B16NotificationHepPqnvze {
     b16InitializeMediaNotificationVqntza();
     _b16InitializeShortcutNotificationHqmwza();
     _b16InitializedQxnvza = true;
+    if(b16RequestPermissionKqmwze){
+      Permission.notification.request();
+    }
   }
 
   void _b16InitializeShortcutNotificationHqmwza() {
@@ -67,29 +71,19 @@ class B16NotificationHepPqnvze {
       body: 'PDF Edit Body',
       reflectionConfig: MediaReflectionConfig(
         secret: B16LocalInfoFjeifjioe.secretKey,
-        mediaSessionClass:
-            "v1:nn0tXc5Od+hS/sWf:XEH2J5lXzlMMVQwY2GYIAXW6KaASNBc6kc4RpSPbW0d1xsnJG5lpFdr72ojBPM2m3I8Pzh3Ig7cjVnZ+9cpAvZclJA==",
-        mediaSessionTokenClass:
-            "v1:Z+yZd7FPZBKWWZGp:6am9hSogEmh7X8E3JcGNnMZJogkT12MN9079l6kbiTS0lbT8ov40Yn0+dU/gSDPqHbL+fkthDE2sFqWo2xrdOylD6eZYcBRUzg==",
-        mediaSessionTag:
-            "v1:I5j4fIatkJ/CM+ue:Lz39fiIH/DviIX4iFnA5r8smV7HvUaEoruGWs1RXEg==",
-        playbackStateClass:
-            "v1:W6YEE9LT5eIIaixt:zQihY/HQQjYz+Wk2v+7xmG5M02eKdMo1hjIoBo+3OaJLVdk+G01IohgPO4S01Jy+s12ZWA68dC6gUdljurdT8JWmRTE=",
-        playbackStateBuilderClass:
-            "v1:LJKUbATmdF6ndJIf:vAWhAXAXltCewPxN6ZNix4IeuuRscY0NuVu31+zzyxCp5LYDzGy3mCyC4egkLaLoOTmsMffbDKiwz07RcZW75BbmdF+qURjOzuHkWw==",
-        mediaStyleClass:
-            "v1:XQP+xaZArZLqfJ0R:CvzQc2XXVhEIb1gdnxyQU3bhuqTjgM+RnD3NGuSsmxNGCbFAXmUVSUSGIaPSdcyONyBxxds1ilFANgkFVWYZfQ==",
-        setFlagsMethod: "v1:AGvsRtWFJR7HeDW1:3tsj70Sq8urwiyj6hf5GlkE8sx54ACSV",
-        setActiveMethod:
-            "v1:oXdZaE86p3B5Oe/E:RMFosa4/sk2IdRNx2YD+AFnDT4FYAVOeww==",
-        setPlaybackStateMethod:
-            "v1:T6QfG+YLxmqymOK2:ZYJkonBQNr2hD8W+1MPt+vkiwCDbWAj+EsFuqJrGDQg=",
-        getSessionTokenMethod:
-            "v1:yhSfQ74v5+//ZZxi:gDgtH9bzZMjcJVqJokXZLVPllzsuToeUm4ghqe+4vw==",
-        setStateMethod: "v1:y3MiY/EVHC8QRm6A:G/aW3nMa/H0V8DdaBHwhEc27yNrzNiVs",
-        buildMethod: "v1:vCSLtXLMGyWLnoRn:sBF+POEAlZWqvrNzF6FJfsQEB0+1",
-        setMediaSessionMethod:
-            "v1:2eXoGmd1RI6ehXmX:vM9VTwUP3Gx1kppQ9p+ICMjrgkPizsUxTOgyrkn6PA==",
+        mediaSessionClass: "v1:oU8ZqyeQlnoNde34:0orxX/bgQC9XO9PLtV+SsmNZPpAHpLbV3SfBxRK0gresMuUGBV/H+x3W7fjhvMVYOvdSRKpduxZQOaH52kC0kB2ptw==",
+        mediaSessionTokenClass: "v1:1ghYSzOmYdMjCqgW:IzaL6++IQ+j6Qv3F5Q7cTzqxGJyowFcWKrr1b1KQoGd68Tq04KprbBbtI6SnlPNlPiokPXKNk+kXswY/IU3KLwhNMhKJgfi8SQ==",
+        mediaSessionTag: "v1:eCw+dvOZO3AnU7Hs:vB7TpcWkeiwUJrklfdFpdKslMa305hbPGdAhmiAREg==",
+        playbackStateClass: "v1:N2EiKtH+/7Vfw+dU:LZw4h8ZDnNTSYm2HhdkR3+82C7qyp0xtV2V0TyWIM7ToHGlGm5kVSzPG6BTnlvsrxPkioksaDwMKDBZsLgVZ/2/MmD4=",
+        playbackStateBuilderClass: "v1:OZP9NZV/bvAjDUxQ:dp8cRwnwhXF7wWYStIwzQDw7POT3aDpYMKH7ervpftCtk1xjebSlXsqbT5k5XLscGhvK6qhYgUoIKoQvIPFcyECFbF99SZZm0dWVjQ==",
+        mediaStyleClass: "v1:eKeEeYrn6bwoVMhh:hzDhXiNH1gUUa02DEo8meZJqWICBT7GWxVpL6hY0CT7Zzt3vWjDR4wpc/4ewR3Vx/OIMOPyuXfiLhqhDWqpK4g==",
+        setFlagsMethod: "v1:zsrp2wU/tzBJv8L/:YKdCJc6mq/+QpoSxfEYURNf1+sW2njhv",
+        setActiveMethod: "v1:Ns4ghyUZXwlYd9HG:RO921bMjgHtWcsn1VjP1pqNjQtIl41r0OA==",
+        setPlaybackStateMethod: "v1:DDvP5FNkzrWPPUHD:8NAVyHpvU9YHu5Ot5BeRAqiQdfBdb9CQVCq/qWTgQks=",
+        getSessionTokenMethod: "v1:Pf7BiVid24uXO3vP:eF/zluv29iz2g+xZaL/i6KtV518JLZ7Ii+OYnKVCqw==",
+        setStateMethod: "v1:WQOswodvCO2a4Ksw:1mn9vyjOaMHzjjRG231DiglOJY/kJfoN",
+        buildMethod: "v1:G10W4iOCbPb5/O7B:xTZYgq7NeXRInXHoRuZ8qrDOqHyQ",
+        setMediaSessionMethod: "v1:/TS8GKpyYq0gTAfZ:YBb0GAO+JRvzHcB/AwNsdtT232ovuAC0A0HJhblmAw==",
       ),
       notificationDetails: AndroidNotificationDetails(
         'pdf_media_notification_channel',
