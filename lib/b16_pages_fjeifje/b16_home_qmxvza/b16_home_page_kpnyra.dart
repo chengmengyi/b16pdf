@@ -1,3 +1,4 @@
+import 'package:b16pdf/b16_hep_djijdow/b16_images_hep_qxmvza/b16_images_hep_kqmwze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_controller_hqvwze.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_page_qazmtr.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_asset_image_view_pzrxcu.dart';
@@ -90,6 +91,9 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
         Container(
           margin: EdgeInsets.only(top: 4.h),
           child: B16TapGuardViewMfwqke(
+            b16OnPressedJkcxwu: () {
+              B16ImagesHepKqmwze.instance.toScan();
+            },
             b16ChildHnqvsa: B16AssetImageViewPzrxcu(
               'b16_home_scan_fheifie',
               b16WidthDtvqpl: 64.w,
