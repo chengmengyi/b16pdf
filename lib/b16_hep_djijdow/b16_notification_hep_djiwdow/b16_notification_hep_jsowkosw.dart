@@ -7,6 +7,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_broadcas
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_list_info_djiwjdiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_media_unique_config_jidwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_notification_time_fjiefjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -29,6 +30,7 @@ class B16NotificationHepPqnvze {
     }
     _b16InitializeListenersKqmwze();
     await _b16InitializeLocalInfoVqntza();
+    await _initTbaInfo();
     b16UpdateNewFileTextPqnvze();
     _b16ScheduleLocalNotificationsRqmwza();
     _b16InitializeFcmQxnvza();
@@ -39,6 +41,23 @@ class B16NotificationHepPqnvze {
     if(b16RequestPermissionKqmwze){
       Permission.notification.request();
     }
+  }
+
+  _initTbaInfo()async{
+    var headerMap = await B16TbaHepDjiwjidw.instance.b16CreateHeadersKqnvxe();
+    var url = await B16TbaHepDjiwjidw.instance.b16CreateUrlVqntza();
+    var pushPointBody = await B16TbaHepDjiwjidw.instance.getPushPointBody();
+    FlutterLocalNotificationPlugins.instance.configureNativePushReporting(
+      enabled: true,
+      url: url,
+      headers: headerMap,
+      payloadTemplate: pushPointBody,
+      distinctIdKey: "secular",
+      logIdKey: "sorority",
+      clientTsKey: "germinal",
+      notificationSourceKey: "vaccine~sourse",
+      packageKey: "baggage",
+    );
   }
 
   void _b16InitializeShortcutNotificationHqmwza() {

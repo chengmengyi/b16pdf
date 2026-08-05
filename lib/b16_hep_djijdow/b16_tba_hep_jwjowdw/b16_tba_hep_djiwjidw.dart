@@ -111,14 +111,21 @@ class B16TbaHepDjiwjidw {
     );
   }
 
+  Future<Map<String, dynamic>> getPushPointBody()async{
+    final Map<String, dynamic> b16RequestBodyHqmwze = await _b16CreateCommonBodyHqmwza();
+    b16RequestBodyHqmwze['rove'] = B16PointTypeJdwijdiw.push.name;
+    b16RequestBodyHqmwze['vaccine~sourse'] = "local";
+    return b16RequestBodyHqmwze;
+  }
+
   Future<bool> _b16PostWithRetryPqmxza({
     required Map<String, dynamic> b16BodyHqmwze,
     required String b16EventTypeKqmwze,
     required String b16EventNameVqntza,
   }) async {
     final Map<String, dynamic> b16HeadersVqntza =
-        await _b16CreateHeadersKqnvxe();
-    final String b16RequestUrlPqnvze = await _b16CreateUrlVqntza();
+        await b16CreateHeadersKqnvxe();
+    final String b16RequestUrlPqnvze = await b16CreateUrlVqntza();
 
     for (int b16AttemptQxnvza = 1; b16AttemptQxnvza <= 5; b16AttemptQxnvza++) {
       try {
@@ -192,14 +199,14 @@ class B16TbaHepDjiwjidw {
     };
   }
 
-  Future<Map<String, dynamic>> _b16CreateHeadersKqnvxe() async {
-    return <String, dynamic>{
+  Future<Map<String, String>> b16CreateHeadersKqnvxe() async {
+    return <String, String>{
       'ogre': await FlutterTbaInfo.instance.getIdfv(),
       'baggage': await FlutterTbaInfo.instance.getBundleId(),
     };
   }
 
-  Future<String> _b16CreateUrlVqntza() async {
+  Future<String> b16CreateUrlVqntza() async {
     final String b16BundleIdQxnvza = await FlutterTbaInfo.instance
         .getBundleId();
     final String b16BrandKqmwze = await FlutterTbaInfo.instance.getBrand();
