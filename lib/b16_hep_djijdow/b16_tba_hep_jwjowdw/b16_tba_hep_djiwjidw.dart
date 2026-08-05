@@ -19,6 +19,7 @@ class B16TbaHepDjiwjidw {
   final Dio _b16DioClientKqmwze = Dio();
 
   Future<void> b16UploadInstallQxnvza() async {
+    b16UploadSessionVqntza();
     if (!B16UploadInstallEventStorageQxnvza.b16ReadEnabledKqmwze()) {
       return;
     }
@@ -123,7 +124,7 @@ class B16TbaHepDjiwjidw {
       try {
         debugPrint(
           'tba-$b16EventTypeKqmwze-$b16EventNameVqntza-'
-          '$b16BodyHqmwze-',
+          '请求前-$b16BodyHqmwze-',
         );
         final Response<dynamic> b16ResponseKqmwze = await _b16DioClientKqmwze
             .post<dynamic>(
@@ -140,12 +141,19 @@ class B16TbaHepDjiwjidw {
             b16StatusCodeVqntza < 300) {
           debugPrint(
             'tba-$b16EventTypeKqmwze-$b16EventNameVqntza-'
-            '$b16BodyHqmwze-${b16ResponseKqmwze.data}',
+            '请求结果-true-$b16BodyHqmwze-${b16ResponseKqmwze.data}',
           );
           return true;
         }
-      } catch (_) {
-        // A later attempt handles transient network and server failures.
+        debugPrint(
+          'tba-$b16EventTypeKqmwze-$b16EventNameVqntza-'
+          '请求结果-false-$b16BodyHqmwze-${b16ResponseKqmwze.data}',
+        );
+      } catch (b16RequestErrorPqnvze) {
+        debugPrint(
+          'tba-$b16EventTypeKqmwze-$b16EventNameVqntza-'
+          '请求结果-false-$b16BodyHqmwze-$b16RequestErrorPqnvze',
+        );
       }
 
       if (b16AttemptQxnvza < 5) {
