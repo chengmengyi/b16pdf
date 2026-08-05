@@ -41,42 +41,47 @@ class B16ProcessResultPageKqnvze
     );
   }
 
-  _bottomWidget()=>Container(
-    width: double.infinity,
-    height: 60.h,
-    alignment: Alignment.center,
-    padding: EdgeInsets.only(left: 16.w, right: 16.w),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(12.w),
-        topRight: Radius.circular(12.w),
-      ),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withValues(alpha: 0.2),
-          blurRadius: 5,
-          offset: const Offset(0, -0.5),
-        ),
-      ],
-    ),
-    child: Container(
+  _bottomWidget()=>B16TapGuardViewMfwqke(
+    b16OnPressedJkcxwu: (){
+
+    },
+    b16ChildHnqvsa: Container(
       width: double.infinity,
-      height: 44.h,
+      height: 60.h,
       alignment: Alignment.center,
+      padding: EdgeInsets.only(left: 16.w, right: 16.w),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(22.w),
-        gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(12.w),
+          topRight: Radius.circular(12.w),
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            blurRadius: 5,
+            offset: const Offset(0, -0.5),
+          ),
+        ],
       ),
-      child: B16LocalizedTextViewCxmpra(
-        "Open",
-        b16FontSizeRvxqle: 16.sp,
-        b16ColorDtkzma: Colors.white,
-        b16FontWeightHncysp: FontWeight.bold,
+      child: Container(
+        width: double.infinity,
+        height: 44.h,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(22.w),
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
+          ),
+        ),
+        child: B16LocalizedTextViewCxmpra(
+          "Open",
+          b16FontSizeRvxqle: 16.sp,
+          b16ColorDtkzma: Colors.white,
+          b16FontWeightHncysp: FontWeight.bold,
+        ),
       ),
     ),
   );

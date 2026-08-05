@@ -11,7 +11,6 @@ class B16ImagesResultControllerKqmwze extends B16RootControllerFjesak {
   void clickBack() => B16RoutersHepFjeifjoe.b16BackFtynwp();
 
   clickSave(){
-    // B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16ProcessWaitingRouteHqmwza);
-    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16ProcessResultRoutePqnvze);
+    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16ProcessWaitingRouteHqmwza);
   }
 }
