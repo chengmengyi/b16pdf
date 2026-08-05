@@ -8,4 +8,5 @@ class B16StorageNameFjeoifoe {
   static const String b16NotificationTime = 'b16NotificationTime';
   static const String b16MediaUniqueConfig = 'b16MediaUniqueConfig';
   static const String b16ReferrerConfig = 'b16ReferrerConfig';
+  static const String b16UploadInstallEventQxnvza = 'b16_upload_install_event';
 }
