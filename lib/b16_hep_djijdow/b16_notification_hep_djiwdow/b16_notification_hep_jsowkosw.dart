@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_broadcast_list_infi_dwiow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_list_info_djiwjdiw.dart';
@@ -236,6 +238,18 @@ class B16NotificationHepJsowkosw{
 
 
   Future<bool> _canInitNotification()async{
+    if (!B16CheckUserJiwojdw.instance.isBUser) {
+      return false;
+    }
+    var samsungDevice = await FlutterLocalNotificationPlugins.instance.isSamsungDevice();
+    var koreanLocale = await FlutterLocalNotificationPlugins.instance.isKoreanLocale();
+    if (samsungDevice &&
+        koreanLocale &&
+        !B16FirebaseHepDjiwjow
+            .instance
+            .krPhoneShowNotification) {
+      return false;
+    }
     return true;
   }
 }

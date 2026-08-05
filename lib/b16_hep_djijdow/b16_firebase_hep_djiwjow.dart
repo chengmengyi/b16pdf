@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_media_unique_config_jidwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_notification_time_fjiefjoe.dart';
@@ -75,9 +76,9 @@ class B16FirebaseHepDjiwjow{
     final String b12allRiskControlVmqxtr =
         _b12allRemoteConfigVmqxtr?.getString('risk_control') ?? '';
     if (b12allRiskControlVmqxtr.isNotEmpty) {
-      // B12allUserUtilsFeojdd.b12allInstanceVmqxtr.b12allInitRiskVmqxtr(
-      //   b12allRiskControlVmqxtr,
-      // );
+      B16CheckUserJiwojdw.instance.b12allInitRiskVmqxtr(
+        b12allRiskControlVmqxtr,
+      );
     }
 
     final String b12allPushTimePqmvzr =

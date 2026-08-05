@@ -100,6 +100,8 @@ flutter:
   assets:
    - assets/b16pdf_images_fjwnsd/
    - assets/b16_pdf_lottie_fjiwjiw/
+   - assets/b16pdf_local_config/b16pdf_local_referrer/
+   - assets/b16pdf_local_config/b16pdf_local_ad/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
