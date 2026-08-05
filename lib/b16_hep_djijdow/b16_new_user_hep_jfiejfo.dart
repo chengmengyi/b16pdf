@@ -23,7 +23,10 @@ class B16NewUserHepJfiejfo{
   //   toPageAfterOverlay();
   // }
 
-  toPageAfterOverlay(){
+
+  //语言选择页没有点确定----启动app：语言选择页->通知->首页
+  //语言选择页点确定----启动app：通知->首页
+  toPageChooseLanguage(){
     if(B16LanguageSelectedFjiefjoe.b16ReadLanguageVqmxpe().isEmpty){
       B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
         b16RouteNameYweqpn:
@@ -31,10 +34,10 @@ class B16NewUserHepJfiejfo{
       );
       return;
     }
-    toPageAfterChooseLanguage();
+    toPageOpenNotificationPermission();
   }
 
-  toPageAfterChooseLanguage()async{
+  toPageOpenNotificationPermission()async{
     var permissionStatus = await Permission.notification.status;
     var isGranted = permissionStatus.isGranted || permissionStatus.isLimited;
     if(!isGranted){

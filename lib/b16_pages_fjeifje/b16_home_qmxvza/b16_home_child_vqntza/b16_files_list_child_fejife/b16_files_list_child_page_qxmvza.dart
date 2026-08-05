@@ -186,12 +186,6 @@ class _B16FilesListChildStateVqnxre
                           ],
                         ),
                       ),
-                      SizedBox(width: 12.w),
-                      B16AssetImageViewPzrxcu(
-                        "b16_more_icon_fjioewjfoe",
-                        b16WidthDtvqpl: 24.w,
-                        b16HeightRnxkse: 24.w,
-                      ),
                     ],
                   ),
                 ),

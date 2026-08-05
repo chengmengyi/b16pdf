@@ -72,7 +72,7 @@ class B16ChooseLanguageControllerHqmwza extends B16RootControllerFjesak {
     await B16LanguageHepKqmvza.b16SelectLanguageGqmwxe(
       b16SelectedLanguageKqnvze.b16LocaleVqntza,
     );
-    B16NewUserHepJfiejfo.instance.toPageAfterChooseLanguage();
+    B16NewUserHepJfiejfo.instance.toPageOpenNotificationPermission();
   }
 
   @override

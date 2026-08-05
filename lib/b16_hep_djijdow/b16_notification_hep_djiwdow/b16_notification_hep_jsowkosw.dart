@@ -165,7 +165,7 @@ class B16NotificationHepPqnvze {
 
   Future<void> _b16InitializeLocalInfoVqntza() async {
     await FlutterLocalNotificationPlugins.instance.initNotification(
-      icon: 'b16_notification_logo_hwdiw',
+      icon: 'b16_small_logo_jieoef',
       channelId: 'editer_pdf_channel',
       channelName: 'editer_pdf_channel_name',
       channelDescription: 'Editer PDF notifications',

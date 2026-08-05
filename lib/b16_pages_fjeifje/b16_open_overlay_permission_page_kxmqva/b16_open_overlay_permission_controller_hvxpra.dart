@@ -42,6 +42,6 @@ class B16OpenOverlayPermissionControllerHvxpra extends B16RootControllerFjesak {
   }
 
   void b16OpenNotificationPagePqnvxe() {
-    B16NewUserHepJfiejfo.instance.toPageAfterOverlay();
+    B16NewUserHepJfiejfo.instance.toPageChooseLanguage();
   }
 }
