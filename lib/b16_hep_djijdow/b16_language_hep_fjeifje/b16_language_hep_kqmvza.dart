@@ -134,6 +134,10 @@ final class B16LanguageHepKqmvza extends Translations {
   @override
   Map<String, Map<String, String>> get keys => const {
     'en': {
+      'Enjoying PDF Reader?': 'Enjoying PDF Reader?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'Your 5-star rating helps us improve! It only takes a few seconds of your time.',
+      'Rate Us 5 Stars': 'Rate Us 5 Stars',
       'PDF tools': 'PDF tools',
       'Scan To': 'Scan To',
       'Image To': 'Image To',
@@ -278,6 +282,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Find {n} below and toggle the switch to ON.',
     },
     'fr': {
+      'Enjoying PDF Reader?': 'Vous aimez PDF Reader ?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'Votre note de 5 étoiles nous aide à nous améliorer ! Cela ne prend que quelques secondes.',
+      'Rate Us 5 Stars': 'Nous noter 5 étoiles',
       'PDF tools': 'Outils PDF',
       'Scan To': 'Numériser en',
       'Image To': 'Image en',
@@ -425,6 +433,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trouvez {n} ci-dessous et activez l’interrupteur.',
     },
     'ja': {
+      'Enjoying PDF Reader?': 'PDF Readerをお楽しみですか？',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          '5つ星の評価が改善の力になります。数秒で完了します。',
+      'Rate Us 5 Stars': '5つ星で評価する',
       'PDF tools': 'PDFツール',
       'Scan To': 'スキャンして',
       'Image To': '画像から',
@@ -555,6 +567,10 @@ final class B16LanguageHepKqmvza extends Translations {
           '下から{n}を見つけて、スイッチをオンにしてください。',
     },
     'ko': {
+      'Enjoying PDF Reader?': 'PDF Reader가 마음에 드시나요?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          '별 5개 평가는 앱 개선에 큰 도움이 됩니다. 몇 초면 충분합니다.',
+      'Rate Us 5 Stars': '별 5개 평가하기',
       'PDF tools': 'PDF 도구',
       'Scan To': '스캔하여',
       'Image To': '이미지를',
@@ -685,6 +701,10 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '아래에서 {n}을 찾아 스위치를 켜세요.',
     },
     'de': {
+      'Enjoying PDF Reader?': 'Gefällt dir PDF Reader?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'Deine 5-Sterne-Bewertung hilft uns, besser zu werden. Es dauert nur wenige Sekunden.',
+      'Rate Us 5 Stars': 'Mit 5 Sternen bewerten',
       'PDF tools': 'PDF-Werkzeuge',
       'Scan To': 'Scannen zu',
       'Image To': 'Bild zu',
@@ -835,6 +855,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Suchen Sie unten nach {n} und schalten Sie den Schalter ein.',
     },
     'es': {
+      'Enjoying PDF Reader?': '¿Te gusta PDF Reader?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'Tu valoración de 5 estrellas nos ayuda a mejorar. Solo te llevará unos segundos.',
+      'Rate Us 5 Stars': 'Danos 5 estrellas',
       'PDF tools': 'Herramientas PDF',
       'Scan To': 'Escanear a',
       'Image To': 'Imagen a',
@@ -984,6 +1008,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Busca {n} abajo y activa el interruptor.',
     },
     'it': {
+      'Enjoying PDF Reader?': 'Ti piace PDF Reader?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'La tua valutazione a 5 stelle ci aiuta a migliorare. Bastano pochi secondi.',
+      'Rate Us 5 Stars': 'Valutaci 5 stelle',
       'PDF tools': 'Strumenti PDF',
       'Scan To': 'Scansiona in',
       'Image To': 'Immagine in',
@@ -1132,6 +1160,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Trova {n} qui sotto e attiva l’interruttore.',
     },
     'pt': {
+      'Enjoying PDF Reader?': 'Está gostando do PDF Reader?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'Sua avaliação de 5 estrelas nos ajuda a melhorar. Leva apenas alguns segundos.',
+      'Rate Us 5 Stars': 'Avalie com 5 estrelas',
       'PDF tools': 'Ferramentas PDF',
       'Scan To': 'Digitalizar para',
       'Image To': 'Imagem para',
@@ -1282,6 +1314,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Encontre {n} abaixo e ative o interruptor.',
     },
     'ru': {
+      'Enjoying PDF Reader?': 'Нравится PDF Reader?',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'Ваша оценка в 5 звёзд помогает нам становиться лучше. Это займёт всего несколько секунд.',
+      'Rate Us 5 Stars': 'Оценить на 5 звёзд',
       'PDF tools': 'Инструменты PDF',
       'Scan To': 'Сканировать в',
       'Image To': 'Изображение в',
@@ -1431,6 +1467,10 @@ final class B16LanguageHepKqmvza extends Translations {
           'Найдите {n} ниже и включите переключатель.',
     },
     'zh_TW': {
+      'Enjoying PDF Reader?': '喜歡 PDF Reader 嗎？',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          '你的 5 星好評能幫助我們持續改進，只需花費幾秒鐘。',
+      'Rate Us 5 Stars': '給我們 5 星好評',
       'PDF tools': 'PDF 工具',
       'Scan To': '掃描轉',
       'Image To': '圖片轉',
@@ -1557,6 +1597,10 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，並將開關切換為開啟。',
     },
     'zh_CN': {
+      'Enjoying PDF Reader?': '喜欢 PDF Reader 吗？',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          '你的 5 星好评能帮助我们持续改进，只需花费几秒钟。',
+      'Rate Us 5 Stars': '给我们 5 星好评',
       'PDF tools': 'PDF 工具',
       'Scan To': '扫描转',
       'Image To': '图片转',
@@ -1683,6 +1727,10 @@ final class B16LanguageHepKqmvza extends Translations {
       'Find {n} below and toggle the switch to ON.': '在下方找到 {n}，并将开关切换为开启。',
     },
     'ar': {
+      'Enjoying PDF Reader?': 'هل يعجبك PDF Reader؟',
+      'Your 5-star rating helps us improve! It only takes a few seconds of your time.':
+          'تقييمك لنا بخمس نجوم يساعدنا على التحسين، ولن يستغرق سوى بضع ثوانٍ.',
+      'Rate Us 5 Stars': 'قيّمنا بخمس نجوم',
       'PDF tools': 'أدوات PDF',
       'Scan To': 'مسح إلى',
       'Image To': 'صورة إلى',

@@ -23,6 +23,11 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
   bool get b16ResizeToAvoidBottomInsetNwskde => false;
 
   @override
+  Future<bool> b16AllowRoutePopYmejcu(
+    B16HomeControllerHqvwze b16ControllerTbnyui,
+  ) => b16ControllerTbnyui.b16HandleBackPressedPqnvze();
+
+  @override
   Widget b16BuildContentRuznxe(
     BuildContext b16ContextVqmwza,
     B16HomeControllerHqvwze b16ControllerKqmxve,
@@ -43,7 +48,10 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: b16BottomWidgetPqmvze(b16ControllerVqmxza,b16ContextVqmwza),
+              child: b16BottomWidgetPqmvze(
+                b16ControllerVqmxza,
+                b16ContextVqmwza,
+              ),
             ),
           ],
         );
@@ -51,7 +59,10 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
     );
   }
 
-  Widget b16BottomWidgetPqmvze(B16HomeControllerHqvwze b16ControllerKqmxva, BuildContext b16contextVqmwza) {
+  Widget b16BottomWidgetPqmvze(
+    B16HomeControllerHqvwze b16ControllerKqmxva,
+    BuildContext b16contextVqmwza,
+  ) {
     return Stack(
       alignment: Alignment.topCenter,
       children: [
@@ -109,14 +120,18 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
 
   Widget b16ItemWidgetHqnvza(
     B16HomeBottomTabType b16TypeVqmxze,
-    B16HomeControllerHqvwze b16ControllerKqnvxa, BuildContext b16contextVqmwza,
+    B16HomeControllerHqvwze b16ControllerKqnvxa,
+    BuildContext b16contextVqmwza,
   ) {
     final bool b16SelectedPqmwza =
         b16ControllerKqnvxa.b16TabIndexKqmwza == b16TypeVqmxze.index;
     return Expanded(
       child: B16TapGuardViewMfwqke(
         b16OnPressedJkcxwu: () {
-          b16ControllerKqnvxa.b16SelectTabHqmvze(b16TypeVqmxze,b16contextVqmwza);
+          b16ControllerKqnvxa.b16SelectTabHqmvze(
+            b16TypeVqmxze,
+            b16contextVqmwza,
+          );
         },
         b16ChildHnqvsa: SizedBox.expand(
           child: Column(

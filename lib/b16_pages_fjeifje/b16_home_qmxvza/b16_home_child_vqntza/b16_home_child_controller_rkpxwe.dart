@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:b16pdf/b16_dialog_fjifjie/b16_comment_dialog_jiwjdiw/b16_comment_dialog_jiwjdiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
@@ -126,7 +127,7 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
     if (!kDebugMode) {
       return;
     }
-    B16TbaHepDjiwjidw.instance.b16UploadInstallQxnvza();
+    B16RoutersHepFjeifjoe.b16ShowBottomSheetVxqprn(b16ChildQnwxza: B16CommentDialogJiwjdiwe());
   }
 
   @override
