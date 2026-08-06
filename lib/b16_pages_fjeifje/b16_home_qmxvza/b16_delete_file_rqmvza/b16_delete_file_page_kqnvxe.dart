@@ -168,7 +168,7 @@ class B16DeleteFilePageKqnvxe
           children: [
             B16TapGuardViewMfwqke(
               b16OnPressedJkcxwu: () {
-                B16RoutersHepFjeifjoe.b16BackFtynwp();
+                B16RoutersHepFjeifjoe.b16BackWithExitAdPqnvze<void>();
               },
               b16ChildHnqvsa: B16LocalizedTextViewCxmpra(
                 "Cancel".tr,

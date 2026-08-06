@@ -24,7 +24,7 @@ class B16ImagesResultControllerKqmwze extends B16RootControllerFjesak {
   final ScrollController b16ThumbnailControllerPqnvze = ScrollController();
   int b16SelectedIndexKqmwze = 0;
 
-  void clickBack() => B16RoutersHepFjeifjoe.b16BackFtynwp();
+  void clickBack() => B16RoutersHepFjeifjoe.b16BackWithExitAdPqnvze<void>();
 
   void b16SelectImageVqntza(int b16IndexQxnvza) {
     if (b16IndexQxnvza < 0 || b16IndexQxnvza >= b16ImagePathsQxnvza.length) {

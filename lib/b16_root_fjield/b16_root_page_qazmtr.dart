@@ -16,8 +16,8 @@ abstract class B16RootPageQazmtr<T extends B16RootControllerFjesak>
 
   bool get b16UseSafeBottomVqehcn => true;
 
-  Future<bool> b16AllowRoutePopYmejcu(T b16ControllerTbnyui,) async {
-    B16RoutersHepFjeifjoe.b16BackFtynwp();
+  Future<bool> b16AllowRoutePopYmejcu(T b16ControllerTbnyui) async {
+    B16RoutersHepFjeifjoe.b16BackWithExitAdPqnvze<void>();
     return false;
   }
 
@@ -71,8 +71,10 @@ class _B16RootPageStateVknpse<T extends B16RootControllerFjesak>
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: widget.b16SystemUiOverlayStyleGfrtpo,
       child: WillPopScope(
-        onWillPop: ()async{
-          return widget.b16AllowRoutePopYmejcu( b16ControllerLeaseKjfpso.b16ControllerNqxrfe);
+        onWillPop: () async {
+          return widget.b16AllowRoutePopYmejcu(
+            b16ControllerLeaseKjfpso.b16ControllerNqxrfe,
+          );
         },
         child: GestureDetector(
           behavior: HitTestBehavior.translucent,

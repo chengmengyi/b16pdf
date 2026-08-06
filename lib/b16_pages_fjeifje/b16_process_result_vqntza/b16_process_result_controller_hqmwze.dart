@@ -26,7 +26,7 @@ class B16ProcessResultControllerHqmwze extends B16RootControllerFjesak {
     return '$b16DateTextKqmwze | ${b16SizeVqntza.toStringAsFixed(1)}M';
   }
 
-  void clickBack() => B16RoutersHepFjeifjoe.b16BackFtynwp();
+  void clickBack() => B16RoutersHepFjeifjoe.b16BackWithExitAdPqnvze<void>();
 
   void clickOpen() {
     B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
