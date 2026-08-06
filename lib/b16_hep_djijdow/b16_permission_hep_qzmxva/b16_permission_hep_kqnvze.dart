@@ -1,4 +1,5 @@
 import 'package:b16pdf/b16_dialog_fjifjie/b16_request_permission_dialog_djeifje/b16_request_permission_dialog_djeifje.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_applife_hep_fjeifje.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -37,6 +38,7 @@ class B16PermissionHepKqnvze {
         b16IsShowPermissionAdPqnvxe: true,
       );
     }
+    B16ApplifeHepFjeifje.instance.b16SuppressNextHotLaunchQxnvza();
     final b16StatusKpnyra = await b16PermissionQxmvza.request();
     return B16PermissionResultVqmxze(
       b16IsGrantedHqmwza: b16StatusKpnyra.isGranted,

@@ -16,7 +16,12 @@ class B16ApplifeHepFjeifje {
   B16ApplifeHepFjeifje._();
 
   static final B16ApplifeHepFjeifje instance = B16ApplifeHepFjeifje._();
-  bool b16ObserverStartedHqmxwe = false,_b16AppIsBackStatus=false;
+  bool b16ObserverStartedHqmxwe = false, _b16AppIsBackStatus = false;
+  bool _b16SuppressNextHotLaunchQxnvza = false;
+
+  void b16SuppressNextHotLaunchQxnvza() {
+    _b16SuppressNextHotLaunchQxnvza = true;
+  }
 
   void b16StartObserverKpvnza() {
     if (b16ObserverStartedHqmxwe) {
@@ -43,17 +48,25 @@ class B16ApplifeHepFjeifje {
   }
 
   void _appBack() {
-    _b16AppIsBackStatus=true;
+    _b16AppIsBackStatus = true;
   }
 
   Future<void> _appFront() async {
-    unawaited(B16NotificationHepPqnvze.instance.b16UploadPendingNotificationEventsTqnvze());
-    if(!_b16AppIsBackStatus){
+    unawaited(
+      B16NotificationHepPqnvze.instance
+          .b16UploadPendingNotificationEventsTqnvze(),
+    );
+    if (!_b16AppIsBackStatus) {
       return;
     }
     await Future<void>.delayed(const Duration(milliseconds: 300));
-    _b16AppIsBackStatus=false;
-    final B16HotLauncherSourceInfoKqmwze? b16SourcePqnvze = B16HotLauncherSourceHepDjiwdjw.instance.b16ConsumeSourceVqntza();
+    _b16AppIsBackStatus = false;
+    if (_b16SuppressNextHotLaunchQxnvza) {
+      _b16SuppressNextHotLaunchQxnvza = false;
+      return;
+    }
+    final B16HotLauncherSourceInfoKqmwze? b16SourcePqnvze =
+        B16HotLauncherSourceHepDjiwdjw.instance.b16ConsumeSourceVqntza();
     if (b16SourcePqnvze == null) {
       showAd(B16AdSceneJdwo.pr_launch, B16PosidJkwkosw.pr_open_hot);
       return;
@@ -66,10 +79,10 @@ class B16ApplifeHepFjeifje {
     }
   }
 
-  showAd(
+  Future<void> showAd(
     B16AdSceneJdwo b16AdSceneQxnvza,
     B16PosidJkwkosw b16PositionIdVqntza,
-  ) async{
+  ) async {
     await FlutterPdfAdPlugins.instance.closeFullScreenAdAndWait();
     B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
       b16AdScenePqmvzr: b16AdSceneQxnvza,
