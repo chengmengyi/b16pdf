@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_hep_kqmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_hot_launcher_source_hep_djiwdjw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:quick_actions/quick_actions.dart';
@@ -32,11 +33,13 @@ class B16QuickActionHepFjeifjiw {
     await _quickActions.initialize((String b16ShortcutTypeKqnvxe) {
       if (!_b16LauncherFinishedHqmwza) {
         _b16PendingTypeVqntza = b16ShortcutTypeKqnvxe;
-        B16ColdLauncherSourceHepJiwjdow.instance.b16RecordQuickActionSourceQxnvza(
-          b16ShortcutTypeKqnvxe,
-        );
+        B16ColdLauncherSourceHepJiwjdow.instance
+            .b16RecordQuickActionSourceQxnvza(b16ShortcutTypeKqnvxe);
         return;
       }
+      B16HotLauncherSourceHepDjiwdjw.instance.b16RecordQuickActionSourceHqmwza(
+        b16ShortcutTypeKqnvxe,
+      );
       unawaited(
         _b16HandleShortcutHqmwza(
           b16ShortcutTypeKqnvxe,
@@ -68,13 +71,17 @@ class B16QuickActionHepFjeifjiw {
     if (b16ShortcutTypePqnvze != b16UninstallTypeQxnvza) {
       return false;
     }
-    B16ColdLauncherSourceHepJiwjdow.instance.b16RecordQuickActionSourceQxnvza(
-      b16ShortcutTypePqnvze,
-    );
     if (b16FromColdStartPqmxza) {
-      await B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt(b16RouteNameYweqpn: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze);
+      B16ColdLauncherSourceHepJiwjdow.instance.b16RecordQuickActionSourceQxnvza(
+        b16ShortcutTypePqnvze,
+      );
+      await B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt(
+        b16RouteNameYweqpn: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze,
+      );
     } else {
-      await B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze);
+      await B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(
+        b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze,
+      );
     }
     return true;
   }

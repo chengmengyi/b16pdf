@@ -1,8 +1,13 @@
+import 'dart:async';
 import 'dart:convert';
 
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_applife_hep_fjeifje.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_hot_launcher_source_hep_djiwdjw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_broadcast_list_infi_dwiow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_list_info_djiwjdiw.dart';
@@ -217,8 +222,18 @@ class B16NotificationHepPqnvze {
   void _b16InitializeListenersKqmwze() {
     FlutterLocalNotificationPlugins.instance.setListeners(
       onNotificationClicked: (LocalNotificationEvent b16EventQxnvza) {
-        _b16UploadClickEventKqmwze(
-          b16EventQxnvza.payload ?? b16EventQxnvza.payloadType?.name ?? '',
+        final String b16PayloadVqntza =
+            b16EventQxnvza.payload ?? b16EventQxnvza.payloadType?.name ?? '';
+        B16HotLauncherSourceHepDjiwdjw.instance
+            .b16RecordNotificationSourcePqnvze(b16PayloadVqntza);
+        _b16UploadClickEventKqmwze(b16PayloadVqntza);
+        unawaited(
+          B16ApplifeHepFjeifje.instance.showAd(
+            B16AdSceneJdwo.pr_launch,
+            b16PayloadVqntza == 'media'
+                ? B16PosidJkwkosw.pr_open_mediapop
+                : B16PosidJkwkosw.pr_open_noti,
+          ),
         );
       },
       onNotificationDisplayed: (LocalNotificationEvent b16EventVqntza) {
