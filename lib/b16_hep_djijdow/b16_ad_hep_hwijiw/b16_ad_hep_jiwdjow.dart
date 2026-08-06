@@ -112,10 +112,6 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
   }
 
   Future<void> _b16PreloadStartupAdScenesVmqxtr() async {
-    // if (_b16HasPreloadedStartupAdScenesKqmvzr) {
-    //   return;
-    // }
-    // _b16HasPreloadedStartupAdScenesKqmvzr = true;
     final List<Future<void>> b16StartupPreloadTasksPqmvzr =
         _b16StartupPreloadAdScenesVmqxtr
             .map(_b16PreloadAdScenePlacementPqmvzr)
