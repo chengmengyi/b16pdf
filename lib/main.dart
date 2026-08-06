@@ -21,7 +21,7 @@ Future<void> main() async {
   await GetStorage.init();
   await B16LauncherSourceHepJiwjdow.instance.initSource();
   B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16InitializeAdSdkPqmvzr();
-  B16QuickActionHepFjeifjiw.instance.init();
+  await B16QuickActionHepFjeifjiw.instance.init();
   B16ApplifeHepFjeifje.instance.b16StartObserverKpvnza();
   final Locale b16InitialLocaleQmxvza =
       B16LanguageHepKqmvza.b16ResolveInitialLocaleRmqxve();
