@@ -1,3 +1,8 @@
+import 'dart:async';
+
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_tools_fieife.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_choose_language_qxmvza/b16_choose_language_controller_hqmwza.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_page_qazmtr.dart';
@@ -25,17 +30,23 @@ class B16ChooseLanguagePageKqnvze
     global: false,
     builder: (b16ControllerQxmvza) => Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 120.h),
-          _b16TopWidgetHqmwza(),
-          SizedBox(height: 40.h),
-          _b16ListWidgetKqnvze(b16ControllerQxmvza),
-          SizedBox(height: 40.h),
-          _b16BottomWidgetVqntza(b16ControllerQxmvza),
-          SizedBox(height: 16.h),
-        ],
+      child: SafeArea(
+        top: true,
+        bottom: false,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 16.h),
+            _nativeAdWidget(),
+            SizedBox(height: 16.h),
+            _b16TopWidgetHqmwza(),
+            SizedBox(height: 40.h),
+            _b16ListWidgetKqnvze(b16ControllerQxmvza),
+            SizedBox(height: 40.h),
+            _b16BottomWidgetVqntza(b16ControllerQxmvza),
+            SizedBox(height: 16.h),
+          ],
+        ),
       ),
     ),
   );
@@ -150,4 +161,78 @@ class B16ChooseLanguagePageKqnvze
       ),
     ],
   );
+
+  Widget _nativeAdWidget() => const _B16ChooseLanguageNativeAdVqntza();
+}
+
+class _B16ChooseLanguageNativeAdVqntza extends StatefulWidget {
+  const _B16ChooseLanguageNativeAdVqntza();
+
+  @override
+  State<_B16ChooseLanguageNativeAdVqntza> createState() =>
+      _B16ChooseLanguageNativeAdStateHqmwza();
+}
+
+class _B16ChooseLanguageNativeAdStateHqmwza
+    extends State<_B16ChooseLanguageNativeAdVqntza> {
+  static const Duration _b16RetryDurationQxnvza = Duration(milliseconds: 500);
+
+  Timer? _b16RetryTimerKqmwze;
+  Widget? _b16AdWidgetVqntza;
+  bool _b16CheckingAdHqmwza = false;
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_b16TryTakeAdWidgetPqnvze());
+    _b16RetryTimerKqmwze = Timer.periodic(
+      _b16RetryDurationQxnvza,
+      (_) => unawaited(_b16TryTakeAdWidgetPqnvze()),
+    );
+  }
+
+  Future<void> _b16TryTakeAdWidgetPqnvze() async {
+    if (_b16AdWidgetVqntza != null || _b16CheckingAdHqmwza) {
+      return;
+    }
+    _b16CheckingAdHqmwza = true;
+    try {
+      final Widget? b16AdWidgetKqnvxe = await B16AdHepJiwdjow
+          .b16AdUtilsInstanceKqmvzr
+          .b16BuildCachedNativeAdWidgetPqmvzr(
+            b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
+            b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_new_lan_nat,
+          );
+      if (!mounted || b16AdWidgetKqnvxe == null) {
+        return;
+      }
+      _b16RetryTimerKqmwze?.cancel();
+      _b16RetryTimerKqmwze = null;
+      setState(() {
+        _b16AdWidgetVqntza = b16AdWidgetKqnvxe;
+      });
+      unawaited(
+        B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr
+            .b16RequestFilesListNativeAdPqmvzr(),
+      );
+    } finally {
+      _b16CheckingAdHqmwza = false;
+    }
+  }
+
+  @override
+  Widget build(BuildContext b16ContextQxnvza) {
+    return SizedBox(
+      width: double.infinity,
+      height: 58.h,
+      child: _b16AdWidgetVqntza ?? const SizedBox.shrink(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _b16RetryTimerKqmwze?.cancel();
+    _b16RetryTimerKqmwze = null;
+    super.dispose();
+  }
 }

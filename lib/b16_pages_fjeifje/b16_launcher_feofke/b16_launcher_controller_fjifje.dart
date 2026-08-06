@@ -204,6 +204,9 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
 
   Future<void> b16FinishLauncherQxnvza() async {
     await B16QuickActionHepFjeifjiw.instance.b16ConsumeColdStartActionVqntza();
+    B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16PreloadAdBySceneKqmwze(
+      B16AdSceneJdwo.pr_user_use,
+    );
     B16NewUserHepJfiejfo.instance.toPageChooseLanguage();
   }
 
