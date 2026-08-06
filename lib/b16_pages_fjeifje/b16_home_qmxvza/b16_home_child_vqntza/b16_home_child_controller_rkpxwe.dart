@@ -103,6 +103,9 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
           await B16PermissionHepKqnvze.instance.requestPermission(
             b16PermissionQxmvza: b16PermissionQxnvza,
           );
+      if(b16ResultVqntza.b16IsShowPermissionAdPqnvxe){
+        B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(b16AdScenePqmvzr: B16AdSceneJdwo.pr_launch, b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_permission_open);
+      }
       if (!b16ResultVqntza.b16IsGrantedHqmwza) return;
       B16EventHepFjiejizx.instance.b16SendMsgFjijeio(
         B16EventBeanFhifeode(

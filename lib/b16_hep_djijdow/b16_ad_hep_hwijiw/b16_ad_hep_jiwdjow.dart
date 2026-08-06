@@ -9,6 +9,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_launcher_click_gate_hep_qxnvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -776,6 +777,11 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     if (b16AdPosIdVmqxtr is! B16PosidJkwkosw) {
       return;
     }
+    B16LauncherClickGateHepQxnvza.instance
+        .b16MarkLauncherAdShownIfMatchedHqmwza(
+          b16AdScenePqnvze: b16AdPlacementPqmvzr,
+          b16AdPosIdKqmwze: b16AdPosIdVmqxtr,
+        );
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_show,
       b16ParametersKqmwze: {

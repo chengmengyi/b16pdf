@@ -6,6 +6,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_launcher_click_gate_hep_qxnvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_quick_action_hep_fjeifjiw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
@@ -38,6 +39,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
   @override
   void onInit() {
     super.onInit();
+    B16LauncherClickGateHepQxnvza.instance.b16MarkLauncherStartedQxnvza();
     _b16ResolveLaunchAdQxnvza();
     B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16UploadAdChanceKqnvxe(
       b16AdScenePqmvzr: b16LaunchAdSceneQxnvza,
@@ -194,11 +196,20 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
     if (b16ProgressControllerKqnvza.isAnimating) {
       b16ProgressControllerKqnvza.stop(canceled: false);
     }
-    await B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
-      b16AdScenePqmvzr: b16SceneQxnvza,
-      b16AdPosIdKqmvzr: b16PosIdKqmwze,
-      b16UploadChancePqnvze: false,
+    B16LauncherClickGateHepQxnvza.instance.b16MarkLauncherAdWaitingVqntza(
+      b16AdScenePqnvze: b16SceneQxnvza,
+      b16AdPosIdKqmwze: b16PosIdKqmwze,
     );
+    final bool? b16DidShowAdRqmwza = await B16AdHepJiwdjow
+        .b16AdUtilsInstanceKqmvzr
+        .b16ShowCachedSceneAdPqmvzr(
+          b16AdScenePqmvzr: b16SceneQxnvza,
+          b16AdPosIdKqmvzr: b16PosIdKqmwze,
+          b16UploadChancePqnvze: false,
+        );
+    if (b16DidShowAdRqmwza != true) {
+      B16LauncherClickGateHepQxnvza.instance.b16MarkLauncherAdNotShownPqnvze();
+    }
     await b16FinishLauncherQxnvza();
   }
 
@@ -206,8 +217,9 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
     B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16PreloadAdBySceneKqmwze(
       B16AdSceneJdwo.pr_user_use,
     );
-    var result = await B16QuickActionHepFjeifjiw.instance.b16ConsumeColdStartActionVqntza();
-    if(result){
+    var result = await B16QuickActionHepFjeifjiw.instance
+        .b16ConsumeColdStartActionVqntza();
+    if (result) {
       return;
     }
     B16NewUserHepJfiejfo.instance.toPageChooseLanguage();
@@ -246,6 +258,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
 
   @override
   void onClose() {
+    B16LauncherClickGateHepQxnvza.instance.b16MarkLauncherClosedKqmwze();
     _b16AdCheckTimerKqnvxe?.cancel();
     _b16AdCheckStopwatchPqnvze.stop();
     b16ProgressControllerKqnvza
