@@ -2,11 +2,13 @@ import 'dart:convert';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_launcher_source_hep_jiwjdow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_broadcast_list_infi_dwiow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_list_info_djiwjdiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_media_unique_config_jidwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_notification_time_fjiefjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
@@ -30,7 +32,7 @@ class B16NotificationHepPqnvze {
     }
     _b16InitializeListenersKqmwze();
     await _b16InitializeLocalInfoVqntza();
-    await _initTbaInfo();
+    await _b16InitializeTbaInfoPqnvze();
     b16UpdateNewFileTextPqnvze();
     _b16ScheduleLocalNotificationsRqmwza();
     _b16InitializeFcmQxnvza();
@@ -38,20 +40,25 @@ class B16NotificationHepPqnvze {
     b16InitializeMediaNotificationVqntza();
     _b16InitializeShortcutNotificationHqmwza();
     _b16InitializedQxnvza = true;
-    if(b16RequestPermissionKqmwze){
+    if (b16RequestPermissionKqmwze) {
       Permission.notification.request();
     }
   }
 
-  _initTbaInfo()async{
-    var headerMap = await B16TbaHepDjiwjidw.instance.b16CreateHeadersKqnvxe();
-    var url = await B16TbaHepDjiwjidw.instance.b16CreateUrlVqntza();
-    var pushPointBody = await B16TbaHepDjiwjidw.instance.getPushPointBody();
+  Future<void> _b16InitializeTbaInfoPqnvze() async {
+    final Map<String, String> b16HeaderMapQxnvza = Map<String, String>.from(
+      await B16TbaHepDjiwjidw.instance.b16CreateHeadersKqnvxe(),
+    );
+    final String b16RequestUrlKqmwze = await B16TbaHepDjiwjidw.instance
+        .b16CreateUrlVqntza();
+    final Map<String, dynamic> b16PushPayloadVqntza = await B16TbaHepDjiwjidw
+        .instance
+        .getPushPointBody();
     FlutterLocalNotificationPlugins.instance.configureNativePushReporting(
       enabled: true,
-      url: url,
-      headers: headerMap,
-      payloadTemplate: pushPointBody,
+      url: b16RequestUrlKqmwze,
+      headers: b16HeaderMapQxnvza,
+      payloadTemplate: b16PushPayloadVqntza,
       distinctIdKey: "secular",
       logIdKey: "sorority",
       clientTsKey: "germinal",
@@ -90,19 +97,29 @@ class B16NotificationHepPqnvze {
       body: 'PDF Edit Body',
       reflectionConfig: MediaReflectionConfig(
         secret: B16LocalInfoFjeifjioe.secretKey,
-        mediaSessionClass: "v1:oU8ZqyeQlnoNde34:0orxX/bgQC9XO9PLtV+SsmNZPpAHpLbV3SfBxRK0gresMuUGBV/H+x3W7fjhvMVYOvdSRKpduxZQOaH52kC0kB2ptw==",
-        mediaSessionTokenClass: "v1:1ghYSzOmYdMjCqgW:IzaL6++IQ+j6Qv3F5Q7cTzqxGJyowFcWKrr1b1KQoGd68Tq04KprbBbtI6SnlPNlPiokPXKNk+kXswY/IU3KLwhNMhKJgfi8SQ==",
-        mediaSessionTag: "v1:eCw+dvOZO3AnU7Hs:vB7TpcWkeiwUJrklfdFpdKslMa305hbPGdAhmiAREg==",
-        playbackStateClass: "v1:N2EiKtH+/7Vfw+dU:LZw4h8ZDnNTSYm2HhdkR3+82C7qyp0xtV2V0TyWIM7ToHGlGm5kVSzPG6BTnlvsrxPkioksaDwMKDBZsLgVZ/2/MmD4=",
-        playbackStateBuilderClass: "v1:OZP9NZV/bvAjDUxQ:dp8cRwnwhXF7wWYStIwzQDw7POT3aDpYMKH7ervpftCtk1xjebSlXsqbT5k5XLscGhvK6qhYgUoIKoQvIPFcyECFbF99SZZm0dWVjQ==",
-        mediaStyleClass: "v1:eKeEeYrn6bwoVMhh:hzDhXiNH1gUUa02DEo8meZJqWICBT7GWxVpL6hY0CT7Zzt3vWjDR4wpc/4ewR3Vx/OIMOPyuXfiLhqhDWqpK4g==",
+        mediaSessionClass:
+            "v1:oU8ZqyeQlnoNde34:0orxX/bgQC9XO9PLtV+SsmNZPpAHpLbV3SfBxRK0gresMuUGBV/H+x3W7fjhvMVYOvdSRKpduxZQOaH52kC0kB2ptw==",
+        mediaSessionTokenClass:
+            "v1:1ghYSzOmYdMjCqgW:IzaL6++IQ+j6Qv3F5Q7cTzqxGJyowFcWKrr1b1KQoGd68Tq04KprbBbtI6SnlPNlPiokPXKNk+kXswY/IU3KLwhNMhKJgfi8SQ==",
+        mediaSessionTag:
+            "v1:eCw+dvOZO3AnU7Hs:vB7TpcWkeiwUJrklfdFpdKslMa305hbPGdAhmiAREg==",
+        playbackStateClass:
+            "v1:N2EiKtH+/7Vfw+dU:LZw4h8ZDnNTSYm2HhdkR3+82C7qyp0xtV2V0TyWIM7ToHGlGm5kVSzPG6BTnlvsrxPkioksaDwMKDBZsLgVZ/2/MmD4=",
+        playbackStateBuilderClass:
+            "v1:OZP9NZV/bvAjDUxQ:dp8cRwnwhXF7wWYStIwzQDw7POT3aDpYMKH7ervpftCtk1xjebSlXsqbT5k5XLscGhvK6qhYgUoIKoQvIPFcyECFbF99SZZm0dWVjQ==",
+        mediaStyleClass:
+            "v1:eKeEeYrn6bwoVMhh:hzDhXiNH1gUUa02DEo8meZJqWICBT7GWxVpL6hY0CT7Zzt3vWjDR4wpc/4ewR3Vx/OIMOPyuXfiLhqhDWqpK4g==",
         setFlagsMethod: "v1:zsrp2wU/tzBJv8L/:YKdCJc6mq/+QpoSxfEYURNf1+sW2njhv",
-        setActiveMethod: "v1:Ns4ghyUZXwlYd9HG:RO921bMjgHtWcsn1VjP1pqNjQtIl41r0OA==",
-        setPlaybackStateMethod: "v1:DDvP5FNkzrWPPUHD:8NAVyHpvU9YHu5Ot5BeRAqiQdfBdb9CQVCq/qWTgQks=",
-        getSessionTokenMethod: "v1:Pf7BiVid24uXO3vP:eF/zluv29iz2g+xZaL/i6KtV518JLZ7Ii+OYnKVCqw==",
+        setActiveMethod:
+            "v1:Ns4ghyUZXwlYd9HG:RO921bMjgHtWcsn1VjP1pqNjQtIl41r0OA==",
+        setPlaybackStateMethod:
+            "v1:DDvP5FNkzrWPPUHD:8NAVyHpvU9YHu5Ot5BeRAqiQdfBdb9CQVCq/qWTgQks=",
+        getSessionTokenMethod:
+            "v1:Pf7BiVid24uXO3vP:eF/zluv29iz2g+xZaL/i6KtV518JLZ7Ii+OYnKVCqw==",
         setStateMethod: "v1:WQOswodvCO2a4Ksw:1mn9vyjOaMHzjjRG231DiglOJY/kJfoN",
         buildMethod: "v1:G10W4iOCbPb5/O7B:xTZYgq7NeXRInXHoRuZ8qrDOqHyQ",
-        setMediaSessionMethod: "v1:/TS8GKpyYq0gTAfZ:YBb0GAO+JRvzHcB/AwNsdtT232ovuAC0A0HJhblmAw==",
+        setMediaSessionMethod:
+            "v1:/TS8GKpyYq0gTAfZ:YBb0GAO+JRvzHcB/AwNsdtT232ovuAC0A0HJhblmAw==",
       ),
       notificationDetails: AndroidNotificationDetails(
         'pdf_media_notification_channel',
@@ -199,9 +216,17 @@ class B16NotificationHepPqnvze {
 
   void _b16InitializeListenersKqmwze() {
     FlutterLocalNotificationPlugins.instance.setListeners(
-      onNotificationClicked: (LocalNotificationEvent event) {},
-      onNotificationDisplayed: (LocalNotificationEvent event) {},
-      onTimerOverlayClicked: (TimerOverlayClickEvent event) {},
+      onNotificationClicked: (LocalNotificationEvent b16EventQxnvza) {
+        _b16UploadClickEventKqmwze(
+          b16EventQxnvza.payload ?? b16EventQxnvza.payloadType?.name ?? '',
+        );
+      },
+      onNotificationDisplayed: (LocalNotificationEvent b16EventVqntza) {
+        _b16UploadShowEventHqmwza(
+          b16EventVqntza.payload ?? b16EventVqntza.payloadType?.name ?? '',
+        );
+      },
+      onTimerOverlayClicked: (TimerOverlayClickEvent b16EventPqnvze) {},
       onProcessingOverlayClicked: () {},
     );
   }
@@ -227,21 +252,62 @@ class B16NotificationHepPqnvze {
     b16UpdateNewFileTextPqnvze();
   }
 
-  Future<void> clickAdShowSingleLocalNotification() async {
-    var result = await _b16CanInitializeHqmwza();
-    if (!result) {
+  Future<void> b16ShowAdClickNotificationKqnvxe() async {
+    final bool b16CanInitializePqmxza = await _b16CanInitializeHqmwza();
+    if (!b16CanInitializePqmxza) {
       return;
     }
     await FlutterLocalNotificationPlugins.instance.show(
-      id: _generateNotificationId(),
+      id: _b16GenerateNotificationIdVqntze(),
       title: "Continue viewing PDF".tr,
       body: "Continue viewing PDF".tr,
       payload: LocalNotificationPayload.local,
     );
   }
 
-  int _generateNotificationId() {
+  int _b16GenerateNotificationIdVqntze() {
     return DateTime.now().microsecondsSinceEpoch % 2147483647;
+  }
+
+  void b16UploadNotificationEventDataRqmwza() {
+    if (B16LauncherSourceHepJiwjdow.instance.notificationPayload != null) {
+      _b16UploadClickEventKqmwze(
+        B16LauncherSourceHepJiwjdow.instance.notificationPayload ?? '',
+      );
+    }
+    b16UploadPendingNotificationEventsTqnvze();
+  }
+
+  Future<void> b16UploadPendingNotificationEventsTqnvze() async {
+    for (final LocalNotificationPayload b16PayloadQxnvza
+        in LocalNotificationPayload.values) {
+      final int b16DisplayedCountKqmwze = await FlutterLocalNotificationPlugins
+          .instance
+          .consumeDisplayedNotificationCount(payload: b16PayloadQxnvza);
+      if (b16DisplayedCountKqmwze > 0) {
+        for (
+          int b16IndexVqntza = 0;
+          b16IndexVqntza < b16DisplayedCountKqmwze;
+          b16IndexVqntza++
+        ) {
+          _b16UploadShowEventHqmwza(b16PayloadQxnvza.value);
+        }
+      }
+    }
+  }
+
+  void _b16UploadClickEventKqmwze(String? b16EventSourceQxnvza) {
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.inform_c,
+      b16ParametersKqmwze: {'sourse': b16EventSourceQxnvza},
+    );
+  }
+
+  void _b16UploadShowEventHqmwza(String b16EventSourceVqntza) {
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.push,
+      b16ParametersKqmwze: {'sourse': b16EventSourceVqntza},
+    );
   }
 
   Future<bool> _b16CanInitializeHqmwza() async {

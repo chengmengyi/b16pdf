@@ -1,6 +1,7 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:flutter_app_lifecycle/app_state_observer.dart';
 import 'package:flutter_app_lifecycle/flutter_app_lifecycle.dart';
 
@@ -24,8 +25,20 @@ class B16ApplifeHepFjeifje {
               b16IntValueDjijie: b16InBackgroundVqmwxe ? 1 : 0,
             ),
           );
+          if (b16InBackgroundVqmwxe) {
+            _appBack();
+          } else {
+            _appFront();
+          }
         },
       ),
     );
+  }
+
+  _appBack() {}
+
+  _appFront() {
+    B16NotificationHepPqnvze.instance
+        .b16UploadPendingNotificationEventsTqnvze();
   }
 }

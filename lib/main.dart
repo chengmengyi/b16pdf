@@ -1,5 +1,7 @@
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_applife_hep_fjeifje.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_hep_kqmvza.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_launcher_source_hep_jiwjdow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_quick_action_hep_fjeifjiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
@@ -17,11 +19,17 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await GetStorage.init();
+  await B16LauncherSourceHepJiwjdow.instance.initSource();
   B16QuickActionHepFjeifjiw.instance.init();
   B16ApplifeHepFjeifje.instance.b16StartObserverKpvnza();
-  final Locale b16InitialLocaleQmxvza = B16LanguageHepKqmvza.b16ResolveInitialLocaleRmqxve();
-  B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza(b16RequestPermissionKqmwze: true);
+  final Locale b16InitialLocaleQmxvza =
+      B16LanguageHepKqmvza.b16ResolveInitialLocaleRmqxve();
+  B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza(
+    b16RequestPermissionKqmwze: true,
+  );
   B16TbaHepDjiwjidw.instance.b16UploadInstallQxnvza();
+  B16NotificationHepPqnvze.instance.b16UploadNotificationEventDataRqmwza();
+  B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16InitializeAdSdkPqmvzr();
 
   runApp(B16ApplicationVqmxza(b16InitialLocaleHqmwze: b16InitialLocaleQmxvza));
 }

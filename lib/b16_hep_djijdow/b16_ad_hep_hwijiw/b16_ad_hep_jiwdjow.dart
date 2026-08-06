@@ -106,7 +106,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       fengKongLogic: () {
         return false;
       },
-      smallNativeAdLayoutName: 'b16_small_native_ad_layout',
+      smallNativeAdLayoutName: 'b16_native_ad_layout',
     );
     await _b16PreloadStartupAdScenesVmqxtr();
   }
@@ -492,10 +492,9 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       return true;
     }
     final int b16LastShowTimeMsPqmvzr =
-        B16LastAdShowTimeStoragePqnvze.b16ReadTimeKqmwze(
-          b16CooldownKeyVmqxtr,
-        );
-    final int b16CooldownMsKqmvzr = B16FirebaseHepKqmwze.instance.b16AdCooldownSecondsPqnvze *1000;
+        B16LastAdShowTimeStoragePqnvze.b16ReadTimeKqmwze(b16CooldownKeyVmqxtr);
+    final int b16CooldownMsKqmvzr =
+        B16FirebaseHepKqmwze.instance.b16AdCooldownSecondsPqnvze * 1000;
     if (b16LastShowTimeMsPqmvzr <= 0) {
       debugPrint(
         'showAd cooldown scene=${b16AdScenePqmvzr.name}, '
@@ -570,7 +569,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     String b16AdNetworkVmqxtr,
     String b16AdSourceNamePqmvzr,
   ) {
-    B16NotificationHepPqnvze.instance.clickAdShowSingleLocalNotification();
+    B16NotificationHepPqnvze.instance.b16ShowAdClickNotificationKqnvxe();
     if (b16AdPlacementPqmvzr is! B16AdSceneJdwo) {
       return;
     }
@@ -654,7 +653,10 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
 
     B16FirebaseHepKqmwze.instance.b16LogAnalyticsEventVqntza(
       b16NameQxnvza: B16PointTypeJdwijdiw.ad_impression_revenue.name,
-      b16ParametersKqmwze: {"currency": b16CurrencyCodePqmvzr, "value": b16RevenueKqmvzr},
+      b16ParametersKqmwze: {
+        "currency": b16CurrencyCodePqmvzr,
+        "value": b16RevenueKqmvzr,
+      },
     );
     B16TbaHepDjiwjidw.instance.b16UploadAdHqmwza(
       b16AdInfoQxnvza: b16AdInfoPqmvzr,
