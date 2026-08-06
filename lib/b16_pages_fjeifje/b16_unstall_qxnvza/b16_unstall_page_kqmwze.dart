@@ -33,7 +33,7 @@ class B16UnstallPageKqmwze
   ) {
     return Column(
       children: [
-        _titleWidget(),
+        _titleWidget(b16ControllerKqmxve),
         SizedBox(height: 8.h),
         _contentWidget(b16ControllerKqmxve),
         _bottomWidget(b16ControllerKqmxve),
@@ -62,44 +62,57 @@ class B16UnstallPageKqmwze
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                B16MediaPaddingViewVnyqsl(
-                  b16ChildQzpmwa: ListView.separated(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: b16controllerKqmxve.reasonList.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        width: double.infinity,
-                        height: 48.h,
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.only(left: 16.w, right: 16.w),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: B16LocalizedTextViewCxmpra(
-                                b16controllerKqmxve.reasonList[index].tr,
-                                b16FontSizeRvxqle: 14.sp,
-                                b16ColorDtkzma: Colors.black,
-                                b16FontWeightHncysp: FontWeight.bold,
-                                b16OverflowFzrxke: TextOverflow.ellipsis,
-                              ),
+                GetBuilder<B16UnstallControllerVqntza>(
+                  id: B16UnstallControllerVqntza.b16ReasonBuilderIdQxnvza,
+                  builder: (b16BuilderQxmvza) => B16MediaPaddingViewVnyqsl(
+                    b16ChildQzpmwa: ListView.separated(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: b16BuilderQxmvza.reasonList.length,
+                      itemBuilder: (context, index) {
+                        final bool b16SelectedVqntza =
+                            b16BuilderQxmvza.b16SelectedReasonIndexKqmwze ==
+                            index;
+                        return B16TapGuardViewMfwqke(
+                          b16OnPressedJkcxwu: () {
+                            b16BuilderQxmvza.b16ClickReasonVqntza(index);
+                          },
+                          b16ChildHnqvsa: Container(
+                            width: double.infinity,
+                            height: 48.h,
+                            alignment: Alignment.centerLeft,
+                            padding: EdgeInsets.only(left: 16.w, right: 16.w),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: B16LocalizedTextViewCxmpra(
+                                    b16BuilderQxmvza.reasonList[index].tr,
+                                    b16FontSizeRvxqle: 14.sp,
+                                    b16ColorDtkzma: Colors.black,
+                                    b16FontWeightHncysp: FontWeight.bold,
+                                    b16OverflowFzrxke: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                SizedBox(width: 16.w),
+                                B16AssetImageViewPzrxcu(
+                                  b16SelectedVqntza
+                                      ? "b16_sel_icon"
+                                      : "b16_uns_icon",
+                                  b16WidthDtvqpl: 24.w,
+                                  b16HeightRnxkse: 24.w,
+                                ),
+                              ],
                             ),
-                            SizedBox(width: 16.w),
-                            B16AssetImageViewPzrxcu(
-                              "b16_uns_icon",
-                              b16WidthDtvqpl: 24.w,
-                              b16HeightRnxkse: 24.w,
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) =>
-                        Container(
-                          width: double.infinity,
-                          height: 0.5.h,
-                          color: Color(0xffEBEBEB),
-                        ),
+                          ),
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          Container(
+                            width: double.infinity,
+                            height: 0.5.h,
+                            color: Color(0xffEBEBEB),
+                          ),
+                    ),
                   ),
                 ),
                 Container(
@@ -145,6 +158,7 @@ class B16UnstallPageKqmwze
         mainAxisSize: MainAxisSize.min,
         children: [
           B16TapGuardViewMfwqke(
+            b16OnPressedJkcxwu: b16controllerKqmxve.b16ClickNoUninstallHqmwza,
             b16ChildHnqvsa: Container(
               width: double.infinity,
               height: 50.h,
@@ -177,43 +191,45 @@ class B16UnstallPageKqmwze
         ],
       );
 
-  Widget _titleWidget() => Container(
-    width: double.infinity,
-    color: Colors.white,
-    child: SafeArea(
-      top: true,
-      bottom: false,
-      child: SizedBox(
+  Widget _titleWidget(B16UnstallControllerVqntza b16ControllerQxmvza) =>
+      Container(
         width: double.infinity,
-        height: 44.h,
-        child: Stack(
-          children: [
-            B16TapGuardViewMfwqke(
-              b16OnPressedJkcxwu: () {},
-              b16ChildHnqvsa: Container(
-                width: 44.w,
-                height: 44.h,
-                alignment: Alignment.center,
-                child: B16AssetImageViewPzrxcu(
-                  "b16_close_icon",
-                  b16WidthDtvqpl: 24.w,
-                  b16HeightRnxkse: 24.w,
+        color: Colors.white,
+        child: SafeArea(
+          top: true,
+          bottom: false,
+          child: SizedBox(
+            width: double.infinity,
+            height: 44.h,
+            child: Stack(
+              children: [
+                B16TapGuardViewMfwqke(
+                  b16OnPressedJkcxwu:
+                      b16ControllerQxmvza.b16ClickNoUninstallHqmwza,
+                  b16ChildHnqvsa: Container(
+                    width: 44.w,
+                    height: 44.h,
+                    alignment: Alignment.center,
+                    child: B16AssetImageViewPzrxcu(
+                      "b16_close_icon",
+                      b16WidthDtvqpl: 24.w,
+                      b16HeightRnxkse: 24.w,
+                    ),
+                  ),
                 ),
-              ),
+                Align(
+                  child: B16LocalizedTextViewCxmpra(
+                    "Why are you uninstalling?".tr,
+                    b16FontSizeRvxqle: 18.sp,
+                    b16ColorDtkzma: Colors.black,
+                    b16FontWeightHncysp: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
-            Align(
-              child: B16LocalizedTextViewCxmpra(
-                "Why are you uninstalling?".tr,
-                b16FontSizeRvxqle: 18.sp,
-                b16ColorDtkzma: Colors.black,
-                b16FontWeightHncysp: FontWeight.bold,
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
-    ),
-  );
+      );
 }
 
 class _B16UnstallNativeAdVqmwza extends StatefulWidget {

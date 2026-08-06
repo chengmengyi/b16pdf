@@ -64,27 +64,33 @@ class B16UpdateDialogFowjidwj
                   ),
                 ),
                 SizedBox(height: 12.h),
-                Container(
-                  width: double.infinity,
-                  height: 48.h,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(24.w),
-                    gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
+                B16TapGuardViewMfwqke(
+                  b16OnPressedJkcxwu:
+                      b16ControllerKqmwza.b16ClickContinueUsingKqnvze,
+                  b16ChildHnqvsa: Container(
+                    width: double.infinity,
+                    height: 48.h,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(24.w),
+                      gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
+                      ),
                     ),
-                  ),
-                  child: B16LocalizedTextViewCxmpra(
-                    "Continue using for free".tr,
-                    b16FontSizeRvxqle: 16.sp,
-                    b16ColorDtkzma: Colors.white,
-                    b16FontWeightHncysp: FontWeight.bold,
+                    child: B16LocalizedTextViewCxmpra(
+                      "Continue using for free".tr,
+                      b16FontSizeRvxqle: 16.sp,
+                      b16ColorDtkzma: Colors.white,
+                      b16FontWeightHncysp: FontWeight.bold,
+                    ),
                   ),
                 ),
                 SizedBox(height: 16.h),
                 B16TapGuardViewMfwqke(
+                  b16OnPressedJkcxwu:
+                      b16ControllerKqmwza.b16ClickLeaveAnywayVqntza,
                   b16ChildHnqvsa: B16LocalizedTextViewCxmpra(
                     "Leave anyway".tr,
                     b16FontSizeRvxqle: 14.sp,
