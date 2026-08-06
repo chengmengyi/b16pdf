@@ -1,3 +1,9 @@
+import 'dart:async';
+
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_unstall_qxnvza/b16_unstall_controller_vqntza.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_page_qazmtr.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_asset_image_view_pzrxcu.dart';
@@ -31,8 +37,18 @@ class B16UnstallPageKqmwze
         SizedBox(height: 8.h),
         _contentWidget(b16ControllerKqmxve),
         _bottomWidget(b16ControllerKqmxve),
-        SizedBox(height: 20.h),
+        _b16NativeAdWidgetPqnvze(),
       ],
+    );
+  }
+
+  Widget _b16NativeAdWidgetPqnvze() {
+    if (!B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza) {
+      return const SizedBox.shrink();
+    }
+    return Padding(
+      padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 14.h),
+      child: const _B16UnstallNativeAdVqmwza(),
     );
   }
 
@@ -198,4 +214,74 @@ class B16UnstallPageKqmwze
       ),
     ),
   );
+}
+
+class _B16UnstallNativeAdVqmwza extends StatefulWidget {
+  const _B16UnstallNativeAdVqmwza();
+
+  @override
+  State<_B16UnstallNativeAdVqmwza> createState() =>
+      _B16UnstallNativeAdStateKqnvze();
+}
+
+class _B16UnstallNativeAdStateKqnvze extends State<_B16UnstallNativeAdVqmwza> {
+  static const Duration _b16RetryDurationQxmvza = Duration(milliseconds: 500);
+
+  Timer? _b16RetryTimerPqnvze;
+  Widget? _b16AdWidgetVqntza;
+  bool _b16CheckingAdHqmwza = false;
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_b16TryBuildAdWidgetKqmwze());
+    _b16RetryTimerPqnvze = Timer.periodic(
+      _b16RetryDurationQxmvza,
+      (_) => unawaited(_b16TryBuildAdWidgetKqmwze()),
+    );
+  }
+
+  Future<void> _b16TryBuildAdWidgetKqmwze() async {
+    if (_b16AdWidgetVqntza != null || _b16CheckingAdHqmwza) {
+      return;
+    }
+    _b16CheckingAdHqmwza = true;
+    try {
+      final Widget? b16AdWidgetPqmxza = await B16AdHepJiwdjow
+          .b16AdUtilsInstanceKqmvzr
+          .b16BuildCachedNativeAdWidgetPqmvzr(
+            b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban2,
+            b16AdPosIdKqmvzr: B16PosidJkwkosw.unload_nat1,
+          );
+      if (!mounted || b16AdWidgetPqmxza == null) {
+        return;
+      }
+      _b16RetryTimerPqnvze?.cancel();
+      _b16RetryTimerPqnvze = null;
+      setState(() => _b16AdWidgetVqntza = b16AdWidgetPqmxza);
+    } finally {
+      _b16CheckingAdHqmwza = false;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 56.h,
+      child:
+          _b16AdWidgetVqntza ??
+          const B16AssetImageViewPzrxcu(
+            'b16_native_ad_cover_kqnvze',
+            b16WidthDtvqpl: double.infinity,
+          ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _b16RetryTimerPqnvze?.cancel();
+    _b16RetryTimerPqnvze = null;
+    super.dispose();
+  }
 }

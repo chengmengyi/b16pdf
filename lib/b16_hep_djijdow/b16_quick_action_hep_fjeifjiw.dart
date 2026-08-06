@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_hep_kqmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_launcher_source_hep_jiwjdow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:quick_actions/quick_actions.dart';
 
 class B16QuickActionHepFjeifjiw {
@@ -69,6 +71,11 @@ class B16QuickActionHepFjeifjiw {
     B16LauncherSourceHepJiwjdow.instance.b16RecordQuickActionSourceQxnvza(
       b16ShortcutTypePqnvze,
     );
+    if (b16FromColdStartPqmxza) {
+      await B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt(b16RouteNameYweqpn: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze);
+    } else {
+      await B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16UnstallRouteKqmwze);
+    }
     return true;
   }
 
