@@ -22,7 +22,6 @@ Future<void> main() async {
   await B16ColdLauncherSourceHepJiwjdow.instance.initSource();
   B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16InitializeAdSdkPqmvzr();
   await B16QuickActionHepFjeifjiw.instance.init();
-  B16ApplifeHepFjeifje.instance.b16StartObserverKpvnza();
   final Locale b16InitialLocaleQmxvza =
       B16LanguageHepKqmvza.b16ResolveInitialLocaleRmqxve();
   B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza(

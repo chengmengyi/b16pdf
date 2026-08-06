@@ -16,7 +16,7 @@ class B16ApplifeHepFjeifje {
   B16ApplifeHepFjeifje._();
 
   static final B16ApplifeHepFjeifje instance = B16ApplifeHepFjeifje._();
-  bool b16ObserverStartedHqmxwe = false;
+  bool b16ObserverStartedHqmxwe = false,_b16AppIsBackStatus=false;
 
   void b16StartObserverKpvnza() {
     if (b16ObserverStartedHqmxwe) {
@@ -42,11 +42,17 @@ class B16ApplifeHepFjeifje {
     );
   }
 
-  void _appBack() {}
+  void _appBack() {
+    _b16AppIsBackStatus=true;
+  }
 
   Future<void> _appFront() async {
     unawaited(B16NotificationHepPqnvze.instance.b16UploadPendingNotificationEventsTqnvze());
+    if(!_b16AppIsBackStatus){
+      return;
+    }
     await Future<void>.delayed(const Duration(milliseconds: 300));
+    _b16AppIsBackStatus=false;
     final B16HotLauncherSourceInfoKqmwze? b16SourcePqnvze = B16HotLauncherSourceHepDjiwdjw.instance.b16ConsumeSourceVqntza();
     if (b16SourcePqnvze == null) {
       showAd(B16AdSceneJdwo.pr_launch, B16PosidJkwkosw.pr_open_hot);

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_applife_hep_fjeifje.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
@@ -258,6 +259,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
 
   @override
   void onClose() {
+    B16ApplifeHepFjeifje.instance.b16StartObserverKpvnza();
     B16LauncherClickGateHepQxnvza.instance.b16MarkLauncherClosedKqmwze();
     _b16AdCheckTimerKqnvxe?.cancel();
     _b16AdCheckStopwatchPqnvze.stop();
