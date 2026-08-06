@@ -15,6 +15,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter_custom_facebook/flutter_custom_facebook.dart';
+import 'package:flutter_pdf_ad_plugins/flutter_pdf_ad_plugins.dart';
 
 class B16FirebaseHepKqmwze {
   B16FirebaseHepKqmwze._();
@@ -115,6 +116,11 @@ class B16FirebaseHepKqmwze {
       B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza();
     }
     _b16ParseSwitchConfigRqmwza();
+
+    var isk_time = _b16RemoteConfigQxnvza?.getInt("isk_time")??0;
+    if(isk_time>0){
+      FlutterPdfAdPlugins.instance.updateAdRequestTimeoutSeconds(isk_time);
+    }
   }
 
   void _b16ParseSwitchConfigRqmwza() {

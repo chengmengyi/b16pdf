@@ -1,5 +1,6 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_applife_hep_fjeifje.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_hep_kqmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_quick_action_hep_fjeifjiw.dart';
@@ -22,6 +23,7 @@ Future<void> main() async {
   await B16ColdLauncherSourceHepJiwjdow.instance.initSource();
   B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16InitializeAdSdkPqmvzr();
   await B16QuickActionHepFjeifjiw.instance.init();
+  B16UserCheckHepQxnvza.instance.b16InitializeAttributionHqmwza();
   final Locale b16InitialLocaleQmxvza =
       B16LanguageHepKqmvza.b16ResolveInitialLocaleRmqxve();
   B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza(

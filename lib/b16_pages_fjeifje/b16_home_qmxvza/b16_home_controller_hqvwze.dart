@@ -2,6 +2,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_dialog_fjifjie/b16_comment_dialog_jiwjdiw/b16_comment_dialog_jiwjdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_page_cqmwze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_tools_child_tqmvza/b16_tools_child_page_vqkrze.dart';
@@ -33,6 +34,12 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
     B16HomeChildPageCqmwze(),
     B16ToolsChildPageVqkrze(),
   ];
+
+  @override
+  void onInit() {
+    super.onInit();
+    B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza(b16RequestPermissionKqmwze: true);
+  }
 
   Future<bool> b16HandleBackPressedPqnvze() async {
     if (_b16CanExitAfterCommentQxnvza) {
