@@ -1,5 +1,9 @@
 import 'dart:io';
 
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter/widgets.dart';
@@ -67,7 +71,16 @@ class B16PreviewWordControllerCqnvra extends B16RootControllerFjesak {
     }
   }
 
-  void clickBack() => B16RoutersHepFjeifjoe.b16BackFtynwp();
+  void clickBack(){
+    B16RoutersHepFjeifjoe.b16BackFtynwp();
+    if(B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza){
+      B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
+        b16AdScenePqmvzr: B16AdSceneJdwo.pr_exit,
+        b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_readback,
+      );
+    }
+  }
+
   @override
   void onClose() {
     b16WordControllerKqnvze.removeListener(_b16ViewerChangedVqmxza);

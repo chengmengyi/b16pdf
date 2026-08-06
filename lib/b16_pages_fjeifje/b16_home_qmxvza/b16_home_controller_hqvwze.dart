@@ -1,3 +1,6 @@
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_page_cqmwze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_tools_child_tqmvza/b16_tools_child_page_vqkrze.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
@@ -28,11 +31,16 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
     B16ToolsChildPageVqkrze(),
   ];
 
-  void b16SelectTabHqmvze(B16HomeBottomTabType b16TabVqnxra) {
+  void b16SelectTabHqmvze(B16HomeBottomTabType b16TabVqnxra, BuildContext b16contextVqmwza) {
     if (b16TabIndexKqmwza == b16TabVqnxra.index) {
       return;
     }
     b16TabIndexKqmwza = b16TabVqnxra.index;
     update([b16TabUpdateIdPqmxve]);
+    B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
+      b16AdScenePqmvzr: B16AdSceneJdwo.pr_user_use,
+      b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_down_int,
+      b16AdHostContextVmqxtr: b16contextVqmwza,
+    );
   }
 }

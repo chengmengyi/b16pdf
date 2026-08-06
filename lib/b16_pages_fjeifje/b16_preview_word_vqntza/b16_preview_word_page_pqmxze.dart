@@ -14,10 +14,17 @@ class B16PreviewWordPagePqmxze
     extends B16RootPageQazmtr<B16PreviewWordControllerCqnvra> {
   const B16PreviewWordPagePqmxze({super.key});
   @override
-  B16PreviewWordControllerCqnvra b16CreateControllerAhdwks() =>
-      B16PreviewWordControllerCqnvra();
+  B16PreviewWordControllerCqnvra b16CreateControllerAhdwks() => B16PreviewWordControllerCqnvra();
+
   @override
   Color get b16NavigationBarColorLxqvbi => Colors.white;
+
+  @override
+  Future<bool> b16AllowRoutePopYmejcu(B16PreviewWordControllerCqnvra b16ControllerTbnyui) async{
+    b16ControllerTbnyui.clickBack();
+    return false;
+  }
+
   @override
   Widget b16BuildContentRuznxe(
     BuildContext b16ContextVqntza,

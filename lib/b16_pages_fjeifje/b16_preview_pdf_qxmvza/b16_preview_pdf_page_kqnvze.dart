@@ -16,8 +16,16 @@ class B16PreviewPdfPageKqnvze
   @override
   B16PreviewPdfControllerHqmwza b16CreateControllerAhdwks() =>
       B16PreviewPdfControllerHqmwza();
+
   @override
   Color get b16NavigationBarColorLxqvbi => Colors.white;
+
+  @override
+  Future<bool> b16AllowRoutePopYmejcu(B16PreviewPdfControllerHqmwza b16ControllerTbnyui) async{
+    b16ControllerTbnyui.clickBack();
+    return false;
+  }
+
   @override
   Widget b16BuildContentRuznxe(
     BuildContext b16ContextQxmvza,

@@ -46,18 +46,20 @@ class _B16HomeChildStatePqnvxa
             if (b16ControllerQxmvza.b16ShowAddWidgetQxnvza)
               _addSmallWidget(b16ControllerQxmvza),
             SizedBox(height: 12.h),
-            _pageWidget(b16ControllerQxmvza),
+            _pageWidget(b16ControllerQxmvza,b16ContextHqmwza),
           ],
         ),
       ),
     );
   }
 
-  _pageWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze) => Expanded(
+  _pageWidget(B16HomeChildControllerRkpxwe b16controllerVqmxze, BuildContext b16contextHqmwza) => Expanded(
     child: PageView.builder(
       itemCount: B16FileTabTypeefie.values.length,
       controller: b16controllerVqmxze.pageController,
-      onPageChanged: b16controllerVqmxze.b16PageChangedHqmwza,
+      onPageChanged: (index){
+        b16controllerVqmxze.b16PageChangedHqmwza(index, b16contextHqmwza);
+      },
       itemBuilder: (context, index) {
         return B16FilesListChildPageQxmvza(
           type: B16FileTabTypeefie.values[index],

@@ -18,6 +18,13 @@ class B16PreviewExcelPageXqnvze
       B16PreviewExcelControllerMqptza();
   @override
   Color get b16NavigationBarColorLxqvbi => Colors.white;
+
+ @override
+  Future<bool> b16AllowRoutePopYmejcu(B16PreviewExcelControllerMqptza b16ControllerTbnyui) async{
+   b16ControllerTbnyui.clickBack();
+   return false;
+  }
+
   @override
   Widget b16BuildContentRuznxe(
     BuildContext b16ContextRqmwza,

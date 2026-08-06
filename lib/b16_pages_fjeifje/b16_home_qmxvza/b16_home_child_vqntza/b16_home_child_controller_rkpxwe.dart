@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
@@ -56,9 +59,14 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
         curve: Curves.easeInOut,
       );
 
-  void b16PageChangedHqmwza(int b16IndexKqnvze) {
+  void b16PageChangedHqmwza(int b16IndexKqnvze,BuildContext b16ContextHqmwza) {
     b16SelectedTabIndexQmvnza = b16IndexKqnvze;
     update();
+    B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
+      b16AdScenePqmvzr: B16AdSceneJdwo.pr_user_use,
+      b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_up_int,
+      b16AdHostContextVmqxtr: b16ContextHqmwza,
+    );
   }
 
   void b16SearchFilesPqmxza(String b16KeywordVqntze) =>

@@ -43,7 +43,7 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: b16BottomWidgetPqmvze(b16ControllerVqmxza),
+              child: b16BottomWidgetPqmvze(b16ControllerVqmxza,b16ContextVqmwza),
             ),
           ],
         );
@@ -51,7 +51,7 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
     );
   }
 
-  Widget b16BottomWidgetPqmvze(B16HomeControllerHqvwze b16ControllerKqmxva) {
+  Widget b16BottomWidgetPqmvze(B16HomeControllerHqvwze b16ControllerKqmxva, BuildContext b16contextVqmwza) {
     return Stack(
       alignment: Alignment.topCenter,
       children: [
@@ -74,11 +74,13 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
               b16ItemWidgetHqnvza(
                 B16HomeBottomTabType.files,
                 b16ControllerKqmxva,
+                b16contextVqmwza,
               ),
               SizedBox(width: 64.w),
               b16ItemWidgetHqnvza(
                 B16HomeBottomTabType.tools,
                 b16ControllerKqmxva,
+                b16contextVqmwza,
               ),
             ],
           ),
@@ -107,14 +109,14 @@ class B16HomePageKpnyra extends B16RootPageQazmtr<B16HomeControllerHqvwze> {
 
   Widget b16ItemWidgetHqnvza(
     B16HomeBottomTabType b16TypeVqmxze,
-    B16HomeControllerHqvwze b16ControllerKqnvxa,
+    B16HomeControllerHqvwze b16ControllerKqnvxa, BuildContext b16contextVqmwza,
   ) {
     final bool b16SelectedPqmwza =
         b16ControllerKqnvxa.b16TabIndexKqmwza == b16TypeVqmxze.index;
     return Expanded(
       child: B16TapGuardViewMfwqke(
         b16OnPressedJkcxwu: () {
-          b16ControllerKqnvxa.b16SelectTabHqmvze(b16TypeVqmxze);
+          b16ControllerKqnvxa.b16SelectTabHqmvze(b16TypeVqmxze,b16contextVqmwza);
         },
         b16ChildHnqvsa: SizedBox.expand(
           child: Column(

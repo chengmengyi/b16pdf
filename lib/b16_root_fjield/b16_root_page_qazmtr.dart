@@ -1,3 +1,4 @@
+import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_controller_lease_kmwtza.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,10 @@ abstract class B16RootPageQazmtr<T extends B16RootControllerFjesak>
 
   bool get b16UseSafeBottomVqehcn => true;
 
-  bool get b16AllowRoutePopYmejcu => true;
+  Future<bool> b16AllowRoutePopYmejcu(T b16ControllerTbnyui,) async {
+    B16RoutersHepFjeifjoe.b16BackFtynwp();
+    return false;
+  }
 
   Color get b16BackgroundColorLxqvbi => Color(0xffF3F5F7);
 
@@ -66,8 +70,10 @@ class _B16RootPageStateVknpse<T extends B16RootControllerFjesak>
   Widget build(BuildContext b16ContextQewrty) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: widget.b16SystemUiOverlayStyleGfrtpo,
-      child: PopScope(
-        canPop: widget.b16AllowRoutePopYmejcu,
+      child: WillPopScope(
+        onWillPop: ()async{
+          return widget.b16AllowRoutePopYmejcu( b16ControllerLeaseKjfpso.b16ControllerNqxrfe);
+        },
         child: GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
