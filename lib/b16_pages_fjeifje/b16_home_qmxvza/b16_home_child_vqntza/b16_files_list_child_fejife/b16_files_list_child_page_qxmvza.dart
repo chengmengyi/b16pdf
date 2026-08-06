@@ -20,7 +20,7 @@ import 'package:visibility_detector/visibility_detector.dart';
 
 class B16FilesListChildPageQxmvza extends B16RootChildMxkqza {
   final B16FileTabTypeefie type;
-  B16FilesListChildPageQxmvza({super.key, required this.type});
+  const B16FilesListChildPageQxmvza({super.key, required this.type});
 
   @override
   State<B16FilesListChildPageQxmvza> createState() =>
@@ -94,99 +94,110 @@ class _B16FilesListChildStateVqnxre
     );
   }
 
-  _sortWidget(B16FilesListChildControllerHqmwze b16controllerVqnxre) => Row(
-    children: [
-      Expanded(
-        child: B16LocalizedTextViewCxmpra(
-          "Local Storage".tr,
-          b16FontSizeRvxqle: 18.sp,
-          b16ColorDtkzma: Colors.black,
-          b16FontWeightHncysp: FontWeight.bold,
-          b16OverflowFzrxke: TextOverflow.ellipsis,
-        ),
+  Widget _sortWidget(B16FilesListChildControllerHqmwze b16controllerVqnxre) =>
+      Row(
+        children: [
+          Expanded(
+            child: B16LocalizedTextViewCxmpra(
+              "Local Storage".tr,
+              b16FontSizeRvxqle: 18.sp,
+              b16ColorDtkzma: Colors.black,
+              b16FontWeightHncysp: FontWeight.bold,
+              b16OverflowFzrxke: TextOverflow.ellipsis,
+            ),
+          ),
+          SizedBox(width: 8.w),
+          B16TapGuardViewMfwqke(
+            b16OnPressedJkcxwu: () {
+              b16controllerVqnxre.clickSort();
+            },
+            b16ChildHnqvsa: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                B16AssetImageViewPzrxcu(
+                  b16controllerVqnxre.b16SortTypePqnvza.b16IconKqnvxe,
+                  b16WidthDtvqpl: 20.w,
+                  b16HeightRnxkse: 20.w,
+                ),
+                SizedBox(width: 4.w),
+                B16LocalizedTextViewCxmpra(
+                  "Sort".tr,
+                  b16FontSizeRvxqle: 14.sp,
+                  b16ColorDtkzma: Color(0xff858C92),
+                  b16FontWeightHncysp: FontWeight.w500,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(width: 12.w),
+          B16TapGuardViewMfwqke(
+            b16OnPressedJkcxwu: () {
+              b16controllerVqnxre.clickDeleteFile();
+            },
+            b16ChildHnqvsa: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                B16AssetImageViewPzrxcu(
+                  "b16_select_fjeifjie",
+                  b16WidthDtvqpl: 20.w,
+                  b16HeightRnxkse: 20.w,
+                ),
+                SizedBox(width: 4.w),
+                B16LocalizedTextViewCxmpra(
+                  "Select".tr,
+                  b16FontSizeRvxqle: 14.sp,
+                  b16ColorDtkzma: Color(0xff858C92),
+                  b16FontWeightHncysp: FontWeight.w500,
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+
+  Widget _contentWidget(
+    B16FilesListChildControllerHqmwze b16controllerVqnxre,
+  ) => Expanded(
+    child: Container(
+      width: double.infinity,
+      height: double.infinity,
+      margin: EdgeInsets.only(bottom: 8.h),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12.w),
+        border: Border.all(width: 0.5.w, color: Color(0xffEBEBEB)),
       ),
-      SizedBox(width: 8.w),
-      B16TapGuardViewMfwqke(
-        b16OnPressedJkcxwu: () {
-          b16controllerVqnxre.clickSort();
-        },
-        b16ChildHnqvsa: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            B16AssetImageViewPzrxcu(
-              b16controllerVqnxre.b16SortTypePqnvza.b16IconKqnvxe,
-              b16WidthDtvqpl: 20.w,
-              b16HeightRnxkse: 20.w,
-            ),
-            SizedBox(width: 4.w),
-            B16LocalizedTextViewCxmpra(
-              "Sort".tr,
-              b16FontSizeRvxqle: 14.sp,
-              b16ColorDtkzma: Color(0xff858C92),
-              b16FontWeightHncysp: FontWeight.w500,
-            ),
-          ],
-        ),
-      ),
-      SizedBox(width: 12.w),
-      B16TapGuardViewMfwqke(
-        b16OnPressedJkcxwu: () {
-          b16controllerVqnxre.clickDeleteFile();
-        },
-        b16ChildHnqvsa: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            B16AssetImageViewPzrxcu(
-              "b16_select_fjeifjie",
-              b16WidthDtvqpl: 20.w,
-              b16HeightRnxkse: 20.w,
-            ),
-            SizedBox(width: 4.w),
-            B16LocalizedTextViewCxmpra(
-              "Select".tr,
-              b16FontSizeRvxqle: 14.sp,
-              b16ColorDtkzma: Color(0xff858C92),
-              b16FontWeightHncysp: FontWeight.w500,
-            ),
-          ],
-        ),
-      ),
-    ],
+      child: switch (b16controllerVqnxre.b16ListStatePqmxza) {
+        B16FilesListStateQmvnza.noPermission =>
+          _b16EmptyWithDemoFileWidgetQxnvza(
+            b16ControllerPqnvze: b16controllerVqnxre,
+            b16EmptyWidgetVqntza: _noPermissionWidget(b16controllerVqnxre),
+          ),
+        B16FilesListStateQmvnza.loading => _loadingWidget(),
+        B16FilesListStateQmvnza.loaded =>
+          b16controllerVqnxre.b16VisibleFilesVqmwza.isEmpty
+              ? _b16EmptyWithDemoFileWidgetQxnvza(
+                  b16ControllerPqnvze: b16controllerVqnxre,
+                  b16EmptyWidgetVqntza: _b16NoFilesWidgetKqmwze(
+                    b16controllerVqnxre,
+                  ),
+                )
+              : _listViewWidget(b16controllerVqnxre),
+      },
+    ),
   );
 
-  _contentWidget(B16FilesListChildControllerHqmwze b16controllerVqnxre) =>
-      Expanded(
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          margin: EdgeInsets.only(bottom: 8.h),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12.w),
-            border: Border.all(width: 0.5.w, color: Color(0xffEBEBEB)),
-          ),
-          child: switch (b16controllerVqnxre.b16ListStatePqmxza) {
-            B16FilesListStateQmvnza.noPermission => _noPermissionWidget(
-              b16controllerVqnxre,
-            ),
-            B16FilesListStateQmvnza.loading => _loadingWidget(),
-            B16FilesListStateQmvnza.loaded => _listViewWidget(
-              b16controllerVqnxre,
-            ),
-          },
-        ),
-      );
-
-  _listViewWidget(B16FilesListChildControllerHqmwze b16controllerVqnxre) =>
-      B16MediaPaddingViewVnyqsl(
-        b16ChildQzpmwa: B16RefreshViewDkgwta(
-          b16EnableLoadMoreNpkxvu: false,
-          b16ControllerXqmvta: b16controllerVqnxre.refreshController,
-          b16ScrollControllerGzrqma: _b16ScrollControllerPqnvze,
-          b16OnRefreshCqpydu: b16controllerVqnxre.b16RefreshFilesVqmwza,
-          b16ChildJkznwe: _b16FileListWidgetKqnvze(b16controllerVqnxre),
-        ),
-      );
+  Widget _listViewWidget(
+    B16FilesListChildControllerHqmwze b16controllerVqnxre,
+  ) => B16MediaPaddingViewVnyqsl(
+    b16ChildQzpmwa: B16RefreshViewDkgwta(
+      b16EnableLoadMoreNpkxvu: false,
+      b16ControllerXqmvta: b16controllerVqnxre.refreshController,
+      b16ScrollControllerGzrqma: _b16ScrollControllerPqnvze,
+      b16OnRefreshCqpydu: b16controllerVqnxre.b16RefreshFilesVqmwza,
+      b16ChildJkznwe: _b16FileListWidgetKqnvze(b16controllerVqnxre),
+    ),
+  );
 
   Widget _b16FileListWidgetKqnvze(
     B16FilesListChildControllerHqmwze b16ControllerPqnvze,
@@ -224,58 +235,7 @@ class _B16FilesListChildStateVqnxre
             : index;
         final b16FileQxmvza =
             b16ControllerPqnvze.b16VisibleFilesVqmwza[b16FileIndexQxmvza];
-        return Column(
-          children: [
-            B16TapGuardViewMfwqke(
-              b16OnPressedJkcxwu: () {
-                b16ControllerPqnvze.clickFileItem(b16FileQxmvza);
-              },
-              b16ChildHnqvsa: Container(
-                width: double.infinity,
-                height: 72.h,
-                alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(left: 16.w, right: 16.w),
-                child: Row(
-                  children: [
-                    B16AssetImageViewPzrxcu(
-                      _b16FileIconKqnvze(b16FileQxmvza),
-                      b16WidthDtvqpl: 32.w,
-                      b16HeightRnxkse: 32.w,
-                    ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          B16LocalizedTextViewCxmpra(
-                            b16FileQxmvza.name ?? '',
-                            b16FontSizeRvxqle: 14.sp,
-                            b16ColorDtkzma: Colors.black,
-                            b16FontWeightHncysp: FontWeight.bold,
-                            b16OverflowFzrxke: TextOverflow.ellipsis,
-                          ),
-                          B16LocalizedTextViewCxmpra(
-                            _b16FileDetailPqmwza(b16FileQxmvza),
-                            b16FontSizeRvxqle: 12.sp,
-                            b16ColorDtkzma: Color(0xff858C92),
-                            b16FontWeightHncysp: FontWeight.w500,
-                            b16OverflowFzrxke: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              height: 0.5.h,
-              color: const Color(0xffEBEBEB),
-            ),
-          ],
-        );
+        return _b16FileItemWidgetRqmwza(b16ControllerPqnvze, b16FileQxmvza);
       },
     );
   }
@@ -522,58 +482,182 @@ class _B16FilesListChildStateVqnxre
     return '$b16DateTextKqnvze | ${b16SizePqmxza.toStringAsFixed(1)}M';
   }
 
-  _loadingWidget() => Center(child: CircularProgressIndicator());
+  Widget _b16FileItemWidgetRqmwza(
+    B16FilesListChildControllerHqmwze b16ControllerPqnvze,
+    FileToolsFileInfo b16FileQxmvza,
+  ) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        B16TapGuardViewMfwqke(
+          b16OnPressedJkcxwu: () =>
+              b16ControllerPqnvze.clickFileItem(b16FileQxmvza),
+          b16ChildHnqvsa: Container(
+            width: double.infinity,
+            height: 72.h,
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              children: [
+                B16AssetImageViewPzrxcu(
+                  _b16FileIconKqnvze(b16FileQxmvza),
+                  b16WidthDtvqpl: 32.w,
+                  b16HeightRnxkse: 32.w,
+                ),
+                SizedBox(width: 12.w),
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      B16LocalizedTextViewCxmpra(
+                        b16FileQxmvza.name ?? '',
+                        b16FontSizeRvxqle: 14.sp,
+                        b16ColorDtkzma: Colors.black,
+                        b16FontWeightHncysp: FontWeight.bold,
+                        b16OverflowFzrxke: TextOverflow.ellipsis,
+                      ),
+                      B16LocalizedTextViewCxmpra(
+                        _b16FileDetailPqmwza(b16FileQxmvza),
+                        b16FontSizeRvxqle: 12.sp,
+                        b16ColorDtkzma: const Color(0xff858C92),
+                        b16FontWeightHncysp: FontWeight.w500,
+                        b16OverflowFzrxke: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Container(
+          width: double.infinity,
+          height: 0.5.h,
+          color: const Color(0xffEBEBEB),
+        ),
+      ],
+    );
+  }
 
-  _noPermissionWidget(B16FilesListChildControllerHqmwze b16controllerVqnxre) =>
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+  Widget _b16EmptyWithDemoFileWidgetQxnvza({
+    required B16FilesListChildControllerHqmwze b16ControllerPqnvze,
+    required Widget b16EmptyWidgetVqntza,
+  }) {
+    final FileToolsFileInfo? b16DemoFileQxmvza =
+        b16ControllerPqnvze.b16DemoFileInfoQxnvza;
+    if (b16DemoFileQxmvza == null) {
+      return b16EmptyWidgetVqntza;
+    }
+    return Column(
+      children: [
+        _b16FileItemWidgetRqmwza(b16ControllerPqnvze, b16DemoFileQxmvza),
+        Expanded(child: b16EmptyWidgetVqntza),
+      ],
+    );
+  }
+
+  Widget _b16NoFilesWidgetKqmwze(
+    B16FilesListChildControllerHqmwze b16ControllerPqnvze,
+  ) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           B16AssetImageViewPzrxcu(
-            "b16_lock_fjeifje",
-            b16WidthDtvqpl: 80.w,
-            b16HeightRnxkse: 80.w,
+            'b16_pdf_logo',
+            b16WidthDtvqpl: 72.w,
+            b16HeightRnxkse: 72.w,
           ),
           SizedBox(height: 16.h),
           B16LocalizedTextViewCxmpra(
-            "No permissions granted".tr,
-            b16FontSizeRvxqle: 20.sp,
+            'No files found'.tr,
+            b16FontSizeRvxqle: 18.sp,
             b16ColorDtkzma: Colors.black,
             b16FontWeightHncysp: FontWeight.bold,
           ),
-          SizedBox(height: 6.h),
-          B16LocalizedTextViewCxmpra(
-            "Permission is required to access all files".tr,
-            b16FontSizeRvxqle: 14.sp,
-            b16ColorDtkzma: Color(0xff4B5156),
-          ),
-          SizedBox(height: 40.h),
+          SizedBox(height: 24.h),
           B16TapGuardViewMfwqke(
-            b16OnPressedJkcxwu: () {
-              b16controllerVqnxre.clickRequestPermission();
-            },
+            b16OnPressedJkcxwu: b16ControllerPqnvze.b16RefreshFilesVqmwza,
             b16ChildHnqvsa: Container(
-              width: double.infinity,
-              height: 48.h,
+              height: 42.h,
+              constraints: BoxConstraints(minWidth: 132.w),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
               alignment: Alignment.center,
-              margin: EdgeInsets.only(left: 24.w, right: 24.w),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24.w),
-                gradient: LinearGradient(
+                borderRadius: BorderRadius.circular(21.w),
+                gradient: const LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
                 ),
               ),
               child: B16LocalizedTextViewCxmpra(
-                "Go to settings".tr,
-                b16FontSizeRvxqle: 16.sp,
+                'Try again'.tr,
+                b16FontSizeRvxqle: 14.sp,
                 b16ColorDtkzma: Colors.white,
                 b16FontWeightHncysp: FontWeight.bold,
               ),
             ),
           ),
         ],
-      );
+      ),
+    );
+  }
+
+  Widget _loadingWidget() => Center(child: CircularProgressIndicator());
+
+  Widget _noPermissionWidget(
+    B16FilesListChildControllerHqmwze b16controllerVqnxre,
+  ) => Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      B16AssetImageViewPzrxcu(
+        "b16_lock_fjeifje",
+        b16WidthDtvqpl: 80.w,
+        b16HeightRnxkse: 80.w,
+      ),
+      SizedBox(height: 16.h),
+      B16LocalizedTextViewCxmpra(
+        "No permissions granted".tr,
+        b16FontSizeRvxqle: 20.sp,
+        b16ColorDtkzma: Colors.black,
+        b16FontWeightHncysp: FontWeight.bold,
+      ),
+      SizedBox(height: 6.h),
+      B16LocalizedTextViewCxmpra(
+        "Permission is required to access all files".tr,
+        b16FontSizeRvxqle: 14.sp,
+        b16ColorDtkzma: Color(0xff4B5156),
+      ),
+      SizedBox(height: 40.h),
+      B16TapGuardViewMfwqke(
+        b16OnPressedJkcxwu: () {
+          b16controllerVqnxre.clickRequestPermission();
+        },
+        b16ChildHnqvsa: Container(
+          width: double.infinity,
+          height: 48.h,
+          alignment: Alignment.center,
+          margin: EdgeInsets.only(left: 24.w, right: 24.w),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(24.w),
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [Color(0xffFF8E71), Color(0xffA77FF1)],
+            ),
+          ),
+          child: B16LocalizedTextViewCxmpra(
+            "Go to settings".tr,
+            b16FontSizeRvxqle: 16.sp,
+            b16ColorDtkzma: Colors.white,
+            b16FontWeightHncysp: FontWeight.bold,
+          ),
+        ),
+      ),
+    ],
+  );
 }
 
 class _B16FilesNativeAdContentKqnvze extends StatefulWidget {

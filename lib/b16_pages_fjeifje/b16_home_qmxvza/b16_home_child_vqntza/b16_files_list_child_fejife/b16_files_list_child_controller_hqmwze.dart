@@ -5,6 +5,7 @@ import 'package:b16pdf/b16_dialog_fjifjie/b16_sort_bottom_dialog_fjiewfjoe/b16_s
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_demo_file_hep_qxnvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_permission_hep_qzmxva/b16_permission_hep_kqnvze.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
@@ -24,6 +25,7 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
   B16FilesListStateQmvnza b16ListStatePqmxza = B16FilesListStateQmvnza.loading;
   List<FileToolsFileInfo> b16AllFilesKqnvze = [];
   List<FileToolsFileInfo> b16VisibleFilesVqmwza = [];
+  FileToolsFileInfo? b16DemoFileInfoQxnvza;
   String b16SearchTextHqmxze = '';
   bool b16LoadingFilesVqntza = false;
   bool b16HasLoadedFilesKqmwze = false;
@@ -67,6 +69,7 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
     }
     final b16PermissionHqmwza = await _b16StoragePermissionQxmvza();
     if (!await b16PermissionHqmwza.isGranted) {
+      await _b16PrepareDemoFileVqntza();
       b16ListStatePqmxza = B16FilesListStateQmvnza.noPermission;
       refreshController.refreshCompleted();
       update();
@@ -83,6 +86,9 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
       );
       _b16SortFilesHqmwza();
       _b16ApplySearchVqmxze();
+      if (b16VisibleFilesVqmwza.isEmpty) {
+        await _b16PrepareDemoFileVqntza();
+      }
       b16HasLoadedFilesKqmwze = true;
       b16ListStatePqmxza = B16FilesListStateQmvnza.loaded;
     } finally {
@@ -139,6 +145,11 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
                     .contains(b16KeywordPqmwza),
               )
               .toList();
+  }
+
+  Future<void> _b16PrepareDemoFileVqntza() async {
+    b16DemoFileInfoQxnvza = await B16DemoFileHepQxnvza.instance
+        .b16GetDemoPdfInfoKqnvxe();
   }
 
   Future<void> clickSort() async {
