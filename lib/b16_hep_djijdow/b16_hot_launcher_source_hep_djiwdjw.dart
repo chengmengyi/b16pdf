@@ -41,4 +41,8 @@ class B16HotLauncherSourceHepDjiwdjw {
     _b16PendingSourceVqntza = null;
     return b16SourceQxnvza;
   }
+
+  removeHotLauncherSourceInfo(){
+    _b16PendingSourceVqntza=null;
+  }
 }

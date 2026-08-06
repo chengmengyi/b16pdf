@@ -69,5 +69,6 @@ class B16ApplifeHepFjeifje {
       b16AdScenePqmvzr: b16AdSceneQxnvza,
       b16AdPosIdKqmvzr: b16PositionIdVqntza,
     );
+    B16HotLauncherSourceHepDjiwdjw.instance.removeHotLauncherSourceInfo();
   }
 }
