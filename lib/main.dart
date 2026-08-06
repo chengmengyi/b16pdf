@@ -20,6 +20,7 @@ Future<void> main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await GetStorage.init();
   await B16LauncherSourceHepJiwjdow.instance.initSource();
+  B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16InitializeAdSdkPqmvzr();
   B16QuickActionHepFjeifjiw.instance.init();
   B16ApplifeHepFjeifje.instance.b16StartObserverKpvnza();
   final Locale b16InitialLocaleQmxvza =
@@ -29,7 +30,6 @@ Future<void> main() async {
   );
   B16TbaHepDjiwjidw.instance.b16UploadInstallQxnvza();
   B16NotificationHepPqnvze.instance.b16UploadNotificationEventDataRqmwza();
-  B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16InitializeAdSdkPqmvzr();
 
   runApp(B16ApplicationVqmxza(b16InitialLocaleHqmwze: b16InitialLocaleQmxvza));
 }

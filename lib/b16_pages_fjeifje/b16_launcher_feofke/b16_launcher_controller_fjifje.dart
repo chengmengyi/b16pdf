@@ -1,6 +1,7 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_quick_action_hep_fjeifjiw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
@@ -35,6 +36,16 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
       return;
     }
     b16NavigationStartedHqmwxe = true;
+    b16FinishLauncherQxnvza();
+  }
+
+  Future<void> b16FinishLauncherQxnvza() async {
+    final bool b16HandledQuickActionKqmwze = await B16QuickActionHepFjeifjiw
+        .instance
+        .b16ConsumeColdStartActionVqntza();
+    if (b16HandledQuickActionKqmwze) {
+      return;
+    }
     B16NewUserHepJfiejfo.instance.toPageChooseLanguage();
   }
 
