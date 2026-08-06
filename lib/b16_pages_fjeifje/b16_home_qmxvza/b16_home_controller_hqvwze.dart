@@ -3,6 +3,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_dialog_fjifjie/b16_comment_dialog_jiwjdiw/b16_comment_dialog_jiwjdiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_page_cqmwze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_tools_child_tqmvza/b16_tools_child_page_vqkrze.dart';
@@ -28,7 +29,7 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
   static const String b16TabUpdateIdPqmxve = 'b16_home_tab';
 
   int b16TabIndexKqmwza = 0;
-  bool _b16CanExitAfterCommentQxnvza = false;
+  bool _b16CanExitAfterCommentQxnvza = false,_showOpenNotificationPage=true;
 
   final List<Widget> b16PagesVqnxre = const [
     B16HomeChildPageCqmwze(),
@@ -70,5 +71,21 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
       b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_down_int,
       b16AdHostContextVmqxtr: b16contextVqmwza,
     );
+    _checkShowNotificationPage();
+  }
+
+  _checkShowNotificationPage()async{
+    if(!_showOpenNotificationPage){
+      return;
+    }
+    var result = await B16NotificationHepPqnvze.instance.hasNotificationPermission();
+    if(result){
+      return;
+    }
+    B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(
+      b16RouteNameMcfzsq: B16RoutersAddressFjeifjeo.b16NotificationRouteHqmwza,
+      b16ArgumentsXvedlu: {"fromHome":true},
+    );
+    _showOpenNotificationPage=false;
   }
 }

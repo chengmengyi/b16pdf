@@ -1,8 +1,10 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:app_settings/app_settings.dart';
+import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class B16OpenNotificationControllerHqvwze extends B16RootControllerFjesak {
@@ -17,7 +19,7 @@ class B16OpenNotificationControllerHqvwze extends B16RootControllerFjesak {
   }
 
   void clickLater() {
-    B16NewUserHepJfiejfo.instance.toHome();
+    _toNextPage();
   }
 
   @override
@@ -56,6 +58,15 @@ class B16OpenNotificationControllerHqvwze extends B16RootControllerFjesak {
     _b16EnteredBackgroundKqmwze = false;
     _b16CheckingPermissionVqntza = false;
     if (b16PermissionGrantedKqnvxe) {
+      _toNextPage();
+    }
+  }
+
+  _toNextPage(){
+    var fromHome=B16RoutersHepFjeifjoe.getParams()["fromHome"]??false;
+    if(fromHome){
+      B16RoutersHepFjeifjoe.b16BackFtynwp();
+    }else{
       B16NewUserHepJfiejfo.instance.toHome();
     }
   }

@@ -91,4 +91,13 @@ abstract final class B16RoutersHepFjeifjoe {
       barrierDismissible: b16BarrierDismissibleZxmqny,
     );
   }
+
+  static Map<String, dynamic> getParams() {
+    try {
+      return Get.arguments as Map<String, dynamic>;
+    } catch (e) {
+      return {};
+    }
+  }
+
 }

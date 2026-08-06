@@ -51,6 +51,12 @@ class B16NotificationHepPqnvze {
     }
   }
 
+  Future<bool> hasNotificationPermission()async{
+    var permissionStatus = await Permission.notification.status;
+    var isGranted = permissionStatus.isGranted || permissionStatus.isLimited;
+    return isGranted;
+  }
+
   Future<void> _b16InitializeTbaInfoPqnvze() async {
     final Map<String, String> b16HeaderMapQxnvza = Map<String, String>.from(
       await B16TbaHepDjiwjidw.instance.b16CreateHeadersKqnvxe(),

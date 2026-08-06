@@ -1,3 +1,4 @@
+import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_language_selected_fjiefjoe.dart';
@@ -38,9 +39,8 @@ class B16NewUserHepJfiejfo{
   }
 
   toPageOpenNotificationPermission()async{
-    var permissionStatus = await Permission.notification.status;
-    var isGranted = permissionStatus.isGranted || permissionStatus.isLimited;
-    if(!isGranted){
+    var result = await B16NotificationHepPqnvze.instance.hasNotificationPermission();
+    if(!result){
       B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
         b16RouteNameYweqpn:
         B16RoutersAddressFjeifjeo.b16NotificationRouteHqmwza,
