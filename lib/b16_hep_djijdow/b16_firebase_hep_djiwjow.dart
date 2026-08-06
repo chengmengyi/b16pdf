@@ -6,6 +6,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhi
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_ad_switch_storage_vqntza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_firebase_ad_config_storage_hqmwza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_media_unique_config_jidwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_notification_time_fjiefjoe.dart';
@@ -26,11 +27,6 @@ class B16FirebaseHepKqmwze {
 
   int b16AdCooldownSecondsPqnvze = 30;
   bool b16KoreanPhoneNotificationKqmwze = false;
-  bool b16SearchInterstitialEnabledQxnvza = false;
-  bool b16FileInterstitialEnabledVqntza = false;
-  bool b16CommentOverlayEnabledHqmwza = false;
-  int b16PermissionSwitchPqnvze = 0;
-  int b16FileSwitchRqmwza = 0;
 
   Future<void> b16InitializeFirebaseQxnvza() async {
     try {
@@ -118,10 +114,6 @@ class B16FirebaseHepKqmwze {
       b16KoreanPhoneNotificationKqmwze = b16KoreanPushModeKqmwze == 1;
       B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza();
     }
-
-    b16PermissionSwitchPqnvze =
-        _b16RemoteConfigQxnvza?.getInt('switch_per') ?? 0;
-    b16FileSwitchRqmwza = _b16RemoteConfigQxnvza?.getInt('switch_file') ?? 0;
     _b16ParseSwitchConfigRqmwza();
   }
 
@@ -129,11 +121,9 @@ class B16FirebaseHepKqmwze {
     try {
       final String b16SwitchConfigQxnvza =
           _b16RemoteConfigQxnvza?.getString('switch_config') ?? '';
-      final dynamic b16SwitchJsonVqntza = jsonDecode(b16SwitchConfigQxnvza);
-      b16SearchInterstitialEnabledQxnvza =
-          b16SwitchJsonVqntza['search_int'] != 0;
-      b16FileInterstitialEnabledVqntza = b16SwitchJsonVqntza['read_int'] != 0;
-      b16CommentOverlayEnabledHqmwza = b16SwitchJsonVqntza['comment_op'] != 0;
+      if (b16SwitchConfigQxnvza.isNotEmpty) {
+        B16AdSwitchStorageVqntza.b16SaveConfigHqmwza(b16SwitchConfigQxnvza);
+      }
     } catch (_) {}
   }
 

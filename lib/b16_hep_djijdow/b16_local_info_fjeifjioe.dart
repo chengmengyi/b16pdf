@@ -16,6 +16,10 @@ class B16LocalInfoFjeifjioe {
   static const _localAdConfigRelease="assets/b16pdf_local_config/b16pdf_local_ad/b16_ad_release.json";
   static String localAdConfig=kDebugMode?_localAdConfigDebug:_localAdConfigRelease;
 
+  static const _localAdSwitchDebug="assets/b16pdf_local_config/b16pdf_local_ad_switch/b16_ad_switch_debug.json";
+  static const _localAdSwitchRelease="assets/b16pdf_local_config/b16pdf_local_ad_switch/b16_ad_switch_release.json";
+  static String localAdSwitch=kDebugMode?_localAdSwitchDebug:_localAdSwitchRelease;
+
   static const _tbaUrlDebug="https://test-playpen.pdfeditorpaperforge.com/tipple/chaise/mellon";
   static const _tbaUrlRelease="https://playpen.pdfeditorpaperforge.com/obdurate/impress/hoar";
   static String tbaUrl=kDebugMode?_tbaUrlDebug:_tbaUrlRelease;

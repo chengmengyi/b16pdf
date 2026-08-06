@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_ad_switch_storage_vqntza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_firebase_ad_config_storage_hqmwza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_last_ad_show_time_storage_pqnvze.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_load_new_launch_ad_storage_qxnvza.dart';
@@ -371,6 +372,9 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     if (FlutterPdfAdPlugins.instance.isShowingAd()) {
       return false;
     }
+    if (!await b16CanShowAdBySwitchVqntza(b16AdPosIdKqmvzr)) {
+      return false;
+    }
     if (!_b16CanUseAdScenePosIdPqmvzr(b16AdScenePqmvzr, b16AdPosIdKqmvzr)) {
       debugPrint(
         'showAd _b16CanUseAdScenePosIdPqmvzr scene=$b16AdScenePqmvzr, posid=$b16AdPosIdKqmvzr',
@@ -438,6 +442,29 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       );
       debugPrint(b16StackTraceKqmvzr.toString());
       return false;
+    }
+  }
+
+  Future<bool> b16CanShowAdBySwitchVqntza(
+    B16PosidJkwkosw b16AdPosIdKqmwze,
+  ) async {
+    try {
+      String b16SwitchConfigPqnvze =
+          B16AdSwitchStorageVqntza.b16ReadConfigKqmwze();
+      if (b16SwitchConfigPqnvze.isEmpty) {
+        b16SwitchConfigPqnvze = await rootBundle.loadString(
+          B16LocalInfoFjeifjioe.localAdSwitch,
+        );
+      }
+      final dynamic b16SwitchJsonQxnvza = jsonDecode(b16SwitchConfigPqnvze);
+      if (b16SwitchJsonQxnvza is! Map<String, dynamic>) {
+        return true;
+      }
+      final dynamic b16SwitchValueHqmwza =
+          b16SwitchJsonQxnvza[b16AdPosIdKqmwze.name];
+      return b16SwitchValueHqmwza != 0;
+    } catch (_) {
+      return true;
     }
   }
 
