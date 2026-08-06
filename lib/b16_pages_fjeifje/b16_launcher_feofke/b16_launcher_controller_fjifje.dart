@@ -5,7 +5,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_launcher_source_hep_jiwjdow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_quick_action_hep_fjeifjiw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
@@ -63,7 +63,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
     }
 
     final String b16NotificationPayloadPqnvze =
-        B16LauncherSourceHepJiwjdow.instance.notificationPayload ?? '';
+        B16ColdLauncherSourceHepJiwjdow.instance.notificationPayload ?? '';
     if (b16NotificationPayloadPqnvze.isNotEmpty) {
       b16LaunchAdSceneQxnvza = B16AdSceneJdwo.pr_launch;
       b16LaunchAdPosIdKqmwze =
@@ -74,7 +74,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
     }
 
     final String b16QuickActionTypeKqnvxe =
-        B16LauncherSourceHepJiwjdow.instance.b16QuickActionTypeKqmwze ?? '';
+        B16ColdLauncherSourceHepJiwjdow.instance.b16QuickActionTypeKqmwze ?? '';
     if (b16QuickActionTypeKqnvxe.isNotEmpty) {
       b16LaunchAdSceneQxnvza = B16AdSceneJdwo.pr_exit;
       b16LaunchAdPosIdKqmwze = B16PosidJkwkosw.unload_1;

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_launcher_source_hep_jiwjdow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_broadcast_list_infi_dwiow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_list_info_djiwjdiw.dart';
@@ -270,9 +270,9 @@ class B16NotificationHepPqnvze {
   }
 
   void b16UploadNotificationEventDataRqmwza() {
-    if (B16LauncherSourceHepJiwjdow.instance.notificationPayload != null) {
+    if (B16ColdLauncherSourceHepJiwjdow.instance.notificationPayload != null) {
       _b16UploadClickEventKqmwze(
-        B16LauncherSourceHepJiwjdow.instance.notificationPayload ?? '',
+        B16ColdLauncherSourceHepJiwjdow.instance.notificationPayload ?? '',
       );
     }
     b16UploadPendingNotificationEventsTqnvze();

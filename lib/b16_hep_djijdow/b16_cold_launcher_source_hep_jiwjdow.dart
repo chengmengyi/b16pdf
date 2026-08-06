@@ -1,9 +1,9 @@
 import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
 
-class B16LauncherSourceHepJiwjdow {
-  static final B16LauncherSourceHepJiwjdow _b16launcherSourceHepJiwjdow =
-      B16LauncherSourceHepJiwjdow();
-  static B16LauncherSourceHepJiwjdow get instance =>
+class B16ColdLauncherSourceHepJiwjdow {
+  static final B16ColdLauncherSourceHepJiwjdow _b16launcherSourceHepJiwjdow =
+      B16ColdLauncherSourceHepJiwjdow();
+  static B16ColdLauncherSourceHepJiwjdow get instance =>
       _b16launcherSourceHepJiwjdow;
 
   String? notificationPayload;
