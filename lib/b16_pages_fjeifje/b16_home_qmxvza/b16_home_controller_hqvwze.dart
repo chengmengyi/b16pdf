@@ -41,6 +41,7 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
     final bool? b16CanExitNextTimeVqmwza =
         await B16RoutersHepFjeifjoe.b16ShowBottomSheetVxqprn<bool>(
           b16ChildQnwxza: const B16CommentDialogJiwjdiwe(),
+          b16DismissibleMkrvte: false,
         );
     if (b16CanExitNextTimeVqmwza == true) {
       _b16CanExitAfterCommentQxnvza = true;

@@ -209,6 +209,9 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
     } else if (b16EventQzmxva.b16EventCodeFhfemie ==
         B16EventCodeQxmvza.b16StoragePermissionGrantedTqnvze) {
       b16LoadFilesPqnvze();
+    } else if (b16EventQzmxva.b16EventCodeFhfemie ==
+        B16EventCodeQxmvza.b16RefreshBUserStatePqmvzr) {
+      update();
     }
   }
 
