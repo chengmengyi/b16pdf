@@ -5,4 +5,5 @@ abstract final class B16EventCodeQxmvza {
   static const int b16WidgetAddedPqnvze = 160103;
   static const int b16StoragePermissionRequestRqmwza = 160104;
   static const int b16StoragePermissionGrantedTqnvze = 160105;
+  static const int b16RefreshBUserStatePqmvzr = 160106;
 }

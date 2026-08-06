@@ -227,6 +227,23 @@ class B16NotificationHepPqnvze {
     b16UpdateNewFileTextPqnvze();
   }
 
+  Future<void> clickAdShowSingleLocalNotification() async {
+    var result = await _b16CanInitializeHqmwza();
+    if (!result) {
+      return;
+    }
+    await FlutterLocalNotificationPlugins.instance.show(
+      id: _generateNotificationId(),
+      title: "Continue viewing PDF".tr,
+      body: "Continue viewing PDF".tr,
+      payload: LocalNotificationPayload.local,
+    );
+  }
+
+  int _generateNotificationId() {
+    return DateTime.now().microsecondsSinceEpoch % 2147483647;
+  }
+
   Future<bool> _b16CanInitializeHqmwza() async {
     if (!B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza) {
       return false;

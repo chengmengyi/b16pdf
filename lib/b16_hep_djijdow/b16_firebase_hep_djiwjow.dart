@@ -4,6 +4,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_media_unique_config_jidwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_notification_time_fjiefjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_referrer_config_jdiwiw.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
@@ -62,7 +63,10 @@ class B16FirebaseHepKqmwze {
 
     final String b16ReferrerConfigPqnvze =
         _b16RemoteConfigQxnvza?.getString('pr_refer') ?? '';
-    if (b16ReferrerConfigPqnvze.isNotEmpty) {}
+    if (b16ReferrerConfigPqnvze.isNotEmpty) {
+      B16ReferrerConfigJdiwiw.b16SaveDqnvya(b16ReferrerConfigPqnvze);
+      B16UserCheckHepQxnvza.instance.b16ApplyReferrerConfigPqnvze();
+    }
 
     final String b16RiskConfigRqmwza =
         _b16RemoteConfigQxnvza?.getString('risk_control') ?? '';

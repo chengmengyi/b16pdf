@@ -9,4 +9,7 @@ class B16StorageNameFjeoifoe {
   static const String b16MediaUniqueConfig = 'b16MediaUniqueConfig';
   static const String b16ReferrerConfig = 'b16ReferrerConfig';
   static const String b16UploadInstallEventQxnvza = 'b16_upload_install_event';
+  static const String b16LoadNewLaunchAdKqmwze = 'b16_load_new_launch_ad';
+  static const String b16FirebaseAdConfigVqntza = 'b16_firebase_ad_config';
+  static const String b16LastAdShowTimeHqmwza = 'b16_last_ad_show_time';
 }

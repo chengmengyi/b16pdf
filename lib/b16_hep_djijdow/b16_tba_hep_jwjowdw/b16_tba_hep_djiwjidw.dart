@@ -104,6 +104,9 @@ class B16TbaHepDjiwjidw {
     b16ParametersKqmwze?.forEach((String b16KeyPqnvze, dynamic b16ValueKqnvxe) {
       b16RequestBodyHqmwze['vaccine~$b16KeyPqnvze'] = b16ValueKqnvxe;
     });
+    if(null!=b16UserGroupVqntza){
+      b16RequestBodyHqmwze["decouple"]=b16UserGroupVqntza;
+    }
     await _b16PostWithRetryPqmxza(
       b16BodyHqmwze: b16RequestBodyHqmwze,
       b16EventTypeKqmwze: 'point',
@@ -211,5 +214,21 @@ class B16TbaHepDjiwjidw {
         .getBundleId();
     final String b16BrandKqmwze = await FlutterTbaInfo.instance.getBrand();
     return '${B16LocalInfoFjeifjioe.tbaUrl}?baggage=$b16BundleIdQxnvza&fall=$b16BrandKqmwze';
+  }
+
+  addUserGroup(int userGroup)async{
+    b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.alterate,
+      b16ParametersKqmwze: {"secular":await FlutterTbaInfo.instance.getDistinctId()},
+      b16UserGroupVqntza: {"user_group":userGroup},
+    );
+  }
+
+  addUserBV(bool b12allNewUserStatePqmvzr)async{
+    b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.alterate,
+      b16ParametersKqmwze: {"secular":await FlutterTbaInfo.instance.getDistinctId()},
+      b16UserGroupVqntza: {"user_bv":b12allNewUserStatePqmvzr?1:0},
+    );
   }
 }
