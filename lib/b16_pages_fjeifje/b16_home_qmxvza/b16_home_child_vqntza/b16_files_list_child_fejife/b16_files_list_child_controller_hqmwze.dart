@@ -10,6 +10,8 @@ import 'package:b16pdf/b16_hep_djijdow/b16_permission_hep_qzmxva/b16_permission_
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_file_sort_storage_mqnvza.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_controller_rkpxwe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter_preview_file/flutter_preview_file.dart';
@@ -196,6 +198,7 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
       _ => null,
     };
     if (b16RouteNameKqnvze == null) return;
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.editor_entry,);
     B16RoutersHepFjeifjoe.b16PushNamedHkqvpa(
       b16RouteNameMcfzsq: b16RouteNameKqnvze,
       b16ArgumentsXvedlu: {'file': b16FileInfoQxmvza},

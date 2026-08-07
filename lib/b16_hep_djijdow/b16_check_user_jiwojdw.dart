@@ -198,7 +198,7 @@ class B16UserCheckHepQxnvza {
           }
         }
         B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
-          b16PointTypeQxnvza: B16PointTypeJdwijdiw.reffer,
+          b16PointTypeQxnvza: B16PointTypeJdwijdiw.reffer_suc,
           b16ParametersKqmwze: {
             "reffer_info":referrer,
             "reffer_user":referrerUser
@@ -206,7 +206,7 @@ class B16UserCheckHepQxnvza {
         );
       } else {
         B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
-          b16PointTypeQxnvza: B16PointTypeJdwijdiw.reffer,
+          b16PointTypeQxnvza: B16PointTypeJdwijdiw.reffer_suc,
           b16ParametersKqmwze: {
             "reffer_info":referrer,
             "reffer_user":"list is empty"
@@ -215,7 +215,7 @@ class B16UserCheckHepQxnvza {
       }
     } catch (e) {
       B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
-        b16PointTypeQxnvza: B16PointTypeJdwijdiw.reffer,
+        b16PointTypeQxnvza: B16PointTypeJdwijdiw.reffer_suc,
         b16ParametersKqmwze: {
           "reffer_info":referrer,
           "reffer_user":"error"

@@ -5,6 +5,8 @@ import 'package:b16pdf/b16_dialog_fjifjie/b16_comment_dialog_jiwjdiw/b16_comment
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_page_cqmwze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_tools_child_tqmvza/b16_tools_child_page_vqkrze.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
@@ -39,6 +41,10 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
   @override
   void onInit() {
     super.onInit();
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.page_view,
+      b16ParametersKqmwze: {"page":"file"},
+    );
     B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza(b16RequestPermissionKqmwze: true);
   }
 
@@ -63,6 +69,17 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
   ) {
     if (b16TabIndexKqmwza == b16TabVqnxra.index) {
       return;
+    }
+    if(b16TabIndexKqmwza==0){
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+        b16PointTypeQxnvza: B16PointTypeJdwijdiw.page_view,
+        b16ParametersKqmwze: {"page":"file"},
+      );
+    }else if(b16TabIndexKqmwza==1) {
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+        b16PointTypeQxnvza: B16PointTypeJdwijdiw.page_view,
+        b16ParametersKqmwze: {"page":"tools"},
+      );
     }
     b16TabIndexKqmwza = b16TabVqnxra.index;
     update([b16TabUpdateIdPqmxve]);

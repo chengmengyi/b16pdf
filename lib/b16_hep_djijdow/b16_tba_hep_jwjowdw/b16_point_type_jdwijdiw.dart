@@ -45,7 +45,7 @@ enum B16PointTypeJdwijdiw{
   processing_guide_click,
   push,
   inform_c,
-  reffer,
+  reffer_suc,
   guide_page,
   float_page_view,
   float_page_click,
@@ -79,4 +79,5 @@ enum B16PointTypeJdwijdiw{
   mambo,
   rating_pop_v,
   rating_pop_c,
+  storage_system_result,
 }

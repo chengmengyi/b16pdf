@@ -2,6 +2,8 @@ import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:app_settings/app_settings.dart';
 import 'package:get/get.dart';
@@ -12,13 +14,30 @@ class B16OpenNotificationControllerHqvwze extends B16RootControllerFjesak {
   bool _b16EnteredBackgroundKqmwze = false;
   bool _b16CheckingPermissionVqntza = false;
 
+  @override
+  void onInit() {
+    super.onInit();
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.push_guide_view,
+      b16ParametersKqmwze: {"show_type":"secondary"},
+    );
+  }
+
   Future<void> clickUpdate() async {
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.push_guide_click,
+      b16ParametersKqmwze: {"state":"turn_on"},
+    );
     _b16WaitingSettingsQxnvza = true;
     _b16EnteredBackgroundKqmwze = false;
     await AppSettings.openAppSettings(type: AppSettingsType.notification);
   }
 
   void clickLater() {
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.push_guide_click,
+      b16ParametersKqmwze: {"state":"later"},
+    );
     _toNextPage();
   }
 

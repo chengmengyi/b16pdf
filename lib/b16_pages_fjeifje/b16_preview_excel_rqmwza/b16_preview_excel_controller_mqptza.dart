@@ -5,6 +5,8 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_preview_file/flutter_preview_file.dart';
@@ -56,6 +58,7 @@ class B16PreviewExcelControllerMqptza extends B16RootControllerFjesak {
   Future<void> clickSave() async {
     if (!b16IsEditingQxmvza || b16IsSavingRqmwza) return;
     try {
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.editor_save_click,);
       await b16ExcelControllerKqnvze.save();
       final b16PathKqnvze = b16FileInfoXqnvze.path ?? '';
       final b16StatVqmxza = await File(b16PathKqnvze).stat();

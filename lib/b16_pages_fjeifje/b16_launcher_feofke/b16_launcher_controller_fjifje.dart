@@ -10,6 +10,8 @@ import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart
 import 'package:b16pdf/b16_hep_djijdow/b16_launcher_click_gate_hep_qxnvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_quick_action_hep_fjeifjiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
@@ -218,6 +220,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
     B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16PreloadAdBySceneKqmwze(
       B16AdSceneJdwo.pr_user_use,
     );
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.app_launch_result);
     var result = await B16QuickActionHepFjeifjiw.instance
         .b16ConsumeColdStartActionVqntza();
     if (result) {

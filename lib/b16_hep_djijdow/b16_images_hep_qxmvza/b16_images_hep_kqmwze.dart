@@ -1,6 +1,8 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_permission_hep_qzmxva/b16_permission_hep_kqnvze.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_images_result_qxnvza/b16_images_result_controller_kqmwze.dart';
 import 'package:doc_scan_flutter/doc_scan.dart';
 import 'package:image_picker/image_picker.dart';
@@ -12,6 +14,9 @@ final class B16ImagesHepKqmwze {
   static final B16ImagesHepKqmwze instance = B16ImagesHepKqmwze._();
 
   Future<List<String>> toScan({bool b16OpenResultQxnvza = true}) async {
+    if(b16OpenResultQxnvza){
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.tool_scan,);
+    }
     if (!await Permission.camera.isGranted) {
       final B16PermissionResultVqmxze b16PermissionResultQxnvza =
           await B16PermissionHepKqnvze.instance.requestPermission(
@@ -35,6 +40,9 @@ final class B16ImagesHepKqmwze {
   }
 
   Future<List<String>> chooseImages({bool b16OpenResultQxnvza = true}) async {
+    if(b16OpenResultQxnvza){
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.tool_image_to_pdf);
+    }
     final List<XFile> b16ImageListKqmvzr = await ImagePicker().pickMultiImage();
     final List<String> b16PathsVqntza = _b16ValidPathsHqmwza(
       b16ImageListKqmvzr.map((XFile b16ImageQxnvza) => b16ImageQxnvza.path),

@@ -1,4 +1,6 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_add_widget_hep_qxnvza/b16_add_widget_hep_kqmvze.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_files_list_child_fejife/b16_files_list_child_page_qxmvza.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_controller_rkpxwe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_child_mxkqza.dart';
@@ -260,7 +262,9 @@ class _B16HomeChildStatePqnvxa
                     controller: b16controllerVqmxze.textEditingController,
                     textInputAction: TextInputAction.search,
                     style: TextStyle(fontSize: 16.sp, color: Colors.black),
-                    onTap: () {},
+                    onTap: () {
+                      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.search_click);
+                    },
                     decoration: InputDecoration(
                       counterText: '',
                       isCollapsed: true,

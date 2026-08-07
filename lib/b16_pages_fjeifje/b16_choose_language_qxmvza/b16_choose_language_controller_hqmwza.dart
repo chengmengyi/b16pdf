@@ -4,6 +4,8 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_hep_kqmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_tools_fieife.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,6 +21,7 @@ class B16ChooseLanguageControllerHqmwza extends B16RootControllerFjesak {
   @override
   void onInit() {
     super.onInit();
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.lang_select_view);
     B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16UploadAdChanceKqnvxe(
       b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
       b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_new_lan_nat,
@@ -75,6 +78,7 @@ class B16ChooseLanguageControllerHqmwza extends B16RootControllerFjesak {
   }
 
   Future<void> clickOk() async {
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.lang_select_click);
     await B16LanguageHepKqmvza.b16SelectLanguageGqmwxe(
       b16SelectedLanguageKqnvze.b16LocaleVqntza,
     );

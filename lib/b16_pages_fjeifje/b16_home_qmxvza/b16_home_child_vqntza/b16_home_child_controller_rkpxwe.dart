@@ -7,6 +7,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
@@ -53,12 +54,14 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
     b16RequestStoragePermissionHqmwza();
   }
 
-  Future<void> clickTabItem(B16FileTabTypeefie type) =>
-      pageController.animateToPage(
-        type.index,
-        duration: const Duration(milliseconds: 100),
-        curve: Curves.easeInOut,
-      );
+  clickTabItem(B16FileTabTypeefie type){
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.file_filter_click);
+    pageController.animateToPage(
+      type.index,
+      duration: const Duration(milliseconds: 100),
+      curve: Curves.easeInOut,
+    );
+  }
 
   void b16PageChangedHqmwza(int b16IndexKqnvze,BuildContext b16ContextHqmwza) {
     b16SelectedTabIndexQmvnza = b16IndexKqnvze;
@@ -104,6 +107,7 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
             b16PermissionQxmvza: b16PermissionQxnvza,
           );
       if(b16ResultVqntza.b16IsShowPermissionAdPqnvxe){
+        B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.storage_auth_click);
         B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(b16AdScenePqmvzr: B16AdSceneJdwo.pr_launch, b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_permission_open);
       }
       if (!b16ResultVqntza.b16IsGrantedHqmwza) return;

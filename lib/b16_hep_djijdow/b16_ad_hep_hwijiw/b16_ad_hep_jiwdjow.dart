@@ -669,7 +669,6 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       b16RevenueKqmvzr,
       b16AdInfoPqmvzr.adId ?? "",
     );
-    // B12allFirebaseUtilsFheifei.b16FirebaseInstanceKqmvzr.apex09LogFacebookEvent(
     B16FirebaseHepKqmwze.instance.b16LogFacebookPurchaseKqmwze(
       b16RevenueKqmvzr,
       b16CurrencyCodePqmvzr,

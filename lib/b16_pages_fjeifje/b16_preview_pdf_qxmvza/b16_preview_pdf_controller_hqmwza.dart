@@ -7,6 +7,8 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_preview_file/flutter_preview_file.dart';
@@ -230,6 +232,7 @@ class B16PreviewPdfControllerHqmwza extends B16RootControllerFjesak {
     b16SavingPqmwza = true;
     update();
     try {
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.editor_save_click,);
       List<int> b16BytesQxmvza = await b16ViewerControllerVqntza.saveDocument();
       if (b16PenStrokesHqmwza.isNotEmpty) {
         final b16DocumentKqnvze = PdfDocument(inputBytes: b16BytesQxmvza);

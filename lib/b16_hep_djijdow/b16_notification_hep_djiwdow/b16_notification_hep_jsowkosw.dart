@@ -47,7 +47,15 @@ class B16NotificationHepPqnvze {
     _b16InitializeShortcutNotificationHqmwza();
     _b16InitializedQxnvza = true;
     if (b16RequestPermissionKqmwze) {
-      Permission.notification.request();
+      await Permission.notification.request();
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+        b16PointTypeQxnvza: B16PointTypeJdwijdiw.storage_system_result,
+        b16ParametersKqmwze: {"open":(await hasNotificationPermission())?1:0},
+      );
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+        b16PointTypeQxnvza: B16PointTypeJdwijdiw.push_guide_view,
+        b16ParametersKqmwze: {"show_type":"system"},
+      );
     }
   }
 
