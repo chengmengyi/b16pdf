@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
@@ -12,11 +11,11 @@ import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijd
 import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_check_adjust/callback/request_callback.dart';
-import 'package:flutter_check_adjust/flutter_check_adjust.dart';
-import 'package:flutter_check_adjust/request_adjust/request_adjust_callback.dart';
-import 'package:flutter_check_adjust/request_cloak/request_cloak_callback.dart';
-import 'package:flutter_check_adjust/request_referrer/request_referrer_callback.dart';
+import 'package:flutter_check_af/callback/request_callback.dart';
+import 'package:flutter_check_af/flutter_check_af.dart';
+import 'package:flutter_check_af/request_af/request_af_callback.dart';
+import 'package:flutter_check_af/request_cloak/request_cloak_callback.dart';
+import 'package:flutter_check_af/request_referrer/request_referrer_callback.dart';
 import 'package:flutter_pdf_ad_plugins/flutter_pdf_ad_plugins.dart';
 import 'package:flutter_pdf_risk_control_plugins/callbacks/flutter_pdf_risk_control_callback.dart';
 import 'package:flutter_pdf_risk_control_plugins/flutter_pdf_risk_control_plugins.dart';
@@ -42,8 +41,9 @@ class B16UserCheckHepQxnvza {
     b16RefreshUserStateVqntza();
     final String b16DistinctIdQxnvza = await FlutterTbaInfo.instance
         .getDistinctId();
-    FlutterCheckAdjust.instance.init(
-      adjustAppToken: B16LocalInfoFjeifjioe.adjustToken,
+    FlutterCheckAf.instance.init(
+      afKey: B16LocalInfoFjeifjioe.afKey,
+      afAppId: "",
       distinctId: b16DistinctIdQxnvza,
       clockUrl: B16LocalInfoFjeifjioe.clockUrl,
       cloakWhiteKey: 'claw',
@@ -55,25 +55,41 @@ class B16UserCheckHepQxnvza {
         'germinal': DateTime.now().millisecondsSinceEpoch,
       },
       requestCallback: RequestCallback(
-        requestAdjustCallback: RequestAdjustCallback(
-          startRequestAdjust: () {
-            B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.adj_req);
+        requestAfCallback: RequestAfCallback(
+          startRequestAf: (){
+            B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.af_req);
           },
-          requestSuccess: (bool b12allIsBKqmvzr, String b12allNetworkVmqxtr) {
+          requestSuccess: (bool b12allIsBKqmvzr,String afStr){
             B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
-              b16PointTypeQxnvza: B16PointTypeJdwijdiw.adj_suc,
+              b16PointTypeQxnvza: B16PointTypeJdwijdiw.af_suc,
               b16ParametersKqmwze: {
                 //adj_user：【0】【1】，对应【黑名单用户】【自然量用户】
-                "adj_user":b12allIsBKqmvzr?1:0,
-                "network":b12allNetworkVmqxtr,
+                "af_user":b12allIsBKqmvzr?1:0,
+                "af_info":afStr,
               },
             );
             FlutterPdfAdPlugins.instance.updateAdjustAttribution(
-              network: b12allNetworkVmqxtr,
+              network: afStr,
             );
             b16RefreshUserStateVqntza();
           },
-          firstRequestAdjustB: () {},
+          firstRequestAfB: (){
+
+          },
+          startAfSuccess: (){
+            B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+              b16PointTypeQxnvza: B16PointTypeJdwijdiw.start_af_suc,
+            );
+          },
+          startAfFail: (int code,String msg){
+            B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+              b16PointTypeQxnvza: B16PointTypeJdwijdiw.start_af_fail,
+              b16ParametersKqmwze: {
+                "code":code,
+                "msg":msg,
+              },
+            );
+          },
         ),
         requestCloakCallback: RequestCloakCallback(
           startRequestCloak: () {
@@ -146,7 +162,7 @@ class B16UserCheckHepQxnvza {
           }
         }
       }
-      FlutterCheckAdjust.instance.updateReferrerList(
+      FlutterCheckAf.instance.updateReferrerList(
         b16ConfigJsonVqntza['door'] == 0,
         b16ReferrerListPqnvze,
       );
@@ -163,7 +179,7 @@ class B16UserCheckHepQxnvza {
   }
 
   void b16RefreshUserStateVqntza() {
-    final bool b16CheckResultQxnvza = FlutterCheckAdjust.instance.checkUser();
+    final bool b16CheckResultQxnvza = FlutterCheckAf.instance.checkUser();
     final bool b16HasSavedRiskKqmwze = FlutterPdfRiskControlPlugins.instance
         .hasSavedPdfRisk();
     if (kDebugMode) {

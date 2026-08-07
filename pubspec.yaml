@@ -60,7 +60,9 @@ dependencies:
     path: /Users/chengmengyi/testbird/flutter_pdf_ad_plugins
   flutter_tba_info: 0.0.9
   flutter_app_lifecycle: 0.0.3
-  flutter_check_adjust: 0.0.9
+#  flutter_check_adjust: 0.0.9
+  flutter_check_af:
+    path: /Users/chengmengyi/testbird/flutter_check_af
   flutter_pdf_risk_control_plugins: 0.0.2
   sqflite: 2.4.2
   dio: 5.8.0+1
@@ -73,7 +75,6 @@ dependencies:
   url_launcher: 6.3.2
   visibility_detector: 0.4.0+2
   path_provider: 2.1.6
-  appsflyer_sdk_plus: 0.0.4
 
 dev_dependencies:
   flutter_test:

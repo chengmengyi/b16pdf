@@ -3,7 +3,8 @@ import 'package:flutter/foundation.dart';
 class B16LocalInfoFjeifjioe {
   static final appName = "PDF Editer";
   static final secretKey = "B16secretKeyKhuwi";
-  static String adjustToken=kDebugMode?"4qedga65udq8":"";
+  // static String adjustToken=kDebugMode?"4qedga65udq8":"";
+  static String afKey=kDebugMode?"Ed2FymhzHg3qqYpyH8Z9Eg":"GR8a4XoJ2JWo7rVoYwVDCR";
 
   static final clockUrl="https://upturn.pdfeditorpaperforge.com/ashmen/emma/irish";
 

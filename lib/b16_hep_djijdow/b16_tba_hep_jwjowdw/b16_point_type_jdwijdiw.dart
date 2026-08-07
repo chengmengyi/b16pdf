@@ -1,7 +1,9 @@
 enum B16PointTypeJdwijdiw{
   referrer_req,
-  adj_req,
-  adj_suc,
+  af_req,
+  af_suc,
+  start_af_suc,
+  start_af_fail,
   cloak_req,
   cloak_suc,
   app_launch_result,
