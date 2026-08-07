@@ -73,6 +73,7 @@ dependencies:
   url_launcher: 6.3.2
   visibility_detector: 0.4.0+2
   path_provider: 2.1.6
+  appsflyer_sdk_plus: 0.0.4
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,6 @@
 import 'dart:async';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_files_list_child_fejife/b16_files_list_child_controller_hqmwze.dart';
 import 'package:b16pdf/b16_pages_fjeifje/b16_home_qmxvza/b16_home_child_vqntza/b16_home_child_controller_rkpxwe.dart';
 import 'package:b16pdf/b16_root_fjield/b16_root_child_mxkqza.dart';
@@ -13,6 +10,7 @@ import 'package:b16pdf/b16_view_krtmxa/b16_media_padding_view_vnyqsl.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_refresh_view_dkgwta.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_tap_guard_view_mfwqke.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pdf_ad_plugins/flutter_pdf_ad_plugins.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_preview_file/flutter_preview_file.dart';
 import 'package:get/get.dart';
@@ -33,41 +31,6 @@ class _B16FilesListChildStateVqnxre
           B16FilesListChildControllerHqmwze,
           B16FilesListChildPageQxmvza
         > {
-  static const int _b16NativeAdIntervalKqmvze = 4;
-  static const Duration _b16NativeAdRefreshDurationVqntza = Duration(
-    seconds: 10,
-  );
-  static const Duration _b16ScrollIdleDurationHqmwza = Duration(
-    milliseconds: 280,
-  );
-
-  final ScrollController _b16ScrollControllerPqnvze = ScrollController();
-  final Map<int, GlobalKey> _b16NativeAdKeyMapQxmvza = <int, GlobalKey>{};
-  final Set<int> _b16VisibleNativeAdIndexesVqmwza = <int>{};
-  Timer? _b16ScrollIdleTimerKqnvze;
-  Timer? _b16NativeAdRefreshTimerHqmwza;
-  int? _b16ActiveNativeAdIndexPqmxza;
-  int? _b16LastChanceNativeAdIndexVqntza;
-  int _b16LatestListItemCountKqmwze = 0;
-  int _b16NativeAdRefreshKeyQxnvza = 0;
-  bool _b16IsListScrollingPqnvze = false;
-  bool _b16IsRefreshingNativeAdVqmwza = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _b16ScrollControllerPqnvze.addListener(_b16HandleScrollKqmwze);
-  }
-
-  @override
-  void dispose() {
-    _b16StopNativeAdRefreshTimerQxnvza();
-    _b16ScrollIdleTimerKqnvze?.cancel();
-    _b16ScrollControllerPqnvze.removeListener(_b16HandleScrollKqmwze);
-    _b16ScrollControllerPqnvze.dispose();
-    super.dispose();
-  }
-
   @override
   String get b16ControllerTagVdsyre => 'b16_files_${widget.type.name}';
 
@@ -84,13 +47,15 @@ class _B16FilesListChildStateVqnxre
     return GetBuilder<B16FilesListChildControllerHqmwze>(
       init: b16ControllerVqnxre,
       global: false,
-      builder: (b16ControllerQxmvza) => Column(
-        children: [
-          _sortWidget(b16ControllerQxmvza),
-          SizedBox(height: 8.h),
-          _contentWidget(b16ControllerQxmvza),
-        ],
-      ),
+      builder: (b16ControllerQxmvza) {
+        return Column(
+          children: [
+            _sortWidget(b16ControllerQxmvza),
+            SizedBox(height: 8.h),
+            _contentWidget(b16ControllerQxmvza),
+          ],
+        );
+      },
     );
   }
 
@@ -193,7 +158,7 @@ class _B16FilesListChildStateVqnxre
     b16ChildQzpmwa: B16RefreshViewDkgwta(
       b16EnableLoadMoreNpkxvu: false,
       b16ControllerXqmvta: b16controllerVqnxre.refreshController,
-      b16ScrollControllerGzrqma: _b16ScrollControllerPqnvze,
+      b16ScrollControllerGzrqma: b16controllerVqnxre.b16ScrollControllerPqnvze,
       b16OnRefreshCqpydu: b16controllerVqnxre.b16RefreshFilesVqmwza,
       b16ChildJkznwe: _b16FileListWidgetKqnvze(b16controllerVqnxre),
     ),
@@ -203,35 +168,29 @@ class _B16FilesListChildStateVqnxre
     B16FilesListChildControllerHqmwze b16ControllerPqnvze,
   ) {
     final bool b16CanShowNativeAdQxmvza =
-        B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza &&
-        b16ControllerPqnvze.b16VisibleFilesVqmwza.length >=
-            _b16NativeAdIntervalKqmvze;
+        b16ControllerPqnvze.b16CanShowNativeAdHqmwza;
     final int b16NativeAdCountVqmwza = b16CanShowNativeAdQxmvza
         ? b16ControllerPqnvze.b16VisibleFilesVqmwza.length ~/
-              _b16NativeAdIntervalKqmvze
+              B16FilesListChildControllerHqmwze.b16NativeAdIntervalKqmvze
         : 0;
     final int b16ItemCountHqmwza =
         b16ControllerPqnvze.b16VisibleFilesVqmwza.length +
         b16NativeAdCountVqmwza;
-    _b16LatestListItemCountKqmwze = b16ItemCountHqmwza;
-    _b16NativeAdKeyMapQxmvza.removeWhere(
-      (b16IndexKqnvze, _) => b16IndexKqnvze >= b16ItemCountHqmwza,
-    );
-    _b16VisibleNativeAdIndexesVqmwza.removeWhere(
-      (b16IndexKqnvze) => b16IndexKqnvze >= b16ItemCountHqmwza,
-    );
-    _b16SyncNativeAdStatePqnvze(b16CanShowNativeAdQxmvza, b16ItemCountHqmwza);
+    b16ControllerPqnvze.b16SyncNativeAdListStatePqnvze(b16ItemCountHqmwza);
     return ListView.builder(
       itemCount: b16ItemCountHqmwza,
       itemBuilder: (context, index) {
-        if (b16CanShowNativeAdQxmvza && _b16IsNativeAdIndexVqntza(index)) {
+        if (b16CanShowNativeAdQxmvza &&
+            b16ControllerPqnvze.b16IsNativeAdIndexVqntza(index)) {
           return _b16NativeAdSlotWidgetHqmwza(
+            b16ControllerPqnvze: b16ControllerPqnvze,
             b16ListIndexKqnvze: index,
-            b16ShowNativeAdPqnvze: _b16ActiveNativeAdIndexPqmxza == index,
+            b16ShowNativeAdPqnvze:
+                b16ControllerPqnvze.b16ActiveNativeAdIndexPqmxza == index,
           );
         }
         final int b16FileIndexQxmvza = b16CanShowNativeAdQxmvza
-            ? _b16FileIndexFromListIndexVqmwza(index)
+            ? b16ControllerPqnvze.b16FileIndexFromListIndexVqmwza(index)
             : index;
         final b16FileQxmvza =
             b16ControllerPqnvze.b16VisibleFilesVqmwza[b16FileIndexQxmvza];
@@ -240,185 +199,20 @@ class _B16FilesListChildStateVqnxre
     );
   }
 
-  bool _b16IsNativeAdIndexVqntza(int b16IndexKqnvze) =>
-      (b16IndexKqnvze + 1) % (_b16NativeAdIntervalKqmvze + 1) == 0;
-
-  int _b16FileIndexFromListIndexVqmwza(int b16IndexPqnvze) =>
-      b16IndexPqnvze - (b16IndexPqnvze + 1) ~/ (_b16NativeAdIntervalKqmvze + 1);
-
-  bool _b16CanShowNativeAdHqmwza() =>
-      B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza &&
-      b16ControllerLeaseFshqya
-              .b16ControllerNqxrfe
-              .b16VisibleFilesVqmwza
-              .length >=
-          _b16NativeAdIntervalKqmvze;
-
-  void _b16SyncNativeAdStatePqnvze(bool b16CanShowQxmvza, int b16CountVqmwza) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted || _b16IsRefreshingNativeAdVqmwza) return;
-      if (!b16CanShowQxmvza || b16CountVqmwza <= 0) {
-        _b16ClearActiveNativeAdKqnvze();
-      } else if (_b16ActiveNativeAdIndexPqmxza == null ||
-          _b16ActiveNativeAdIndexPqmxza! >= b16CountVqmwza) {
-        _b16ActivateNativeAdNearViewportQxmvza(b16CountVqmwza);
-      } else {
-        _b16StartNativeAdRefreshTimerVqntza();
-      }
-    });
-  }
-
-  void _b16HandleScrollKqmwze() {
-    if (!mounted || !_b16CanShowNativeAdHqmwza()) return;
-    _b16IsListScrollingPqnvze = true;
-    _b16ScrollIdleTimerKqnvze?.cancel();
-    _b16StopNativeAdRefreshTimerQxnvza();
-    _b16ScrollIdleTimerKqnvze = Timer(_b16ScrollIdleDurationHqmwza, () {
-      if (!mounted || !_b16CanShowNativeAdHqmwza()) return;
-      _b16IsListScrollingPqnvze = false;
-      _b16ActivateNativeAdNearViewportQxmvza(_b16LatestListItemCountKqmwze);
-    });
-  }
-
-  void _b16ActivateNativeAdNearViewportQxmvza(int b16ItemCountPqnvze) {
-    final int? b16IndexVqmwza = _b16FindVisibleNativeAdIndexKqnvze(
-      b16ItemCountPqnvze,
-    );
-    if (b16IndexVqmwza == null) {
-      _b16StartNativeAdRefreshTimerVqntza();
-      return;
-    }
-    if (_b16ActiveNativeAdIndexPqmxza != b16IndexVqmwza) {
-      setState(() => _b16ActiveNativeAdIndexPqmxza = b16IndexVqmwza);
-    }
-    _b16StartNativeAdRefreshTimerVqntza();
-  }
-
-  int? _b16FindVisibleNativeAdIndexKqnvze(int b16ItemCountPqnvze) {
-    final b16VisibleIndexesQxmvza =
-        _b16VisibleNativeAdIndexesVqmwza
-            .where((b16IndexVqntza) => b16IndexVqntza < b16ItemCountPqnvze)
-            .toList()
-          ..sort();
-    if (b16VisibleIndexesQxmvza.isNotEmpty) {
-      return b16VisibleIndexesQxmvza.first;
-    }
-    final double b16ScreenCenterHqmwza = MediaQuery.of(context).size.height / 2;
-    int? b16BestIndexPqnvze;
-    double? b16BestDistanceVqmwza;
-    for (final b16EntryKqnvze in _b16NativeAdKeyMapQxmvza.entries) {
-      final b16RenderObjectQxmvza = b16EntryKqnvze.value.currentContext
-          ?.findRenderObject();
-      if (b16EntryKqnvze.key >= b16ItemCountPqnvze ||
-          b16RenderObjectQxmvza is! RenderBox ||
-          !b16RenderObjectQxmvza.attached) {
-        continue;
-      }
-      final double b16TopVqntza = b16RenderObjectQxmvza
-          .localToGlobal(Offset.zero)
-          .dy;
-      final double b16BottomHqmwza =
-          b16TopVqntza + b16RenderObjectQxmvza.size.height;
-      if (b16BottomHqmwza < 0 ||
-          b16TopVqntza > MediaQuery.of(context).size.height) {
-        continue;
-      }
-      final double b16DistancePqmxza =
-          ((b16TopVqntza + b16BottomHqmwza) / 2 - b16ScreenCenterHqmwza).abs();
-      if (b16BestDistanceVqmwza == null ||
-          b16DistancePqmxza < b16BestDistanceVqmwza) {
-        b16BestIndexPqnvze = b16EntryKqnvze.key;
-        b16BestDistanceVqmwza = b16DistancePqmxza;
-      }
-    }
-    return b16BestIndexPqnvze;
-  }
-
-  void _b16ClearActiveNativeAdKqnvze() {
-    _b16StopNativeAdRefreshTimerQxnvza();
-    _b16LastChanceNativeAdIndexVqntza = null;
-    if (_b16ActiveNativeAdIndexPqmxza != null) {
-      setState(() => _b16ActiveNativeAdIndexPqmxza = null);
-    }
-  }
-
-  void _b16StartNativeAdRefreshTimerVqntza() {
-    _b16NativeAdRefreshTimerHqmwza ??= Timer.periodic(
-      _b16NativeAdRefreshDurationVqntza,
-      (_) => unawaited(_b16RefreshActiveNativeAdPqnvze()),
-    );
-  }
-
-  void _b16StopNativeAdRefreshTimerQxnvza() {
-    _b16NativeAdRefreshTimerHqmwza?.cancel();
-    _b16NativeAdRefreshTimerHqmwza = null;
-  }
-
-  Future<void> _b16RefreshActiveNativeAdPqnvze() async {
-    if (!mounted ||
-        _b16IsRefreshingNativeAdVqmwza ||
-        _b16IsListScrollingPqnvze ||
-        !_b16CanShowNativeAdHqmwza() ||
-        _b16ActiveNativeAdIndexPqmxza == null) {
-      return;
-    }
-    final int b16RefreshIndexKqnvze = _b16ActiveNativeAdIndexPqmxza!;
-    _b16IsRefreshingNativeAdVqmwza = true;
-    _b16UploadNativeAdChanceQxmvza();
-    try {
-      setState(() => _b16ActiveNativeAdIndexPqmxza = null);
-      await WidgetsBinding.instance.endOfFrame;
-      await Future<void>.delayed(Duration.zero);
-      if (!mounted ||
-          _b16IsListScrollingPqnvze ||
-          !_b16CanShowNativeAdHqmwza()) {
-        return;
-      }
-      final b16AdHepVqmwza = B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr;
-      if (!await b16AdHepVqmwza.b16HasFilesListNativeAdPqmvzr()) {
-        await b16AdHepVqmwza.b16RequestFilesListNativeAdPqmvzr();
-      }
-      if (!mounted ||
-          _b16IsListScrollingPqnvze ||
-          !_b16CanShowNativeAdHqmwza()) {
-        return;
-      }
-      setState(() {
-        _b16NativeAdRefreshKeyQxnvza++;
-        _b16ActiveNativeAdIndexPqmxza = b16RefreshIndexKqnvze;
-      });
-    } finally {
-      _b16IsRefreshingNativeAdVqmwza = false;
-      if (mounted &&
-          !_b16IsListScrollingPqnvze &&
-          _b16CanShowNativeAdHqmwza() &&
-          _b16ActiveNativeAdIndexPqmxza == null) {
-        _b16ActivateNativeAdNearViewportQxmvza(_b16LatestListItemCountKqmwze);
-      }
-    }
-  }
-
   Widget _b16NativeAdSlotWidgetHqmwza({
+    required B16FilesListChildControllerHqmwze b16ControllerPqnvze,
     required int b16ListIndexKqnvze,
     required bool b16ShowNativeAdPqnvze,
   }) {
-    if (b16ShowNativeAdPqnvze &&
-        _b16LastChanceNativeAdIndexVqntza != b16ListIndexKqnvze) {
-      _b16LastChanceNativeAdIndexVqntza = b16ListIndexKqnvze;
-      _b16UploadNativeAdChanceQxmvza();
-    }
+    b16ControllerPqnvze.b16PrepareNativeAdSlotHqmwza(b16ListIndexKqnvze);
     return VisibilityDetector(
       key: ValueKey('b16_file_inline_ad_$b16ListIndexKqnvze'),
       onVisibilityChanged: (b16InfoVqmwza) =>
-          _b16UpdateNativeAdVisibilityPqnvze(
+          b16ControllerPqnvze.b16UpdateNativeAdVisibilityPqnvze(
             b16ListIndexKqnvze,
             b16InfoVqmwza.visibleFraction > 0,
           ),
       child: SizedBox(
-        key: _b16NativeAdKeyMapQxmvza.putIfAbsent(
-          b16ListIndexKqnvze,
-          GlobalKey.new,
-        ),
         width: double.infinity,
         height: 68.h,
         child: Padding(
@@ -426,7 +220,7 @@ class _B16FilesListChildStateVqnxre
           child: b16ShowNativeAdPqnvze
               ? KeyedSubtree(
                   key: ValueKey(
-                    'b16_file_native_${b16ListIndexKqnvze}_$_b16NativeAdRefreshKeyQxnvza',
+                    'b16_file_native_${b16ListIndexKqnvze}_${b16ControllerPqnvze.b16NativeAdRefreshKeyQxnvza}',
                   ),
                   child: const _B16FilesNativeAdContentKqnvze(),
                 )
@@ -436,32 +230,6 @@ class _B16FilesListChildStateVqnxre
                 ),
         ),
       ),
-    );
-  }
-
-  void _b16UpdateNativeAdVisibilityPqnvze(
-    int b16IndexKqnvze,
-    bool b16VisibleQxmvza,
-  ) {
-    if (!mounted) return;
-    final bool b16ChangedVqmwza = b16VisibleQxmvza
-        ? _b16VisibleNativeAdIndexesVqmwza.add(b16IndexKqnvze)
-        : _b16VisibleNativeAdIndexesVqmwza.remove(b16IndexKqnvze);
-    if (!b16ChangedVqmwza) return;
-    if (!b16VisibleQxmvza && _b16ActiveNativeAdIndexPqmxza == b16IndexKqnvze) {
-      _b16ActiveNativeAdIndexPqmxza = null;
-    }
-    if (b16VisibleQxmvza &&
-        !_b16IsListScrollingPqnvze &&
-        !_b16IsRefreshingNativeAdVqmwza) {
-      _b16ActivateNativeAdNearViewportQxmvza(_b16LatestListItemCountKqmwze);
-    }
-  }
-
-  void _b16UploadNativeAdChanceQxmvza() {
-    B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16UploadAdChanceKqnvxe(
-      b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
-      b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_main_banner1,
     );
   }
 
@@ -686,7 +454,15 @@ class _B16FilesNativeAdContentStateVqmwza
           b16ReloadAfterTakePqmvzr: true,
           b16DisposeDelayPqmvzr: Duration.zero,
         );
-    if (!mounted || b16AdWidgetQxmvza == null) return;
+    if (b16AdWidgetQxmvza == null) return;
+    if (!mounted) {
+      try {
+        await FlutterPdfAdPlugins.instance.disposeTakenAdWidget(
+          b16AdWidgetQxmvza,
+        );
+      } catch (_) {}
+      return;
+    }
     setState(() => _b16NativeAdWidgetPqnvze = b16AdWidgetQxmvza);
   }
 
