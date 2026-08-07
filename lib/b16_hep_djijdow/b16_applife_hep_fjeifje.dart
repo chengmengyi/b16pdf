@@ -19,8 +19,21 @@ class B16ApplifeHepFjeifje {
   bool b16ObserverStartedHqmxwe = false, _b16AppIsBackStatus = false;
   bool _b16SuppressNextHotLaunchQxnvza = false;
 
+  bool get b16ShouldSuppressClickHotLaunchQxnvza => _b16AppIsBackStatus;
+
   void b16SuppressNextHotLaunchQxnvza() {
     _b16SuppressNextHotLaunchQxnvza = true;
+    _b16AppIsBackStatus = false;
+  }
+
+  bool _b16ConsumeSuppressedHotLaunchQxnvza() {
+    if (!_b16SuppressNextHotLaunchQxnvza) {
+      return false;
+    }
+    _b16SuppressNextHotLaunchQxnvza = false;
+    _b16AppIsBackStatus = false;
+    B16HotLauncherSourceHepDjiwdjw.instance.removeHotLauncherSourceInfo();
+    return true;
   }
 
   void b16StartObserverKpvnza() {
@@ -56,15 +69,17 @@ class B16ApplifeHepFjeifje {
       B16NotificationHepPqnvze.instance
           .b16UploadPendingNotificationEventsTqnvze(),
     );
-    if (!_b16AppIsBackStatus) {
+    if (!_b16AppIsBackStatus && !_b16SuppressNextHotLaunchQxnvza) {
       return;
     }
     await Future<void>.delayed(const Duration(milliseconds: 300));
-    _b16AppIsBackStatus = false;
-    if (_b16SuppressNextHotLaunchQxnvza) {
-      _b16SuppressNextHotLaunchQxnvza = false;
+    if (_b16ConsumeSuppressedHotLaunchQxnvza()) {
       return;
     }
+    if (!_b16AppIsBackStatus) {
+      return;
+    }
+    _b16AppIsBackStatus = false;
     final B16HotLauncherSourceInfoKqmwze? b16SourcePqnvze =
         B16HotLauncherSourceHepDjiwdjw.instance.b16ConsumeSourceVqntza();
     if (b16SourcePqnvze == null) {
@@ -88,6 +103,5 @@ class B16ApplifeHepFjeifje {
       b16AdScenePqmvzr: b16AdSceneQxnvza,
       b16AdPosIdKqmvzr: b16PositionIdVqntza,
     );
-    B16HotLauncherSourceHepDjiwdjw.instance.removeHotLauncherSourceInfo();
   }
 }

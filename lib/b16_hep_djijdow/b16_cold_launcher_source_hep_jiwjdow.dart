@@ -21,6 +21,7 @@ class B16ColdLauncherSourceHepJiwjdow {
     var localNotificationAppLaunchDetails =
         await FlutterLocalNotificationPlugins.instance
             .getNotificationAppLaunchDetails();
+    print("kk==localNotificationAppLaunchDetails===${localNotificationAppLaunchDetails.didNotificationLaunchApp}==${localNotificationAppLaunchDetails.notificationResponse?.payload}");
     if (localNotificationAppLaunchDetails.didNotificationLaunchApp == true) {
       notificationPayload =
           localNotificationAppLaunchDetails.notificationResponse?.payload ??
