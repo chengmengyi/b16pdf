@@ -74,7 +74,7 @@ class B16LauncherControllerFjifje extends B16RootControllerFjesak
       b16LaunchAdPosIdKqmwze =
           b16NotificationPayloadPqnvze == LocalNotificationPayload.media.value
           ? B16PosidJkwkosw.pr_open_mediapop
-          : B16PosidJkwkosw.pr_open_cold;
+          : B16PosidJkwkosw.pr_open_noti;
       return;
     }
 
