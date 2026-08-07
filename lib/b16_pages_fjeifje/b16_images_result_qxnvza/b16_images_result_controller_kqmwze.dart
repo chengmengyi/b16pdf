@@ -7,6 +7,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_
 import 'package:b16pdf/b16_root_fjield/b16_root_controller_fjesak.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -73,6 +74,10 @@ class B16ImagesResultControllerKqmwze extends B16RootControllerFjesak {
 
   Future<void> clickSave() async {
     if (b16ImagePathsQxnvza.isEmpty) return;
+    if(b16ImagePathsQxnvza.length>100){
+      Fluttertoast.showToast(msg: 'Max 100 images allowed'.tr);
+      return;
+    }
     final Permission b16PermissionQxnvza = await _b16StoragePermissionVqntza();
     final B16PermissionResultVqmxze b16ResultHqmwza =
         await B16PermissionHepKqnvze.instance.requestPermission(
