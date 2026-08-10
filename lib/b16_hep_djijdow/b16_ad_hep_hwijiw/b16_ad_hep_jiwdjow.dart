@@ -656,9 +656,6 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       return;
     }
     if (b16RevenueKqmvzr >= 0.01) {
-      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
-        b16PointTypeQxnvza: B16PointTypeJdwijdiw.pr_total_001_revenue,
-      );
       B16FirebaseHepKqmwze.instance.b16LogAnalyticsEventVqntza(
         b16NameQxnvza: B16PointTypeJdwijdiw.pr_total_001_revenue.name,
       );
