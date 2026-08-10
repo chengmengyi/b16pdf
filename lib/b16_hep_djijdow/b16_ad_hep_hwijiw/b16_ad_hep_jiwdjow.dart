@@ -663,6 +663,19 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       B16FirebaseHepKqmwze.instance.b16LogAnalyticsEventVqntza(
         b16NameQxnvza: B16PointTypeJdwijdiw.pr_total_001_revenue.name,
       );
+      B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+        b16PointTypeQxnvza: B16PointTypeJdwijdiw.pr_total_001_revenue,
+        b16ParametersKqmwze: {
+          "scene": b16AdPlacementPqmvzr.name,
+          "ad_pos_id": b16AdPosIdVmqxtr.name,
+          "ad_format": b16AdInfoPqmvzr.adType,
+          "ad_code_id": b16AdInfoPqmvzr.adId,
+          "currency": b16CurrencyCodePqmvzr,
+          "value": b16RevenueKqmvzr,
+          "ad_network": b16AdNetworkVmqxtr,
+          "ad_source_client": b16AdInfoPqmvzr.adPlat,
+        },
+      );
     }
 
     FlutterCheckAf.instance.uploadAdRevenue(b16AdNetworkVmqxtr, b16RevenueKqmvzr, b16AdInfoPqmvzr.adId ?? "", b16AdPlacementPqmvzr.name,);
@@ -679,6 +692,20 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "value": b16RevenueKqmvzr,
       },
     );
+    B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_impression_revenue,
+      b16ParametersKqmwze: {
+        "scene": b16AdPlacementPqmvzr.name,
+        "ad_pos_id": b16AdPosIdVmqxtr.name,
+        "ad_format": b16AdInfoPqmvzr.adType,
+        "ad_code_id": b16AdInfoPqmvzr.adId,
+        "currency": b16CurrencyCodePqmvzr,
+        "value": b16RevenueKqmvzr,
+        "ad_network": b16AdNetworkVmqxtr,
+        "ad_source_client": b16AdInfoPqmvzr.adPlat,
+      },
+    );
+
     B16TbaHepDjiwjidw.instance.b16UploadAdHqmwza(
       b16AdInfoQxnvza: b16AdInfoPqmvzr,
       b16AdSceneKqmwze: b16AdPlacementPqmvzr,
@@ -815,6 +842,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "ad_pos_id": b16AdPosIdVmqxtr.name,
         "ad_network": b16AdNetworkVmqxtr,
         "ad_source_client": b16AdSourceNamePqmvzr,
+        "ad_source": b16AdSourceNamePqmvzr,
       },
     );
   }
