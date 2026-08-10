@@ -2,6 +2,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_dialog_fjifjie/b16_comment_dialog_jiwjdiw/b16_comment_dialog_jiwjdiw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
@@ -51,6 +52,12 @@ class B16HomeControllerHqvwze extends B16RootControllerFjesak {
   Future<bool> b16HandleBackPressedPqnvze() async {
     if (_b16CanExitAfterCommentQxnvza) {
       return true;
+    }
+    if (B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza) {
+      await B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
+        b16AdScenePqmvzr: B16AdSceneJdwo.pr_exit,
+        b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_exit_app,
+      );
     }
     final bool? b16CanExitNextTimeVqmwza =
         await B16RoutersHepFjeifjoe.b16ShowBottomSheetVxqprn<bool>(

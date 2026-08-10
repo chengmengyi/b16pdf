@@ -44,14 +44,6 @@ class B16CommentDialogJiwjdiwController extends B16RootControllerFjesak {
       return;
     }
     _b16ClosingDialogQxmvza = true;
-    if (B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza
-    // && B16FirebaseHepKqmwze.instance.b16CommentOverlayEnabledHqmwza
-    ) {
-      await B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
-        b16AdScenePqmvzr: B16AdSceneJdwo.pr_exit,
-        b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_exit_app,
-      );
-    }
     if (Get.isBottomSheetOpen == true) {
       B16RoutersHepFjeifjoe.b16BackFtynwp<bool>(b16ResultNcgkqe: false);
     }
