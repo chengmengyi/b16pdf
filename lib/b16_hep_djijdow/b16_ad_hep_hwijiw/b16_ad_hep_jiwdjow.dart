@@ -17,6 +17,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_check_af/flutter_check_af.dart';
 import 'package:flutter_pdf_ad_plugins/flutter_pdf_ad_plugins.dart';
 import 'package:flutter_tba_info/flutter_tba_info.dart';
+import 'package:appsflyer_sdk_plus/appsflyer_sdk.dart';
 
 class B16AdHepJiwdjow implements FlutterPdfAdListener {
   static final B16AdHepJiwdjow _b16AdUtilsInstancePqmvzr = B16AdHepJiwdjow._();
@@ -51,11 +52,11 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       B16PosidJkwkosw.pr_new_lan_nat,
       B16PosidJkwkosw.pr_main_banner1,
     },
-    // B16AdSceneJdwo.pr_ban2: <B16PosidJkwkosw>{
-    //   B16PosidJkwkosw.pr_main_banner2,
-    //   B16PosidJkwkosw.unload_nat1,
-    // },
-    // B16AdSceneJdwo.pr_ban3: <B16PosidJkwkosw>{B16PosidJkwkosw.pr_main_banner3},
+    B16AdSceneJdwo.pr_ban2: <B16PosidJkwkosw>{
+      B16PosidJkwkosw.pr_main_banner2,
+      B16PosidJkwkosw.unload_nat1,
+    },
+    B16AdSceneJdwo.pr_ban3: <B16PosidJkwkosw>{B16PosidJkwkosw.pr_main_banner3},
     B16AdSceneJdwo.pr_user_use: <B16PosidJkwkosw>{
       B16PosidJkwkosw.pr_up_int,
       B16PosidJkwkosw.pr_down_int,
@@ -95,8 +96,8 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     FlutterPdfAdPlugins.instance.updateSmallTemplateNativePlacements(
       const <B16AdSceneJdwo>[
         B16AdSceneJdwo.pr_ban1,
-        // B16AdSceneJdwo.pr_ban2,
-        // B16AdSceneJdwo.pr_ban3,
+        B16AdSceneJdwo.pr_ban2,
+        B16AdSceneJdwo.pr_ban3,
       ],
     );
     FlutterPdfAdPlugins.instance.updateSkipReloadAfterClosePlacements(
@@ -195,7 +196,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
   Future<void> _b16LoadStartupAdSceneIgnoringShieldKqmvzr(
     B16AdSceneJdwo b16AdScenePqmvzr,
   ) async {
-    if (b16AdScenePqmvzr != B16AdSceneJdwo.pr_exit) {
+    if (b16AdScenePqmvzr != B16AdSceneJdwo.pr_ban2 &&b16AdScenePqmvzr != B16AdSceneJdwo.pr_exit) {
       await FlutterPdfAdPlugins.instance.loadPlacement<B16AdSceneJdwo>(
         b16AdScenePqmvzr,
         placementLabelBuilder: (B16AdSceneJdwo b16AdPlacementPqmvzr) =>
@@ -246,7 +247,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_launch);
     _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_ban1);
     if (B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza) {
-      // _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_ban2);
+      _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_ban2);
       _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_exit);
     }
     b16LoadNewLaunchAdQxnvza =
@@ -495,7 +496,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       return;
     }
     b16PreloadAdBySceneKqmwze(B16AdSceneJdwo.pr_exit);
-    // b16PreloadAdBySceneKqmwze(B16AdSceneJdwo.pr_ban2);
+    b16PreloadAdBySceneKqmwze(B16AdSceneJdwo.pr_ban2);
   }
 
   bool _b16ShouldExcludeCooldownForShow({
@@ -674,7 +675,13 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       );
     }
 
-    FlutterCheckAf.instance.uploadAdRevenue(b16AdNetworkVmqxtr, b16RevenueKqmvzr, b16AdInfoPqmvzr.adId ?? "", b16AdPlacementPqmvzr.name,);
+    FlutterCheckAf.instance.uploadAdRevenue(
+      b16AdNetworkVmqxtr,
+      b16RevenueKqmvzr,
+      b16AdInfoPqmvzr.adId ?? "",
+      b16AdPlacementPqmvzr.name,
+      AFMediationNetwork.googleAdMob,
+    );
 
     B16FirebaseHepKqmwze.instance.b16LogFacebookPurchaseKqmwze(
       b16RevenueKqmvzr,

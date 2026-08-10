@@ -450,11 +450,10 @@ packages:
   flutter_preview_file:
     dependency: "direct main"
     description:
-      name: flutter_preview_file
-      sha256: "14b62adb86b279d454b8104ea5c8350c6417580d5e8e2915500f74b25e7ee768"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.7"
+      path: "/Users/chengmengyi/testbird/flutter_preview_file"
+      relative: false
+    source: path
+    version: "0.0.8"
   flutter_screenutil:
     dependency: "direct main"
     description:
