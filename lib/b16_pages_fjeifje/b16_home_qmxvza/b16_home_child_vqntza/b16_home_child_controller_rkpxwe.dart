@@ -4,6 +4,7 @@ import 'package:b16pdf/b16_dialog_fjifjie/b16_comment_dialog_jiwjdiw/b16_comment
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
@@ -108,7 +109,9 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
           );
       if(b16ResultVqntza.b16IsShowPermissionAdPqnvxe){
         B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.storage_auth_click);
-        B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(b16AdScenePqmvzr: B16AdSceneJdwo.pr_launch, b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_permission_open);
+        if(B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza){
+          B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(b16AdScenePqmvzr: B16AdSceneJdwo.pr_launch, b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_permission_open);
+        }
       }
       if (!b16ResultVqntza.b16IsGrantedHqmwza) return;
       B16EventHepFjiejizx.instance.b16SendMsgFjijeio(
