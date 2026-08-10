@@ -218,11 +218,14 @@ class B16UnstallPageKqmwze
                   ),
                 ),
                 Align(
-                  child: B16LocalizedTextViewCxmpra(
-                    "Why are you uninstalling?".tr,
-                    b16FontSizeRvxqle: 18.sp,
-                    b16ColorDtkzma: Colors.black,
-                    b16FontWeightHncysp: FontWeight.bold,
+                  child: Container(
+                    margin: EdgeInsets.only(left: 44.w,right: 44.w),
+                    child: B16LocalizedTextViewCxmpra(
+                      "Uninstall reason".tr,
+                      b16FontSizeRvxqle: 18.sp,
+                      b16ColorDtkzma: Colors.black,
+                      b16FontWeightHncysp: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],

@@ -162,6 +162,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Please enter the reason for uninstalling All PDF',
       "Don't uninstall for now": "Don't uninstall for now",
       'Uninstall': 'Uninstall',
+      'Uninstall reason': 'Uninstall reason',
       'New version coming soon!': 'New version coming soon!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!',
@@ -314,6 +315,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Veuillez indiquer pourquoi vous désinstallez All PDF',
       "Don't uninstall for now": 'Ne pas désinstaller maintenant',
       'Uninstall': 'Désinstaller',
+      'Uninstall reason': 'Motif de désinstallation',
       'New version coming soon!': 'Une nouvelle version arrive bientôt !',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'Nous avons bien reçu votre avis ! Il nous est précieux. Nous améliorons continuellement l’expérience et une nouvelle version sera bientôt disponible. Restez avec nous !',
@@ -466,6 +468,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'All PDFをアンインストールする理由を入力してください',
       "Don't uninstall for now": '今はアンインストールしない',
       'Uninstall': 'アンインストール',
+      'Uninstall reason': 'アンインストールの理由',
       'New version coming soon!': '新しいバージョンを近日公開！',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'ご意見を受け付けました。いただいた情報は私たちにとって大切です。より良い製品体験を目指して改善を続けており、新しいバージョンも近日公開予定です。ぜひ引き続きご利用ください。',
@@ -603,6 +606,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'All PDF를 삭제하는 이유를 입력하세요',
       "Don't uninstall for now": '지금은 삭제하지 않기',
       'Uninstall': '삭제',
+      'Uninstall reason': '삭제 이유',
       'New version coming soon!': '새 버전이 곧 출시됩니다!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           '소중한 의견이 접수되었습니다. 보내주신 정보는 제품 개선에 큰 도움이 됩니다. 더 나은 사용 경험을 위해 계속 개선 중이며 새 버전도 곧 출시됩니다. 계속 함께해 주세요!',
@@ -743,6 +747,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Bitte geben Sie den Grund für die Deinstallation von All PDF ein',
       "Don't uninstall for now": 'Vorerst nicht deinstallieren',
       'Uninstall': 'Deinstallieren',
+      'Uninstall reason': 'Deinstallationsgrund',
       'New version coming soon!': 'Eine neue Version kommt bald!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'Ihr Feedback ist bei uns eingegangen und sehr wichtig. Wir verbessern das Produkterlebnis kontinuierlich und veröffentlichen bald eine neue Version. Bleiben Sie bei uns!',
@@ -900,6 +905,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Introduce el motivo por el que desinstalas All PDF',
       "Don't uninstall for now": 'No desinstalar por ahora',
       'Uninstall': 'Desinstalar',
+      'Uninstall reason': 'Motivo de desinstalación',
       'New version coming soon!': '¡Pronto llegará una nueva versión!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'Hemos recibido tus comentarios y son muy importantes. Seguimos mejorando la experiencia del producto y pronto lanzaremos una nueva versión. ¡Quédate con nosotros!',
@@ -1056,6 +1062,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Inserisci il motivo per cui disinstalli All PDF',
       "Don't uninstall for now": 'Non disinstallare per ora',
       'Uninstall': 'Disinstalla',
+      'Uninstall reason': 'Motivo della disinstallazione',
       'New version coming soon!': 'Una nuova versione è in arrivo!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'Abbiamo ricevuto il tuo feedback ed è molto importante. Miglioriamo continuamente l’esperienza del prodotto e presto lanceremo una nuova versione. Resta con noi!',
@@ -1211,6 +1218,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Informe o motivo para desinstalar o All PDF',
       "Don't uninstall for now": 'Não desinstalar agora',
       'Uninstall': 'Desinstalar',
+      'Uninstall reason': 'Motivo da desinstalação',
       'New version coming soon!': 'Uma nova versão será lançada em breve!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'Recebemos seu feedback e ele é muito importante. Continuamos aprimorando a experiência do produto e uma nova versão será lançada em breve. Fique conosco!',
@@ -1368,6 +1376,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'Укажите причину удаления All PDF',
       "Don't uninstall for now": 'Пока не удалять',
       'Uninstall': 'Удалить',
+      'Uninstall reason': 'Причина удаления',
       'New version coming soon!': 'Скоро выйдет новая версия!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'Мы получили ваш отзыв, и он очень важен для нас. Мы постоянно улучшаем приложение, и скоро выйдет новая версия. Оставайтесь с нами!',
@@ -1520,6 +1529,7 @@ final class B16LanguageHepKqmvza extends Translations {
       'Please enter the reason for uninstalling All PDF': '請輸入解除安裝 All PDF 的原因',
       "Don't uninstall for now": '暫時不要解除安裝',
       'Uninstall': '解除安裝',
+      'Uninstall reason': '解除安裝原因',
       'New version coming soon!': '新版本即將推出！',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           '我們已收到您的意見，這些資訊對我們非常重要。我們正持續改善產品體驗，新版本也即將推出，請繼續支持我們！',
@@ -1653,6 +1663,7 @@ final class B16LanguageHepKqmvza extends Translations {
       'Please enter the reason for uninstalling All PDF': '请输入卸载 All PDF 的原因',
       "Don't uninstall for now": '暂时不要卸载',
       'Uninstall': '卸载',
+      'Uninstall reason': '卸载原因',
       'New version coming soon!': '新版本即将上线！',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           '我们已收到您的反馈，这些信息对我们非常重要。我们正在持续优化产品体验，新版本也即将上线，请继续支持我们！',
@@ -1788,6 +1799,7 @@ final class B16LanguageHepKqmvza extends Translations {
           'يرجى إدخال سبب إلغاء تثبيت All PDF',
       "Don't uninstall for now": 'عدم إلغاء التثبيت الآن',
       'Uninstall': 'إلغاء التثبيت',
+      'Uninstall reason': 'سبب إلغاء التثبيت',
       'New version coming soon!': 'إصدار جديد قريبًا!',
       'Your feedback has been received! This information is vital to us. We are continuously optimizing the product experience, and a new version will be launched soon. Please stay with us!':
           'لقد تلقينا ملاحظاتك وهي مهمة جدًا لنا. نواصل تحسين تجربة المنتج وسيتم إطلاق إصدار جديد قريبًا. ابق معنا!',
