@@ -180,10 +180,25 @@ class _B16ChooseLanguageNativeAdStateHqmwza
   Timer? _b16RetryTimerKqmwze;
   Widget? _b16AdWidgetVqntza;
   bool _b16CheckingAdHqmwza = false;
+  bool _b16CanShowAdVqntza = false;
 
   @override
   void initState() {
     super.initState();
+    unawaited(_b16InitializeNativeAdQxmvza());
+  }
+
+  Future<void> _b16InitializeNativeAdQxmvza() async {
+    final B16AdHepJiwdjow b16AdHepKqmwze =
+        B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr;
+    final bool b16CanShowAdPqnvze = await b16AdHepKqmwze
+        .b16CanShowAdBySwitchVqntza(B16PosidJkwkosw.pr_new_lan_nat);
+    if (!mounted || !b16CanShowAdPqnvze) return;
+    setState(() => _b16CanShowAdVqntza = true);
+    b16AdHepKqmwze.b16UploadAdChanceKqnvxe(
+      b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
+      b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_new_lan_nat,
+    );
     unawaited(_b16TryTakeAdWidgetPqnvze());
     _b16RetryTimerKqmwze = Timer.periodic(
       _b16RetryDurationQxnvza,
@@ -222,6 +237,7 @@ class _B16ChooseLanguageNativeAdStateHqmwza
 
   @override
   Widget build(BuildContext b16ContextQxnvza) {
+    if (!_b16CanShowAdVqntza) return const SizedBox.shrink();
     return SizedBox(
       width: double.infinity,
       height: 58.h,

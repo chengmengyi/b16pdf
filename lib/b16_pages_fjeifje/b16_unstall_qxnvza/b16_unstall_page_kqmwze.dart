@@ -249,10 +249,25 @@ class _B16UnstallNativeAdStateKqnvze extends State<_B16UnstallNativeAdVqmwza> {
   Timer? _b16RetryTimerPqnvze;
   Widget? _b16AdWidgetVqntza;
   bool _b16CheckingAdHqmwza = false;
+  bool _b16CanShowAdVqntza = false;
 
   @override
   void initState() {
     super.initState();
+    unawaited(_b16InitializeNativeAdQxmvza());
+  }
+
+  Future<void> _b16InitializeNativeAdQxmvza() async {
+    final B16AdHepJiwdjow b16AdHepKqmwze =
+        B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr;
+    final bool b16CanShowAdPqnvze = await b16AdHepKqmwze
+        .b16CanShowAdBySwitchVqntza(B16PosidJkwkosw.unload_nat1);
+    if (!mounted || !b16CanShowAdPqnvze) return;
+    setState(() => _b16CanShowAdVqntza = true);
+    b16AdHepKqmwze.b16UploadAdChanceKqnvxe(
+      b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
+      b16AdPosIdKqmvzr: B16PosidJkwkosw.unload_nat1,
+    );
     unawaited(_b16TryBuildAdWidgetKqmwze());
     _b16RetryTimerPqnvze = Timer.periodic(
       _b16RetryDurationQxmvza,
@@ -285,6 +300,7 @@ class _B16UnstallNativeAdStateKqnvze extends State<_B16UnstallNativeAdVqmwza> {
 
   @override
   Widget build(BuildContext context) {
+    if (!_b16CanShowAdVqntza) return const SizedBox.shrink();
     return SizedBox(
       width: double.infinity,
       height: 56.h,

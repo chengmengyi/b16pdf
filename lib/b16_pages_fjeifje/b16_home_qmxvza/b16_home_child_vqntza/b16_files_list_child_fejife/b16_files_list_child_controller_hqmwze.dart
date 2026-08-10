@@ -56,6 +56,7 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
   int _b16LatestListItemCountKqmwze = 0;
   bool _b16IsListScrollingPqnvze = false;
   bool _b16IsRefreshingNativeAdVqmwza = false;
+  bool _b16NativeAdSwitchEnabledQxnvza = false;
   late B16SortType b16SortTypePqnvza;
 
   B16FilesListChildControllerHqmwze({required this.type});
@@ -78,9 +79,22 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
     );
     super.onInit();
     b16ScrollControllerPqnvze.addListener(_b16HandleScrollKqmwze);
+    unawaited(_b16InitializeNativeAdSwitchPqnvze());
+  }
+
+  Future<void> _b16InitializeNativeAdSwitchPqnvze() async {
+    _b16NativeAdSwitchEnabledQxnvza = await B16AdHepJiwdjow
+        .b16AdUtilsInstanceKqmvzr
+        .b16CanShowAdBySwitchVqntza(B16PosidJkwkosw.pr_main_banner1);
+    if (isClosed) return;
+    if (!_b16NativeAdSwitchEnabledQxnvza) {
+      _b16ClearActiveNativeAdKqnvze();
+    }
+    update();
   }
 
   bool get b16CanShowNativeAdHqmwza =>
+      _b16NativeAdSwitchEnabledQxnvza &&
       B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza &&
       b16VisibleFilesVqmwza.length >= b16NativeAdIntervalKqmvze;
 
@@ -109,7 +123,8 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
   }
 
   void b16PrepareNativeAdSlotHqmwza(int b16ListIndexKqnvze) {
-    if (b16ActiveNativeAdIndexPqmxza == b16ListIndexKqnvze &&
+    if (b16CanShowNativeAdHqmwza &&
+        b16ActiveNativeAdIndexPqmxza == b16ListIndexKqnvze &&
         _b16LastChanceNativeAdIndexVqntza != b16ListIndexKqnvze) {
       _b16LastChanceNativeAdIndexVqntza = b16ListIndexKqnvze;
       _b16UploadNativeAdChanceQxmvza();
@@ -247,6 +262,7 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
   }
 
   void _b16UploadNativeAdChanceQxmvza() {
+    if (!_b16NativeAdSwitchEnabledQxnvza) return;
     B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16UploadAdChanceKqnvxe(
       b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
       b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_main_banner1,

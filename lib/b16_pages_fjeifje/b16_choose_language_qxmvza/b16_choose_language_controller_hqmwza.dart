@@ -1,6 +1,3 @@
-import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_hep_kqmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_tools_fieife.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_new_user_hep_jfiejfo.dart';
@@ -22,10 +19,6 @@ class B16ChooseLanguageControllerHqmwza extends B16RootControllerFjesak {
   void onInit() {
     super.onInit();
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(b16PointTypeQxnvza: B16PointTypeJdwijdiw.lang_select_view);
-    B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16UploadAdChanceKqnvxe(
-      b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
-      b16AdPosIdKqmvzr: B16PosidJkwkosw.pr_new_lan_nat,
-    );
     final b16InitialLocaleHqmwza =
         B16LanguageToolsFieife.b16InitialLocaleHqnvze();
     b16SelectedLanguageKqnvze = b16LanguageListPqmwza.firstWhere(
