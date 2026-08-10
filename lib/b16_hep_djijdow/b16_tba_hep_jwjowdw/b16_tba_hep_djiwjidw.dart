@@ -82,7 +82,7 @@ class B16TbaHepDjiwjidw {
       'criss': b16AdInfoQxnvza.adPlat ?? '',
       'standard': b16AdInfoQxnvza.adId ?? '',
       'rant': b16PositionIdVqntza?.name ?? '',
-      'leisure': b16AdSceneKqmwze.name,
+      'sinology': b16AdSceneKqmwze.name,
       'lord': b16PrecisionPqmxza,
       'ideate': b16AdInfoQxnvza.adType,
     };
