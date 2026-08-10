@@ -127,6 +127,7 @@ class B16FirebaseHepKqmwze {
     try {
       final String b16SwitchConfigQxnvza =
           _b16RemoteConfigQxnvza?.getString('switch_config') ?? '';
+      print("kk=b16SwitchConfigQxnvza==${b16SwitchConfigQxnvza}");
       if (b16SwitchConfigQxnvza.isNotEmpty) {
         B16AdSwitchStorageVqntza.b16SaveConfigHqmwza(b16SwitchConfigQxnvza);
       }

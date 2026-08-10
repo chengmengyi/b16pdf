@@ -19,6 +19,7 @@ class B16TbaHepDjiwjidw {
   final Dio _b16DioClientKqmwze = Dio();
 
   Future<void> b16UploadInstallQxnvza() async {
+    addLifeTime();
     b16UploadSessionVqntza();
     if (!B16UploadInstallEventStorageQxnvza.b16ReadEnabledKqmwze()) {
       return;
@@ -229,6 +230,34 @@ class B16TbaHepDjiwjidw {
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.alterate,
       b16ParametersKqmwze: {"secular":await FlutterTbaInfo.instance.getDistinctId()},
       b16UserGroupVqntza: {"user_bv":b12allNewUserStatePqmvzr?1:0},
+    );
+  }
+
+  Future<void> addLifeTime() async {
+    final Map<dynamic, dynamic> referrerMap = await FlutterTbaInfo.instance.getReferrerMap();
+    final dynamic installFirstSeconds = referrerMap["install_first_seconds"];
+    final int? b16InstallTimestampKqmwze = int.tryParse(
+      '$installFirstSeconds',
+    );
+    bool b16IsInstalledTodayVqntza = false;
+    if (b16InstallTimestampKqmwze != null && b16InstallTimestampKqmwze > 0) {
+      final int b16InstallMillisecondsQxnvza =
+          b16InstallTimestampKqmwze < 100000000000
+          ? b16InstallTimestampKqmwze * 1000
+          : b16InstallTimestampKqmwze;
+      final DateTime b16InstallDatePqnvze = DateTime.fromMillisecondsSinceEpoch(
+        b16InstallMillisecondsQxnvza,
+      );
+      final DateTime b16NowHqmwza = DateTime.now();
+      b16IsInstalledTodayVqntza =
+          b16InstallDatePqnvze.year == b16NowHqmwza.year &&
+          b16InstallDatePqnvze.month == b16NowHqmwza.month &&
+          b16InstallDatePqnvze.day == b16NowHqmwza.day;
+    }
+    b16UploadPointKqnvxe(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.alterate,
+      b16ParametersKqmwze: {"secular":await FlutterTbaInfo.instance.getDistinctId()},
+      b16UserGroupVqntza: {"life_time":b16IsInstalledTodayVqntza?"d0":"d1"},
     );
   }
 }

@@ -134,7 +134,8 @@ class B16HomeChildControllerRkpxwe extends B16RootControllerFjesak {
     if (!kDebugMode) {
       return;
     }
-    B16RoutersHepFjeifjoe.b16ShowBottomSheetVxqprn(b16ChildQnwxza: B16CommentDialogJiwjdiwe());
+    // B16RoutersHepFjeifjoe.b16ShowBottomSheetVxqprn(b16ChildQnwxza: B16CommentDialogJiwjdiwe());
+    B16TbaHepDjiwjidw.instance.addLifeTime();
   }
 
   @override
