@@ -32,7 +32,7 @@ class B16UnstallControllerVqntza extends B16RootControllerFjesak {
     super.onInit();
     if (B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza) {
       B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16UploadAdChanceKqnvxe(
-        b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban2,
+        b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
         b16AdPosIdKqmvzr: B16PosidJkwkosw.unload_nat1,
       );
     }

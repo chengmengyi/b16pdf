@@ -49,10 +49,15 @@ class B16ProcessWaitingPageRqmxze
                 b16FontWeightHncysp: FontWeight.w500,
               ),
               B16LocalizedTextViewCxmpra(
-                'Processed {current}/{total} images'.trParams(<String, String>{
-                  'current': '${b16ControllerVqntza.b16ProcessedCountKqmwze}',
-                  'total': '${b16ControllerVqntza.b16ImagePathsQxnvza.length}',
-                }),
+                'Processed {current}/{total} images'.tr
+                    .replaceAll(
+                      '{current}',
+                      '${b16ControllerVqntza.b16ProcessedCountKqmwze}',
+                    )
+                    .replaceAll(
+                      '{total}',
+                      '${b16ControllerVqntza.b16ImagePathsQxnvza.length}',
+                    ),
                 b16FontSizeRvxqle: 14.sp,
                 b16ColorDtkzma: Color(0xff4B5156),
                 b16FontWeightHncysp: FontWeight.w500,

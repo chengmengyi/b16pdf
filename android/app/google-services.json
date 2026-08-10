@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "841796886744",
-    "project_id": "boomtest-b4349",
-    "storage_bucket": "boomtest-b4349.firebasestorage.app"
+    "project_number": "443444467104",
+    "project_id": "apex09-610ad",
+    "storage_bucket": "apex09-610ad.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:841796886744:android:8b9d8bf7a250c88eceb7ad",
+        "mobilesdk_app_id": "1:443444467104:android:4d5df13d2859d72c3180c5",
         "android_client_info": {
-          "package_name": "com.test.boom"
+          "package_name": "com.example.apex09"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDj1dHVW3rmpiU4B1kvpMNOOvJStN9nplQ"
+          "current_key": "AIzaSyB-zuWKNKZ-ooePjayGvF18YOM1r-HaDrg"
         }
       ],
       "services": {

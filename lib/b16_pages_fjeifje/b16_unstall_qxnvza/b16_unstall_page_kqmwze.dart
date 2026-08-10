@@ -269,7 +269,7 @@ class _B16UnstallNativeAdStateKqnvze extends State<_B16UnstallNativeAdVqmwza> {
       final Widget? b16AdWidgetPqmxza = await B16AdHepJiwdjow
           .b16AdUtilsInstanceKqmvzr
           .b16BuildCachedNativeAdWidgetPqmvzr(
-            b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban2,
+            b16AdScenePqmvzr: B16AdSceneJdwo.pr_ban1,
             b16AdPosIdKqmvzr: B16PosidJkwkosw.unload_nat1,
           );
       if (!mounted || b16AdWidgetPqmxza == null) {

@@ -51,11 +51,11 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       B16PosidJkwkosw.pr_new_lan_nat,
       B16PosidJkwkosw.pr_main_banner1,
     },
-    B16AdSceneJdwo.pr_ban2: <B16PosidJkwkosw>{
-      B16PosidJkwkosw.pr_main_banner2,
-      B16PosidJkwkosw.unload_nat1,
-    },
-    B16AdSceneJdwo.pr_ban3: <B16PosidJkwkosw>{B16PosidJkwkosw.pr_main_banner3},
+    // B16AdSceneJdwo.pr_ban2: <B16PosidJkwkosw>{
+    //   B16PosidJkwkosw.pr_main_banner2,
+    //   B16PosidJkwkosw.unload_nat1,
+    // },
+    // B16AdSceneJdwo.pr_ban3: <B16PosidJkwkosw>{B16PosidJkwkosw.pr_main_banner3},
     B16AdSceneJdwo.pr_user_use: <B16PosidJkwkosw>{
       B16PosidJkwkosw.pr_up_int,
       B16PosidJkwkosw.pr_down_int,
@@ -95,8 +95,8 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     FlutterPdfAdPlugins.instance.updateSmallTemplateNativePlacements(
       const <B16AdSceneJdwo>[
         B16AdSceneJdwo.pr_ban1,
-        B16AdSceneJdwo.pr_ban2,
-        B16AdSceneJdwo.pr_ban3,
+        // B16AdSceneJdwo.pr_ban2,
+        // B16AdSceneJdwo.pr_ban3,
       ],
     );
     FlutterPdfAdPlugins.instance.updateSkipReloadAfterClosePlacements(
@@ -195,8 +195,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
   Future<void> _b16LoadStartupAdSceneIgnoringShieldKqmvzr(
     B16AdSceneJdwo b16AdScenePqmvzr,
   ) async {
-    if (b16AdScenePqmvzr != B16AdSceneJdwo.pr_ban2 &&
-        b16AdScenePqmvzr != B16AdSceneJdwo.pr_exit) {
+    if (b16AdScenePqmvzr != B16AdSceneJdwo.pr_exit) {
       await FlutterPdfAdPlugins.instance.loadPlacement<B16AdSceneJdwo>(
         b16AdScenePqmvzr,
         placementLabelBuilder: (B16AdSceneJdwo b16AdPlacementPqmvzr) =>
@@ -247,7 +246,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_launch);
     _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_ban1);
     if (B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza) {
-      _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_ban2);
+      // _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_ban2);
       _b16StartupPreloadAdScenesVmqxtr.add(B16AdSceneJdwo.pr_exit);
     }
     b16LoadNewLaunchAdQxnvza =
@@ -496,7 +495,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       return;
     }
     b16PreloadAdBySceneKqmwze(B16AdSceneJdwo.pr_exit);
-    b16PreloadAdBySceneKqmwze(B16AdSceneJdwo.pr_ban2);
+    // b16PreloadAdBySceneKqmwze(B16AdSceneJdwo.pr_ban2);
   }
 
   bool _b16ShouldExcludeCooldownForShow({
