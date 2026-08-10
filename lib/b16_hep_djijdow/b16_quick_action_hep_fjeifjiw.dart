@@ -5,8 +5,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart
 import 'package:b16pdf/b16_hep_djijdow/b16_hot_launcher_source_hep_djiwdjw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
-import 'package:flutter_pdf_ad_plugins/flutter_pdf_ad_plugins.dart';
-import 'package:quick_actions/quick_actions.dart';
+import 'package:flutter_add_widget_plugins/flutter_add_widget_plugins.dart';
 
 class B16QuickActionHepFjeifjiw {
   static final B16QuickActionHepFjeifjiw _actionHepFjeifjiw =

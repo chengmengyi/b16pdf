@@ -2,7 +2,10 @@ import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notifica
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_hep_fjeifjoe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_language_selected_fjiefjoe.dart';
+import 'package:b16pdf/b16_pages_fjeifje/b16_choose_language_qxmvza/b16_choose_language_controller_hqmwza.dart';
+import 'package:b16pdf/b16_pages_fjeifje/b16_open_notification_page_rqmvza/b16_open_notification_controller_hqvwze.dart';
 import 'package:flutter_local_notification_plugins/flutter_local_notification_plugins.dart';
+import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class B16NewUserHepJfiejfo{
@@ -29,10 +32,20 @@ class B16NewUserHepJfiejfo{
   //语言选择页点确定----启动app：通知->首页
   toPageChooseLanguage(){
     if(B16LanguageSelectedFjiefjoe.b16ReadLanguageVqmxpe().isEmpty){
-      B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
-        b16RouteNameYweqpn:
-        B16RoutersAddressFjeifjeo.b16ChooseLanguageRouteHqmwza,
-      );
+      // B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
+      //   b16RouteNameYweqpn:
+      //   B16RoutersAddressFjeifjeo.b16ChooseLanguageRouteHqmwza,
+      // );
+      if (Get.isRegistered<B16ChooseLanguageControllerHqmwza>()) {
+        B16RoutersHepFjeifjoe.b16PopUntilNameWvxhqt(
+          B16RoutersAddressFjeifjeo.b16ChooseLanguageRouteHqmwza,
+        );
+      } else {
+        B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
+          b16RouteNameYweqpn:
+          B16RoutersAddressFjeifjeo.b16ChooseLanguageRouteHqmwza,
+        );
+      }
       return;
     }
     toPageOpenNotificationPermission();
@@ -41,10 +54,20 @@ class B16NewUserHepJfiejfo{
   toPageOpenNotificationPermission()async{
     var result = await B16NotificationHepPqnvze.instance.hasNotificationPermission();
     if(!result){
-      B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
-        b16RouteNameYweqpn:
-        B16RoutersAddressFjeifjeo.b16NotificationRouteHqmwza,
-      );
+      // B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
+      //   b16RouteNameYweqpn:
+      //   B16RoutersAddressFjeifjeo.b16NotificationRouteHqmwza,
+      // );
+      if (Get.isRegistered<B16OpenNotificationControllerHqvwze>()) {
+        B16RoutersHepFjeifjoe.b16PopUntilNameWvxhqt(
+          B16RoutersAddressFjeifjeo.b16NotificationRouteHqmwza,
+        );
+      } else {
+        B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
+          b16RouteNameYweqpn:
+          B16RoutersAddressFjeifjeo.b16NotificationRouteHqmwza,
+        );
+      }
       return;
     }
     toHome();
