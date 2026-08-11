@@ -7,6 +7,7 @@ import 'package:b16pdf/b16_view_krtmxa/b16_media_padding_view_vnyqsl.dart';
 import 'package:b16pdf/b16_view_krtmxa/b16_tap_guard_view_mfwqke.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_preview_file/flutter_preview_file.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -94,7 +95,7 @@ class B16DeleteFilePageKqnvxe
                           b16OverflowFzrxke: TextOverflow.ellipsis,
                         ),
                         B16LocalizedTextViewCxmpra(
-                          "2026-01-06｜1.2M",
+                          _b16FileDetailPqmwza(b16FileQxmvza),
                           b16FontSizeRvxqle: 12.sp,
                           b16ColorDtkzma: Color(0xff858C92),
                           b16FontWeightHncysp: FontWeight.w500,
@@ -111,6 +112,17 @@ class B16DeleteFilePageKqnvxe
       ),
     ),
   );
+
+  String _b16FileDetailPqmwza(FileToolsFileInfo b16FileVqntze) {
+    final b16DateHqmwza = DateTime.fromMillisecondsSinceEpoch(
+      b16FileVqntze.updateTime ?? 0,
+    );
+    final b16DateTextKqnvze =
+        '${b16DateHqmwza.year}-${b16DateHqmwza.month.toString().padLeft(2, '0')}-${b16DateHqmwza.day.toString().padLeft(2, '0')}';
+    final b16SizePqmxza = (b16FileVqntze.size ?? 0) / 1024 / 1024;
+    return '$b16DateTextKqnvze | ${b16SizePqmxza.toStringAsFixed(1)}M';
+  }
+
 
   _bottomWidget(B16DeleteFileControllerHqmwze b16controllerPqmwze) => Container(
     width: double.infinity,

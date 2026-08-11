@@ -87,8 +87,8 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       return;
     }
     FlutterPdfAdPlugins.instance.updateDebugPaidRevenueRange(
-      minRevenue: 100,
-      maxRevenue: 200,
+      minRevenue: 0.0001,
+      maxRevenue: 0.0003,
     );
     FlutterPdfAdPlugins.instance.updateInterstitialLikeNativePlacements(
       const <B16AdSceneJdwo>[B16AdSceneJdwo.pr_user_use],
@@ -681,6 +681,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       b16AdInfoPqmvzr.adId ?? "",
       b16AdPlacementPqmvzr.name,
       AFMediationNetwork.googleAdMob,
+      b16CurrencyCodePqmvzr,
     );
 
     B16FirebaseHepKqmwze.instance.b16LogFacebookPurchaseKqmwze(
