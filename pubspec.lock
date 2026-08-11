@@ -385,10 +385,11 @@ packages:
   flutter_check_af_new:
     dependency: "direct main"
     description:
-      path: "/Users/chengmengyi/testbird/flutter_check_af_new"
-      relative: false
-    source: path
-    version: "0.0.1"
+      name: flutter_check_af_new
+      sha256: "93b8027d008911edcaf954c86fd78bd5b074c70d502fb487223e644c5edcc588"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   flutter_custom_facebook:
     dependency: "direct main"
     description:

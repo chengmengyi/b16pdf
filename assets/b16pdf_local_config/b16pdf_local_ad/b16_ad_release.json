@@ -1,7 +1,15 @@
 {
   "pr_new_launch": [
     {
-      "jsk": "ca-app-pub-3940256099942544/9257395921",
+      "jsk": "ca-app-pub-9941782658976797/4500770753",
+      "iwk": "admob",
+      "iwn": "open",
+      "isk": 13800,
+      "ipn": 4,
+      "grp": [0]
+    },
+    {
+      "jsk": "ca-app-pub-9941782658976797/7901939659",
       "iwk": "admob",
       "iwn": "open",
       "isk": 13800,
@@ -11,53 +19,17 @@
   ],
   "pr_launch": [
     {
-      "jsk": "ca-app-pub-3940256099942544/9257395921",
+      "jsk": "ca-app-pub-9941782658976797/6844577075",
       "iwk": "admob",
       "iwn": "open",
       "isk": 13800,
       "ipn": 3,
       "grp":  [0]
-    },
-    {
-      "jsk": "ca-app-pub-3940256099942544/9257395921",
-      "iwk": "admob",
-      "iwn": "open",
-      "isk": 13800,
-      "ipn": 3,
-      "grp":  [0]
-    },
-    {
-      "jsk": "ca-app-pub-3940256099942544/9257395921",
-      "iwk": "admob",
-      "iwn": "open",
-      "isk": 13800,
-      "ipn": 3,
-      "grp":  [0]
-    }
-  ],
-  "pr_permission_open": [
-    {
-      "jsk": "ca-app-pub-3940256099942544/9257395921",
-      "iwk": "admob",
-      "iwn": "open",
-      "isk": 13800,
-      "ipn": 3,
-      "grp": [0]
-    }
-  ],
-  "pr_new_nat": [
-    {
-      "jsk": "ca-app-pub-3940256099942544/2247696110",
-      "iwk": "admob",
-      "iwn": "nat",
-      "isk": 13800,
-      "ipn": 3,
-      "grp": [0]
     }
   ],
   "pr_ban1": [
     {
-      "jsk": "ca-app-pub-3940256099942544/2247696110",
+      "jsk": "ca-app-pub-9941782658976797/2442297631",
       "iwk": "admob",
       "iwn": "nat",
       "isk": 13800,
@@ -67,17 +39,7 @@
   ],
   "pr_ban2": [
     {
-      "jsk": "ca-app-pub-3940256099942544/2247696110",
-      "iwk": "admob",
-      "iwn": "nat",
-      "isk": 13800,
-      "ipn": 3,
-      "grp":  [0]
-    }
-  ],
-  "pr_ban3": [
-    {
-      "jsk": "ca-app-pub-3940256099942544/2247696110",
+      "jsk": "ca-app-pub-9941782658976797/1144959616",
       "iwk": "admob",
       "iwn": "nat",
       "isk": 13800,
@@ -87,35 +49,9 @@
   ],
   "pr_user_use": [
     {
-      "jsk": "ca-app-pub-3940256099942544/1033173712",
+      "jsk": "ca-app-pub-9941782658976797/2445453056",
       "iwk": "admob",
       "iwn": "int",
-      "isk": 13800,
-      "ipn": 3,
-      "grp": [0]
-    },
-    {
-      "jsk": "ca-app-pub-3940256099942544/1033173712",
-      "iwk": "admob",
-      "iwn": "int",
-      "isk": 13800,
-      "ipn": 2,
-      "grp": [0]
-    },
-    {
-      "jsk": "ca-app-pub-3940256099942544/1033173712",
-      "iwk": "admob",
-      "iwn": "int",
-      "isk": 13800,
-      "ipn": 1,
-      "grp": [0]
-    }
-  ],
-  "pr_user_use_ai": [
-    {
-      "jsk": "ca-app-pub-3940256099942544/5224354917",
-      "iwk": "admob",
-      "iwn": "rwd",
       "isk": 13800,
       "ipn": 3,
       "grp": [0]
@@ -123,7 +59,7 @@
   ],
   "pr_exit": [
     {
-      "jsk": "ca-app-pub-3940256099942544/9257395921",
+      "jsk": "ca-app-pub-9941782658976797/4218413731",
       "iwk": "admob",
       "iwn": "open",
       "isk": 13800,
