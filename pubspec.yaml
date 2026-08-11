@@ -48,8 +48,7 @@ dependencies:
   fluttertoast: 9.1.0
   doc_scan_flutter: 2.0.0
   webview_flutter: 4.13.1
-  flutter_preview_file:
-    path: /Users/chengmengyi/testbird/flutter_preview_file
+  flutter_preview_file: 0.0.8
   app_settings: 6.1.1
   device_info_plus: 12.4.0
   lottie: 3.3.0
@@ -57,23 +56,18 @@ dependencies:
   firebase_remote_config: 6.5.3
   firebase_core: 4.11.0
   firebase_analytics: 12.4.3
-  flutter_pdf_ad_plugins:
-    path: /Users/chengmengyi/testbird/flutter_pdf_ad_plugins
+  flutter_pdf_ad_plugins: 0.2.6
   flutter_tba_info: 0.0.9
   flutter_app_lifecycle: 0.0.3
 #  flutter_check_adjust: 0.0.9
-  flutter_check_af:
-    path: /Users/chengmengyi/testbird/flutter_check_af
+  flutter_check_af_new: 0.0.1
   flutter_pdf_risk_control_plugins: 0.0.2
   sqflite: 2.4.2
   dio: 5.8.0+1
   flutter_custom_facebook: 0.0.5
-  flutter_local_notification_plugins:
-    path: /Users/chengmengyi/testbird/flutter_local_notification_plugins
+  flutter_local_notification_plugins: 0.2.1
   flutter_set_defaults_app: 0.0.1
-  flutter_add_widget_plugins:
-    path: /Users/chengmengyi/testbird/flutter_add_widget_plugins
-#  quick_actions: 1.1.0
+  flutter_add_widget_plugins: 0.0.2
   url_launcher: 6.3.2
   visibility_detector: 0.4.0+2
   path_provider: 2.1.6

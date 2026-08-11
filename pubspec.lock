@@ -369,10 +369,11 @@ packages:
   flutter_add_widget_plugins:
     dependency: "direct main"
     description:
-      path: "/Users/chengmengyi/testbird/flutter_add_widget_plugins"
-      relative: false
-    source: path
-    version: "0.0.1"
+      name: flutter_add_widget_plugins
+      sha256: "83037c73a62d93725dd2004a98c3714bf97dcab4bacd5676bab3f221d7f56375"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   flutter_app_lifecycle:
     dependency: "direct main"
     description:
@@ -381,13 +382,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.3"
-  flutter_check_af:
+  flutter_check_af_new:
     dependency: "direct main"
     description:
-      path: "/Users/chengmengyi/testbird/flutter_check_af"
-      relative: false
-    source: path
-    version: "0.1.0"
+      name: flutter_check_af_new
+      sha256: "2a1e731ec3e7d0409eb6ba8a9b4d51621c6efa1bd55a65e38996d9eabcc8a08b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   flutter_custom_facebook:
     dependency: "direct main"
     description:
@@ -415,9 +417,10 @@ packages:
   flutter_local_notification_plugins:
     dependency: "direct main"
     description:
-      path: "/Users/chengmengyi/testbird/flutter_local_notification_plugins"
-      relative: false
-    source: path
+      name: flutter_local_notification_plugins
+      sha256: a8e7242056f226c9d8b8de99ab78f126dc15eb628e1b49e96ebfd4c72ca846c4
+      url: "https://pub.dev"
+    source: hosted
     version: "0.2.1"
   flutter_localizations:
     dependency: "direct main"
@@ -427,10 +430,11 @@ packages:
   flutter_pdf_ad_plugins:
     dependency: "direct main"
     description:
-      path: "/Users/chengmengyi/testbird/flutter_pdf_ad_plugins"
-      relative: false
-    source: path
-    version: "0.2.5"
+      name: flutter_pdf_ad_plugins
+      sha256: e542be4b03479cc02b93ec5037ebebc1db52cf466f3381a1c298b04430e6da3e
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.6"
   flutter_pdf_risk_control_plugins:
     dependency: "direct main"
     description:
@@ -450,9 +454,10 @@ packages:
   flutter_preview_file:
     dependency: "direct main"
     description:
-      path: "/Users/chengmengyi/testbird/flutter_preview_file"
-      relative: false
-    source: path
+      name: flutter_preview_file
+      sha256: "3e2a59a3b4399ff764ccc4b2ede043575b213d48331e10f04542979fd7fc9587"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.8"
   flutter_screenutil:
     dependency: "direct main"
