@@ -28,8 +28,12 @@ class B16FirebaseHepKqmwze {
 
   int b16AdCooldownSecondsPqnvze = 30;
   bool b16KoreanPhoneNotificationKqmwze = false;
+  String b16AdSource="local";
 
   Future<void> b16InitializeFirebaseQxnvza() async {
+    if(B16FirebaseAdConfigStorageHqmwza.b16ReadConfigKqnvxe().isNotEmpty){
+      b16AdSource="remote";
+    }
     try {
       await Firebase.initializeApp();
       _b16AnalyticsVqntza ??= FirebaseAnalytics.instance;
@@ -63,6 +67,7 @@ class B16FirebaseHepKqmwze {
     final String b16PdfAdConfigKqmwze =
         _b16RemoteConfigQxnvza?.getString('pdf_ad_16') ?? '';
     if (b16PdfAdConfigKqmwze.isNotEmpty) {
+      b16AdSource="remote";
       B16FirebaseAdConfigStorageHqmwza.b16SaveConfigPqmxza(
         b16PdfAdConfigKqmwze,
       );

@@ -608,7 +608,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
         "ad_network": b16AdNetworkVmqxtr,
-        "ad_source_client": b16AdSourceNamePqmvzr,
+        "ad_source_client": b16AdInfoKqmvzr.adPlat,
       },
     );
   }
@@ -635,7 +635,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
         "ad_network": b16AdNetworkVmqxtr,
-        "ad_source_client": b16AdSourceNamePqmvzr,
+        "ad_source_client": b16AdInfoKqmvzr.adPlat,
       },
     );
   }
@@ -740,7 +740,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "error_message": b16FailReasonPqmvzr,
-        "ad_source_client": b16AdSourceNameKqmvzr,
+        "ad_source_client": b16AdInfoKqmvzr.adPlat,
         "ad_network": b16AdNetworkVmqxtr,
         "load_time": loadDurationSeconds,
       },
@@ -782,7 +782,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "scene": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
-        "ad_source_client": b16AdSourceNamePqmvzr,
+        "ad_source_client": b16AdInfoKqmvzr.adPlat,
         "ad_network": b16AdNetworkVmqxtr,
         "load_time": loadDurationSeconds,
       },
@@ -812,7 +812,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
         "ad_network": b16AdNetworkVmqxtr,
-        "ad_source_client": b16AdSourceNamePqmvzr,
+        "ad_source_client": b16AdInfoKqmvzr.adPlat,
         "error_message": b16ErrorMessageKqmvzr,
       },
     );
@@ -845,8 +845,8 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
         "ad_network": b16AdNetworkVmqxtr,
-        "ad_source_client": b16AdSourceNamePqmvzr,
-        "ad_source": b16AdSourceNamePqmvzr,
+        "ad_source_client": b16AdInfoKqmvzr.adPlat,
+        "ad_source": B16FirebaseHepKqmwze.instance.b16AdSource,
       },
     );
   }
