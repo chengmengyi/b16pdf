@@ -50,7 +50,6 @@ dependencies:
   webview_flutter: 4.13.1
   flutter_preview_file: 0.0.8
   app_settings: 6.1.1
-  device_info_plus: 12.4.0
   lottie: 3.3.0
   image_picker: 1.2.2
   firebase_remote_config: 6.5.3

@@ -30,9 +30,9 @@ class B16UserCheckHepQxnvza {
   bool _b16IsEligibleUserKqmwze = false;
 
   bool get b16IsEligibleUserVqntza {
-    // if (kDebugMode) {
-    //   return true;
-    // }
+    if (kDebugMode) {
+      return true;
+    }
     return _b16IsEligibleUserKqmwze;
   }
 
