@@ -70,9 +70,10 @@ class B16NotificationHepPqnvze {
     );
     final String b16RequestUrlKqmwze = await B16TbaHepDjiwjidw.instance
         .b16CreateUrlVqntza();
-    final Map<String, dynamic> b16PushPayloadVqntza = await B16TbaHepDjiwjidw
-        .instance
-        .getPushPointBody();
+    final Map<String, dynamic> b16PushPayloadVqntza = await B16TbaHepDjiwjidw.instance.getPointMapBody(
+      b16PointTypeQxnvza: B16PointTypeJdwijdiw.push,
+      b16ParametersKqmwze: {'sourse': "local"},
+    );
     FlutterLocalNotificationPlugins.instance.configureNativePushReporting(
       enabled: true,
       url: b16RequestUrlKqmwze,

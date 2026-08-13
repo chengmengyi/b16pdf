@@ -99,15 +99,11 @@ class B16TbaHepDjiwjidw {
     Map<String, dynamic>? b16ParametersKqmwze,
     Map<String, dynamic>? b16UserGroupVqntza,
   }) async {
-    final Map<String, dynamic> b16RequestBodyHqmwze =
-        await _b16CreateCommonBodyHqmwza();
-    b16RequestBodyHqmwze['rove'] = b16PointTypeQxnvza.name;
-    b16ParametersKqmwze?.forEach((String b16KeyPqnvze, dynamic b16ValueKqnvxe) {
-      b16RequestBodyHqmwze['vaccine~$b16KeyPqnvze'] = b16ValueKqnvxe;
-    });
-    if(null!=b16UserGroupVqntza){
-      b16RequestBodyHqmwze["decouple"]=b16UserGroupVqntza;
-    }
+    var b16RequestBodyHqmwze = await getPointMapBody(
+      b16PointTypeQxnvza: b16PointTypeQxnvza,
+      b16ParametersKqmwze: b16ParametersKqmwze,
+      b16UserGroupVqntza: b16UserGroupVqntza,
+    );
     await _b16PostWithRetryPqmxza(
       b16BodyHqmwze: b16RequestBodyHqmwze,
       b16EventTypeKqmwze: 'point',
@@ -115,12 +111,29 @@ class B16TbaHepDjiwjidw {
     );
   }
 
-  Future<Map<String, dynamic>> getPushPointBody()async{
-    final Map<String, dynamic> b16RequestBodyHqmwze = await _b16CreateCommonBodyHqmwza();
-    b16RequestBodyHqmwze['rove'] = B16PointTypeJdwijdiw.push.name;
-    b16RequestBodyHqmwze['vaccine~sourse'] = "local";
+  Future<Map<String, dynamic>> getPointMapBody({
+    required B16PointTypeJdwijdiw b16PointTypeQxnvza,
+    Map<String, dynamic>? b16ParametersKqmwze,
+    Map<String, dynamic>? b16UserGroupVqntza,
+  })async{
+    final Map<String, dynamic> b16RequestBodyHqmwze =
+    await _b16CreateCommonBodyHqmwza();
+    b16RequestBodyHqmwze['rove'] = b16PointTypeQxnvza.name;
+    b16ParametersKqmwze?.forEach((String b16KeyPqnvze, dynamic b16ValueKqnvxe) {
+      b16RequestBodyHqmwze['vaccine~$b16KeyPqnvze'] = b16ValueKqnvxe;
+    });
+    if(null!=b16UserGroupVqntza){
+      b16RequestBodyHqmwze["decouple"]=b16UserGroupVqntza;
+    }
     return b16RequestBodyHqmwze;
   }
+
+  // Future<Map<String, dynamic>> getPushPointBody()async{
+  //   final Map<String, dynamic> b16RequestBodyHqmwze = await _b16CreateCommonBodyHqmwza();
+  //   b16RequestBodyHqmwze['rove'] = B16PointTypeJdwijdiw.push.name;
+  //   b16RequestBodyHqmwze['vaccine~sourse'] = "local";
+  //   return b16RequestBodyHqmwze;
+  // }
 
   Future<bool> _b16PostWithRetryPqmxza({
     required Map<String, dynamic> b16BodyHqmwze,
