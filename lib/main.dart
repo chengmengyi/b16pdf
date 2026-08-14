@@ -4,6 +4,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_hep_kqmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_cold_launcher_source_hep_jiwjdow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_local_info_fjeifjioe.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_quick_action_hep_fjeifjiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_routers_hep_djiejfoe/b16_routers_address_fjeifjeo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
@@ -54,7 +55,7 @@ class B16ApplicationVqmxza extends StatelessWidget {
               damping: 20.0,
             ),
             child: GetMaterialApp(
-              onGenerateTitle: (BuildContext b16ContextTqmwva) => 'PDF'.tr,
+              title: B16LocalInfoFjeifjioe.appName,
               enableLog: true,
               darkTheme: ThemeData.dark(),
               themeMode: ThemeMode.system,
