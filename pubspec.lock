@@ -418,10 +418,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_local_notification_plugins
-      sha256: a8e7242056f226c9d8b8de99ab78f126dc15eb628e1b49e96ebfd4c72ca846c4
+      sha256: "5613e18e2f5249f916e43b918d045e8d2d62338ffb1819c19e062f41446f3b37"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.1"
+    version: "0.2.2"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -431,10 +431,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_pdf_ad_plugins
-      sha256: e542be4b03479cc02b93ec5037ebebc1db52cf466f3381a1c298b04430e6da3e
+      sha256: "2ca87c99dfd3eb9d3e92aa8c18a00fe4414e29e0587dcabf2925afb80275f801"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.6"
+    version: "0.2.7"
   flutter_pdf_risk_control_plugins:
     dependency: "direct main"
     description:
