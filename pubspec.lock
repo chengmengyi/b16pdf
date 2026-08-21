@@ -418,10 +418,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_local_notification_plugins
-      sha256: "5613e18e2f5249f916e43b918d045e8d2d62338ffb1819c19e062f41446f3b37"
+      sha256: "8f96ac18b01327c92d28f0b8431466d0ba1d3baa2fe85dc03133f90bf63484c4"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.4"
   flutter_localizations:
     dependency: "direct main"
     description: flutter

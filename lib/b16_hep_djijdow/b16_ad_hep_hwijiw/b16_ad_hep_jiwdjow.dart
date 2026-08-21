@@ -521,7 +521,10 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     }
     final int b16LastShowTimeMsPqmvzr =
         B16LastAdShowTimeStoragePqnvze.b16ReadTimeKqmwze();
-    final int b16CooldownMsKqmvzr = B16FirebaseHepKqmwze.instance.aKcCd * 1000;
+    final int b16CooldownSecondsQxnvza = b16IsBPackagePqmvzr
+        ? B16FirebaseHepKqmwze.instance.b16AdCooldownSecondsPqnvze
+        : B16FirebaseHepKqmwze.instance.aKcCd;
+    final int b16CooldownMsKqmvzr = b16CooldownSecondsQxnvza * 1000;
     if (b16LastShowTimeMsPqmvzr <= 0) {
       debugPrint(
         'showAd cooldown scene=${b16AdScenePqmvzr.name}, '
