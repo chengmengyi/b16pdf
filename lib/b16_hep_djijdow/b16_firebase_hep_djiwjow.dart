@@ -26,7 +26,7 @@ class B16FirebaseHepKqmwze {
 
   bool _b16FacebookInitializedHqmwza = false;
 
-  int b16AdCooldownSecondsPqnvze = 30,aKcCd=180;
+  int b16AdCooldownSecondsPqnvze = 30,aKcCd=180,cdHot=3;
   bool b16KoreanPhoneNotificationKqmwze = false;
   String b16AdSource="local";
 
@@ -125,6 +125,11 @@ class B16FirebaseHepKqmwze {
     var isk_time = _b16RemoteConfigQxnvza?.getInt("isk_time")??0;
     if(isk_time>0){
       FlutterPdfAdPlugins.instance.updateAdRequestTimeoutSeconds(isk_time);
+    }
+
+    var cd_hot = _b16RemoteConfigQxnvza?.getInt("cd_hot")??0;
+    if(cd_hot>0){
+      cdHot=cd_hot;
     }
   }
 

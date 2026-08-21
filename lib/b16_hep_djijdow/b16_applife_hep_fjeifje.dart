@@ -6,6 +6,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart'
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_hot_launcher_source_hep_djiwdjw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
 import 'package:flutter_app_lifecycle/app_state_observer.dart';
@@ -20,6 +21,8 @@ class B16ApplifeHepFjeifje {
   bool _b16SuppressNextHotLaunchQxnvza = false;
 
   bool get b16ShouldSuppressClickHotLaunchQxnvza => _b16AppIsBackStatus;
+
+  Timer? _hotTimer;
 
   void b16SuppressNextHotLaunchQxnvza() {
     _b16SuppressNextHotLaunchQxnvza = true;
@@ -61,18 +64,19 @@ class B16ApplifeHepFjeifje {
   }
 
   void _appBack() {
-    _b16AppIsBackStatus = true;
+    _hotTimer?.cancel();
+    _hotTimer=null;
+    _hotTimer=Timer(Duration(seconds: B16FirebaseHepKqmwze.instance.cdHot), (){
+      _b16AppIsBackStatus = true;
+    });
   }
 
   Future<void> _appFront() async {
-    unawaited(
-      B16NotificationHepPqnvze.instance
-          .b16UploadPendingNotificationEventsTqnvze(),
-    );
+    _hotTimer?.cancel();
+    _hotTimer=null;
     if (!_b16AppIsBackStatus && !_b16SuppressNextHotLaunchQxnvza) {
       return;
     }
-    await Future<void>.delayed(const Duration(milliseconds: 300));
     if (_b16ConsumeSuppressedHotLaunchQxnvza()) {
       return;
     }
@@ -80,6 +84,7 @@ class B16ApplifeHepFjeifje {
       return;
     }
     _b16AppIsBackStatus = false;
+    unawaited(B16NotificationHepPqnvze.instance.b16UploadPendingNotificationEventsTqnvze(),);
     final B16HotLauncherSourceInfoKqmwze? b16SourcePqnvze =
         B16HotLauncherSourceHepDjiwdjw.instance.b16ConsumeSourceVqntza();
     if (b16SourcePqnvze == null) {
