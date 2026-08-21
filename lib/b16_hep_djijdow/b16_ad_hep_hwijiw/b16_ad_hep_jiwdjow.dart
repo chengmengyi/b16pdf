@@ -503,27 +503,30 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     required B16AdSceneJdwo b16AdScenePqmvzr,
     required B16PosidJkwkosw b16AdPosIdKqmvzr,
   }) {
-    final String? b16CooldownKeyVmqxtr = _b16GetCooldownKeyPqmvzr(
-      b16AdScenePqmvzr: b16AdScenePqmvzr,
-      b16AdPosIdKqmvzr: b16AdPosIdKqmvzr,
-    );
-    if (b16CooldownKeyVmqxtr == null) {
+    final bool b16IsBPackagePqmvzr =
+        B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza;
+    final bool b16BPackageNeedsCooldownVmqxtr =
+        b16AdScenePqmvzr == B16AdSceneJdwo.pr_new_launch ||
+        b16AdScenePqmvzr == B16AdSceneJdwo.pr_launch ||
+        b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_up_int ||
+        b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_down_int ||
+        b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_readback ||
+        b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_exit_app;
+    if (b16IsBPackagePqmvzr && !b16BPackageNeedsCooldownVmqxtr) {
       debugPrint(
         'showAd cooldown scene=${b16AdScenePqmvzr.name}, '
         'posid=${b16AdPosIdKqmvzr.name}, canShow=true, '
-        'cooldownMs=0, intervalMs=-1, reason=no-cooldown',
+        'cooldownMs=0, intervalMs=-1, reason=b-package-no-cooldown',
       );
       return true;
     }
     final int b16LastShowTimeMsPqmvzr =
-        B16LastAdShowTimeStoragePqnvze.b16ReadTimeKqmwze(b16CooldownKeyVmqxtr);
-    final int b16CooldownMsKqmvzr =
-        B16FirebaseHepKqmwze.instance.b16AdCooldownSecondsPqnvze * 1000;
+        B16LastAdShowTimeStoragePqnvze.b16ReadTimeKqmwze();
+    final int b16CooldownMsKqmvzr = B16FirebaseHepKqmwze.instance.aKcCd * 1000;
     if (b16LastShowTimeMsPqmvzr <= 0) {
       debugPrint(
         'showAd cooldown scene=${b16AdScenePqmvzr.name}, '
         'posid=${b16AdPosIdKqmvzr.name}, canShow=true, '
-        'cooldownKey=$b16CooldownKeyVmqxtr, '
         'cooldownMs=$b16CooldownMsKqmvzr, intervalMs=-1, '
         'reason=no-last-show',
       );
@@ -537,25 +540,10 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     debugPrint(
       'showAd cooldown scene=${b16AdScenePqmvzr.name}, '
       'posid=${b16AdPosIdKqmvzr.name}, canShow=$b16CanShowVmqxtr, '
-      'cooldownKey=$b16CooldownKeyVmqxtr, '
       'cooldownMs=$b16CooldownMsKqmvzr, '
       'intervalMs=$b16ShowIntervalMsPqmvzr',
     );
     return b16CanShowVmqxtr;
-  }
-
-  String? _b16GetCooldownKeyPqmvzr({
-    required B16AdSceneJdwo b16AdScenePqmvzr,
-    required B16PosidJkwkosw b16AdPosIdKqmvzr,
-  }) {
-    if (b16AdScenePqmvzr == B16AdSceneJdwo.pr_user_use) {
-      return b16AdScenePqmvzr.name;
-    }
-    if (b16AdScenePqmvzr == B16AdSceneJdwo.pr_exit &&
-        b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_readback) {
-      return b16AdPosIdKqmvzr.name;
-    }
-    return null;
   }
 
   Future<bool> _b16HasCachedAdForSceneKqmvzr({
@@ -865,15 +853,10 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     if (b16AdPosIdVmqxtr is! B16PosidJkwkosw) {
       return;
     }
-    final String? b16CooldownKeyPqmvzr = _b16GetCooldownKeyPqmvzr(
-      b16AdScenePqmvzr: b16AdPlacementPqmvzr,
-      b16AdPosIdKqmvzr: b16AdPosIdVmqxtr,
-    );
-    if (b16CooldownKeyPqmvzr == null) {
+    if (b16AdInfoKqmvzr.parsedAdType?.isFullScreen != true) {
       return;
     }
     B16LastAdShowTimeStoragePqnvze.b16SaveTimeVqntza(
-      b16SceneKeyHqmwza: b16CooldownKeyPqmvzr,
       b16TimestampPqnvze: DateTime.now().millisecondsSinceEpoch,
     );
   }

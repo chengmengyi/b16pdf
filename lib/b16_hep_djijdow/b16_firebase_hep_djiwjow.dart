@@ -26,7 +26,7 @@ class B16FirebaseHepKqmwze {
 
   bool _b16FacebookInitializedHqmwza = false;
 
-  int b16AdCooldownSecondsPqnvze = 30;
+  int b16AdCooldownSecondsPqnvze = 30,aKcCd=180;
   bool b16KoreanPhoneNotificationKqmwze = false;
   String b16AdSource="local";
 
@@ -132,7 +132,6 @@ class B16FirebaseHepKqmwze {
     try {
       final String b16SwitchConfigQxnvza =
           _b16RemoteConfigQxnvza?.getString('switch_config') ?? '';
-      print("kk=b16SwitchConfigQxnvza==${b16SwitchConfigQxnvza}");
       if (b16SwitchConfigQxnvza.isNotEmpty) {
         B16AdSwitchStorageVqntza.b16SaveConfigHqmwza(b16SwitchConfigQxnvza);
       }
@@ -140,10 +139,13 @@ class B16FirebaseHepKqmwze {
   }
 
   void b16ApplyAdCooldownConfigHqmwza() {
-    final int b16RemoteCooldownQxnvza =
-        _b16RemoteConfigQxnvza?.getInt('kc_cd') ?? 0;
+    final int b16RemoteCooldownQxnvza = _b16RemoteConfigQxnvza?.getInt('kc_cd') ?? 0;
     if (b16RemoteCooldownQxnvza > 0) {
       b16AdCooldownSecondsPqnvze = b16RemoteCooldownQxnvza;
+    }
+    final int a_kc_cd = _b16RemoteConfigQxnvza?.getInt('a_kc_cd') ?? 0;
+    if(a_kc_cd>0){
+      aKcCd=a_kc_cd;
     }
   }
 
