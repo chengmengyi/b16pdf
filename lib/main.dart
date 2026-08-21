@@ -1,4 +1,5 @@
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_switch_utils_vqntza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_applife_hep_fjeifje.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
@@ -22,6 +23,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await GetStorage.init();
+  await B16AdSwitchUtilsVqntza.instance.b16InitHqmwza();
   await B16ColdLauncherSourceHepJiwjdow.instance.initSource();
   B16FirebaseHepKqmwze.instance.b16InitializeFirebaseQxnvza();
   B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16InitializeAdSdkPqmvzr();

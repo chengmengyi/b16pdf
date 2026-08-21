@@ -13,4 +13,6 @@ class B16StorageNameFjeoifoe {
   static const String b16FirebaseAdConfigVqntza = 'b16_firebase_ad_config';
   static const String b16LastAdShowTimeHqmwza = 'b16_last_ad_show_time';
   static const String b16AdSwitchPqnvze = 'b16_ad_switch';
+  static const String b16LocalSwitchConfigQazxsw =
+      'b16_local_switch_config_qazxsw';
 }

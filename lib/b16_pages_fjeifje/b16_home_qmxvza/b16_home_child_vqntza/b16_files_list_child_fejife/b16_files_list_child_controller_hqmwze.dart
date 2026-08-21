@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:b16pdf/b16_dialog_fjifjie/b16_sort_bottom_dialog_fjiewfjoe/b16_sort_bottom_dialog_fjiewfjoe.dart';
 import 'package:b16pdf/b16_dialog_fjifjie/b16_sort_bottom_dialog_fjiewfjoe/b16_sort_bottom_dialog_fjiewfjoe_controller.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_switch_utils_vqntza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
@@ -79,18 +80,11 @@ class B16FilesListChildControllerHqmwze extends B16RootControllerFjesak {
     );
     super.onInit();
     b16ScrollControllerPqnvze.addListener(_b16HandleScrollKqmwze);
-    unawaited(_b16InitializeNativeAdSwitchPqnvze());
-  }
-
-  Future<void> _b16InitializeNativeAdSwitchPqnvze() async {
-    _b16NativeAdSwitchEnabledQxnvza = await B16AdHepJiwdjow
-        .b16AdUtilsInstanceKqmvzr
-        .b16CanShowAdBySwitchVqntza(B16PosidJkwkosw.pr_main_banner1);
-    if (isClosed) return;
+    _b16NativeAdSwitchEnabledQxnvza = B16AdSwitchUtilsVqntza.instance
+        .b16CanShowAdPqnvze(B16PosidJkwkosw.pr_main_banner1);
     if (!_b16NativeAdSwitchEnabledQxnvza) {
       _b16ClearActiveNativeAdKqnvze();
     }
-    update();
   }
 
   bool get b16CanShowNativeAdHqmwza =>

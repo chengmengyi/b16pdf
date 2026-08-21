@@ -1,12 +1,13 @@
 import 'dart:convert';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_switch_utils_vqntza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_bean_fhifeode.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_code_qxmvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjiejizx.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
-import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_ad_switch_storage_vqntza.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_local_switch_config_qazxsw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_firebase_ad_config_storage_hqmwza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_media_unique_config_jidwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_notification_time_fjiefjoe.dart';
@@ -26,13 +27,13 @@ class B16FirebaseHepKqmwze {
 
   bool _b16FacebookInitializedHqmwza = false;
 
-  int b16AdCooldownSecondsPqnvze = 30,aKcCd=180,cdHot=3;
+  int b16AdCooldownSecondsPqnvze = 30, aKcCd = 180, cdHot = 3;
   bool b16KoreanPhoneNotificationKqmwze = false;
-  String b16AdSource="local";
+  String b16AdSource = "local";
 
   Future<void> b16InitializeFirebaseQxnvza() async {
-    if(B16FirebaseAdConfigStorageHqmwza.b16ReadConfigKqnvxe().isNotEmpty){
-      b16AdSource="remote";
+    if (B16FirebaseAdConfigStorageHqmwza.b16ReadConfigKqnvxe().isNotEmpty) {
+      b16AdSource = "remote";
     }
     try {
       await Firebase.initializeApp();
@@ -67,7 +68,7 @@ class B16FirebaseHepKqmwze {
     final String b16PdfAdConfigKqmwze =
         _b16RemoteConfigQxnvza?.getString('pdf_ad_16') ?? '';
     if (b16PdfAdConfigKqmwze.isNotEmpty) {
-      b16AdSource="remote";
+      b16AdSource = "remote";
       B16FirebaseAdConfigStorageHqmwza.b16SaveConfigPqmxza(
         b16PdfAdConfigKqmwze,
       );
@@ -120,22 +121,26 @@ class B16FirebaseHepKqmwze {
       b16KoreanPhoneNotificationKqmwze = b16KoreanPushModeKqmwze == 1;
       B16NotificationHepPqnvze.instance.b16InitializeNotificationsQxnvza();
     }
-    _b16ParseSwitchConfigRqmwza();
-
-    var isk_time = _b16RemoteConfigQxnvza?.getInt("isk_time")??0;
-    if(isk_time>0){
+    var isk_time = _b16RemoteConfigQxnvza?.getInt("isk_time") ?? 0;
+    if (isk_time > 0) {
       FlutterPdfAdPlugins.instance.updateAdRequestTimeoutSeconds(isk_time);
     }
 
-    var cd_hot = _b16RemoteConfigQxnvza?.getInt("cd_hot")??0;
-    if(cd_hot>0){
-      cdHot=cd_hot;
+    var cd_hot = _b16RemoteConfigQxnvza?.getInt("cd_hot") ?? 0;
+    if (cd_hot > 0) {
+      cdHot = cd_hot;
     }
     _getAdShowClickConfig();
-
+    final String b16SwitchConfigQxnvza = _b16RemoteConfigQxnvza?.getString('switch_config') ?? '';
+    if (b16SwitchConfigQxnvza.isNotEmpty) {
+      B16LocalSwitchConfigQazxsw.b16SaveConfigVqntza(
+        b16SwitchConfigQxnvza,
+      );
+      B16AdSwitchUtilsVqntza.instance.b16InitHqmwza();
+    }
   }
 
-  void _getAdShowClickConfig() {
+  Future<void> _getAdShowClickConfig() async {
     try {
       var ad_config = _b16RemoteConfigQxnvza?.getString("ad_config") ?? "";
       if (ad_config.isNotEmpty) {
@@ -150,24 +155,15 @@ class B16FirebaseHepKqmwze {
     } catch (_) {}
   }
 
-  void _b16ParseSwitchConfigRqmwza() {
-    try {
-      final String b16SwitchConfigQxnvza =
-          _b16RemoteConfigQxnvza?.getString('switch_config') ?? '';
-      if (b16SwitchConfigQxnvza.isNotEmpty) {
-        B16AdSwitchStorageVqntza.b16SaveConfigHqmwza(b16SwitchConfigQxnvza);
-      }
-    } catch (_) {}
-  }
-
   void b16ApplyAdCooldownConfigHqmwza() {
-    final int b16RemoteCooldownQxnvza = _b16RemoteConfigQxnvza?.getInt('kc_cd') ?? 0;
+    final int b16RemoteCooldownQxnvza =
+        _b16RemoteConfigQxnvza?.getInt('kc_cd') ?? 0;
     if (b16RemoteCooldownQxnvza > 0) {
       b16AdCooldownSecondsPqnvze = b16RemoteCooldownQxnvza;
     }
     final int a_kc_cd = _b16RemoteConfigQxnvza?.getInt('a_kc_cd') ?? 0;
-    if(a_kc_cd>0){
-      aKcCd=a_kc_cd;
+    if (a_kc_cd > 0) {
+      aKcCd = a_kc_cd;
     }
   }
 

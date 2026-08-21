@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_switch_utils_vqntza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_language_hep_fjeifje/b16_language_tools_fieife.dart';
@@ -191,8 +192,8 @@ class _B16ChooseLanguageNativeAdStateHqmwza
   Future<void> _b16InitializeNativeAdQxmvza() async {
     final B16AdHepJiwdjow b16AdHepKqmwze =
         B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr;
-    final bool b16CanShowAdPqnvze = await b16AdHepKqmwze
-        .b16CanShowAdBySwitchVqntza(B16PosidJkwkosw.pr_new_lan_nat);
+    final bool b16CanShowAdPqnvze = B16AdSwitchUtilsVqntza.instance
+        .b16CanShowAdPqnvze(B16PosidJkwkosw.pr_new_lan_nat);
     if (!mounted || !b16CanShowAdPqnvze) return;
     setState(() => _b16CanShowAdVqntza = true);
     b16AdHepKqmwze.b16UploadAdChanceKqnvxe(

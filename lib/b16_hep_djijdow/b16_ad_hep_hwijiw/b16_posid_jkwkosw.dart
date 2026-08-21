@@ -24,6 +24,7 @@ enum B16PosidJkwkosw {
   unload_1,
   unload_2,
   unload_nat1,
+  unload_nat2,
   pr_search_int,
   pr_read_int,
   pr_comment,

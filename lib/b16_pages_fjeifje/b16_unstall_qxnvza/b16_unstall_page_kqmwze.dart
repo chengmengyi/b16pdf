@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_hep_jiwdjow.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_switch_utils_vqntza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_scene_jdwo.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_check_user_jiwojdw.dart';
@@ -44,6 +45,11 @@ class B16UnstallPageKqmwze
 
   Widget _b16NativeAdWidgetPqnvze() {
     if (!B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza) {
+      return const SizedBox.shrink();
+    }
+    if (!B16AdSwitchUtilsVqntza.instance.b16CanShowAdPqnvze(
+      B16PosidJkwkosw.unload_nat1,
+    )) {
       return const SizedBox.shrink();
     }
     return Padding(
@@ -219,7 +225,7 @@ class B16UnstallPageKqmwze
                 ),
                 Align(
                   child: Container(
-                    margin: EdgeInsets.only(left: 44.w,right: 44.w),
+                    margin: EdgeInsets.only(left: 44.w, right: 44.w),
                     child: B16LocalizedTextViewCxmpra(
                       "Uninstall reason".tr,
                       b16FontSizeRvxqle: 18.sp,
@@ -260,8 +266,8 @@ class _B16UnstallNativeAdStateKqnvze extends State<_B16UnstallNativeAdVqmwza> {
   Future<void> _b16InitializeNativeAdQxmvza() async {
     final B16AdHepJiwdjow b16AdHepKqmwze =
         B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr;
-    final bool b16CanShowAdPqnvze = await b16AdHepKqmwze
-        .b16CanShowAdBySwitchVqntza(B16PosidJkwkosw.unload_nat1);
+    final bool b16CanShowAdPqnvze = B16AdSwitchUtilsVqntza.instance
+        .b16CanShowAdPqnvze(B16PosidJkwkosw.unload_nat1);
     if (!mounted || !b16CanShowAdPqnvze) return;
     setState(() => _b16CanShowAdVqntza = true);
     b16AdHepKqmwze.b16UploadAdChanceKqnvxe(
