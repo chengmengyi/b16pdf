@@ -63,16 +63,12 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       B16PosidJkwkosw.pr_sc_pdf,
       B16PosidJkwkosw.pr_w_pdf,
       B16PosidJkwkosw.pr_img_pdf,
-      B16PosidJkwkosw.pr_refresh,
-      B16PosidJkwkosw.pr_search_int,
-      B16PosidJkwkosw.pr_read_int,
     },
     B16AdSceneJdwo.pr_exit: <B16PosidJkwkosw>{
       B16PosidJkwkosw.pr_readback,
       B16PosidJkwkosw.pr_exit_app,
       B16PosidJkwkosw.unload_1,
       B16PosidJkwkosw.unload_2,
-      B16PosidJkwkosw.pr_comment,
     },
   };
 
@@ -429,7 +425,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
         B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
           b16PointTypeQxnvza: B16PointTypeJdwijdiw.show_ad_no_cache,
           b16ParametersKqmwze: {
-            "scene": b16AdScenePqmvzr.name,
+            "ad_context": b16AdScenePqmvzr.name,
             "ad_pos_id": b16AdPosIdKqmvzr.name,
             "last_time": b16LastShowCachedSceneAdIntervalKqmvzr,
           },
@@ -474,7 +470,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_chance,
       b16ParametersKqmwze: {
-        "scene": b16AdScenePqmvzr.name,
+        "ad_context": b16AdScenePqmvzr.name,
         "ad_pos_id": b16AdPosIdKqmvzr.name,
       },
     );
@@ -505,8 +501,6 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     final bool b16IsBPackagePqmvzr =
         B16UserCheckHepQxnvza.instance.b16IsEligibleUserVqntza;
     final bool b16BPackageNeedsCooldownVmqxtr =
-        b16AdScenePqmvzr == B16AdSceneJdwo.pr_new_launch ||
-        b16AdScenePqmvzr == B16AdSceneJdwo.pr_launch ||
         b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_up_int ||
         b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_down_int ||
         b16AdPosIdKqmvzr == B16PosidJkwkosw.pr_readback ||
@@ -593,7 +587,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_click,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
@@ -611,6 +605,11 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     String b16AdNetworkVmqxtr,
     String b16AdSourceNamePqmvzr,
   ) {
+    if (b16AdInfoKqmvzr.parsedAdType?.isFullScreen == true) {
+      B16LastAdShowTimeStoragePqnvze.b16SaveTimeVqntza(
+        b16TimestampPqnvze: DateTime.now().millisecondsSinceEpoch,
+      );
+    }
     if (b16AdPlacementPqmvzr is! B16AdSceneJdwo) {
       return;
     }
@@ -620,7 +619,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_close,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
@@ -653,7 +652,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
         b16PointTypeQxnvza: B16PointTypeJdwijdiw.pr_total_001_revenue,
         b16ParametersKqmwze: {
-          "scene": b16AdPlacementPqmvzr.name,
+          "ad_context": b16AdPlacementPqmvzr.name,
           "ad_pos_id": b16AdPosIdVmqxtr.name,
           "ad_format": b16AdInfoPqmvzr.adType,
           "ad_code_id": b16AdInfoPqmvzr.adId,
@@ -689,7 +688,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_impression_revenue,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
         "ad_format": b16AdInfoPqmvzr.adType,
         "ad_code_id": b16AdInfoPqmvzr.adId,
@@ -726,7 +725,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_load_fail,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "error_message": b16FailReasonPqmvzr,
@@ -748,7 +747,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_request,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
       },
@@ -769,7 +768,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_load_success,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_source_client": b16AdInfoKqmvzr.adPlat,
@@ -797,7 +796,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_show_fail,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
@@ -830,7 +829,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
       b16PointTypeQxnvza: B16PointTypeJdwijdiw.ad_show,
       b16ParametersKqmwze: {
-        "scene": b16AdPlacementPqmvzr.name,
+        "ad_context": b16AdPlacementPqmvzr.name,
         "ad_format": b16AdInfoKqmvzr.adType,
         "ad_code_id": b16AdInfoKqmvzr.adId,
         "ad_pos_id": b16AdPosIdVmqxtr.name,
@@ -855,12 +854,6 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     if (b16AdPosIdVmqxtr is! B16PosidJkwkosw) {
       return;
     }
-    if (b16AdInfoKqmvzr.parsedAdType?.isFullScreen != true) {
-      return;
-    }
-    B16LastAdShowTimeStoragePqnvze.b16SaveTimeVqntza(
-      b16TimestampPqnvze: DateTime.now().millisecondsSinceEpoch,
-    );
   }
 
   @override
