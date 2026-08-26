@@ -9,6 +9,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_event_hep_fhiejode/b16_event_hep_fjie
 import 'package:b16pdf/b16_hep_djijdow/b16_firebase_hep_djiwjow.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_hot_launcher_source_hep_djiwdjw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_notification_hep_djiwdow/b16_notification_hep_jsowkosw.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_last_open_ad_close_time_rqmxza.dart';
 import 'package:flutter_app_lifecycle/app_state_observer.dart';
 import 'package:flutter_app_lifecycle/flutter_app_lifecycle.dart';
 import 'package:flutter_pdf_ad_plugins/flutter_pdf_ad_plugins.dart';
@@ -21,8 +22,6 @@ class B16ApplifeHepFjeifje {
   bool _b16SuppressNextHotLaunchQxnvza = false;
 
   bool get b16ShouldSuppressClickHotLaunchQxnvza => _b16AppIsBackStatus;
-
-  Timer? _hotTimer;
 
   void b16SuppressNextHotLaunchQxnvza() {
     _b16SuppressNextHotLaunchQxnvza = true;
@@ -64,16 +63,10 @@ class B16ApplifeHepFjeifje {
   }
 
   void _appBack() {
-    _hotTimer?.cancel();
-    _hotTimer=null;
-    _hotTimer=Timer(Duration(seconds: B16FirebaseHepKqmwze.instance.cdHot), (){
-      _b16AppIsBackStatus = true;
-    });
+    _b16AppIsBackStatus = true;
   }
 
   Future<void> _appFront() async {
-    _hotTimer?.cancel();
-    _hotTimer=null;
     if (!_b16AppIsBackStatus && !_b16SuppressNextHotLaunchQxnvza) {
       return;
     }
@@ -84,7 +77,10 @@ class B16ApplifeHepFjeifje {
       return;
     }
     _b16AppIsBackStatus = false;
-    unawaited(B16NotificationHepPqnvze.instance.b16UploadPendingNotificationEventsTqnvze(),);
+    unawaited(
+      B16NotificationHepPqnvze.instance
+          .b16UploadPendingNotificationEventsTqnvze(),
+    );
     final B16HotLauncherSourceInfoKqmwze? b16SourcePqnvze =
         B16HotLauncherSourceHepDjiwdjw.instance.b16ConsumeSourceVqntza();
     if (b16SourcePqnvze == null) {
@@ -103,6 +99,11 @@ class B16ApplifeHepFjeifje {
     B16AdSceneJdwo b16AdSceneQxnvza,
     B16PosidJkwkosw b16PositionIdVqntza,
   ) async {
+    final int b16LastOpenAdCloseTimeKqmwze = B16LastOpenAdCloseTimeRqmxza.b16ReadTimeKqmwze();
+    final int b16HotCooldownMsVqntza = B16FirebaseHepKqmwze.instance.cdHot * 1000;
+    if (DateTime.now().millisecondsSinceEpoch - b16LastOpenAdCloseTimeKqmwze < b16HotCooldownMsVqntza) {
+      return;
+    }
     await FlutterPdfAdPlugins.instance.closeFullScreenAdAndWait();
     B16AdHepJiwdjow.b16AdUtilsInstanceKqmvzr.b16ShowCachedSceneAdPqmvzr(
       b16AdScenePqmvzr: b16AdSceneQxnvza,

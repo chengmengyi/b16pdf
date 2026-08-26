@@ -4,6 +4,7 @@ import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_ad_switch_utils_vqn
 import 'package:b16pdf/b16_hep_djijdow/b16_ad_hep_hwijiw/b16_posid_jkwkosw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_firebase_ad_config_storage_hqmwza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_last_ad_show_time_storage_pqnvze.dart';
+import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_last_open_ad_close_time_rqmxza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_storage_hep_fjiejfe/b16_storage_hep_fefjei/b16_load_new_launch_ad_storage_qxnvza.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_point_type_jdwijdiw.dart';
 import 'package:b16pdf/b16_hep_djijdow/b16_tba_hep_jwjowdw/b16_tba_hep_djiwjidw.dart';
@@ -597,6 +598,16 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     );
   }
 
+  void _b16SaveLastOpenAdCloseTimeQxnvza(B16AdSceneJdwo b16AdPlacementPqmvzr) {
+    if (b16AdPlacementPqmvzr != B16AdSceneJdwo.pr_new_launch &&
+        b16AdPlacementPqmvzr != B16AdSceneJdwo.pr_launch) {
+      return;
+    }
+    B16LastOpenAdCloseTimeRqmxza.b16SaveTimeVqntza(
+      DateTime.now().millisecondsSinceEpoch,
+    );
+  }
+
   @override
   void onAdClosed(
     Object b16AdPlacementPqmvzr,
@@ -613,6 +624,7 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     if (b16AdPlacementPqmvzr is! B16AdSceneJdwo) {
       return;
     }
+    _b16SaveLastOpenAdCloseTimeQxnvza(b16AdPlacementPqmvzr);
     if (b16AdPosIdVmqxtr is! B16PosidJkwkosw) {
       return;
     }
