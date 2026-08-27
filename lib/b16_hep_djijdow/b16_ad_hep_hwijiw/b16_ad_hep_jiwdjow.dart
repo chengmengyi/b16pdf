@@ -84,8 +84,8 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
       return;
     }
     FlutterPdfAdPlugins.instance.updateDebugPaidRevenueRange(
-      minRevenue: 0.0001,
-      maxRevenue: 0.0003,
+      minRevenue: 0.1,
+      maxRevenue: 0.3,
     );
     FlutterPdfAdPlugins.instance.updateInterstitialLikeNativePlacements(
       const <B16AdSceneJdwo>[B16AdSceneJdwo.pr_user_use],
@@ -660,6 +660,10 @@ class B16AdHepJiwdjow implements FlutterPdfAdListener {
     if (b16RevenueKqmvzr >= 0.01) {
       B16FirebaseHepKqmwze.instance.b16LogAnalyticsEventVqntza(
         b16NameQxnvza: B16PointTypeJdwijdiw.pr_total_001_revenue.name,
+        b16ParametersKqmwze: {
+          "currency": b16CurrencyCodePqmvzr,
+          "value": b16RevenueKqmvzr,
+        },
       );
       B16TbaHepDjiwjidw.instance.b16UploadPointKqnvxe(
         b16PointTypeQxnvza: B16PointTypeJdwijdiw.pr_total_001_revenue,
