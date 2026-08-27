@@ -11,7 +11,7 @@ class B16SwitchConfigBeanQazxsw {
     for (final B16PosidJkwkosw b16PosIdQxmvza in B16PosidJkwkosw.values) {
       final dynamic b16ValueVmqxtr = b16JsonHqmwza[b16PosIdQxmvza.name];
       if (b16ValueVmqxtr != null) {
-        b16SwitchMapPqnvze[b16PosIdQxmvza] = b16ValueVmqxtr == 1;
+        b16SwitchMapPqnvze[b16PosIdQxmvza] = b16ValueVmqxtr != 0;
       }
     }
     return B16SwitchConfigBeanQazxsw(b16SwitchMapPqnvze);

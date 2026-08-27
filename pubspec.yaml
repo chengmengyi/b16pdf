@@ -48,7 +48,7 @@ dependencies:
   fluttertoast: 9.1.0
   doc_scan_flutter: 2.0.0
   webview_flutter: 4.13.1
-  flutter_preview_file: 0.0.8
+  flutter_preview_file: 0.0.9
   app_settings: 6.1.1
   lottie: 3.3.0
   image_picker: 1.2.2

@@ -35,32 +35,47 @@ class B16ProcessWaitingControllerPqnvze extends B16RootControllerFjesak {
   Future<void> _b16GeneratePdfKqmwze() async {
     if (b16GeneratingHqmwza || b16ImagePathsQxnvza.isEmpty) return;
     b16GeneratingHqmwza = true;
-    final List<FileToolsFileInfo> b16ImagesVqntza = <FileToolsFileInfo>[];
-    for (final String b16PathQxnvza in b16ImagePathsQxnvza) {
-      final File b16FileHqmwza = File(b16PathQxnvza);
-      final FileStat b16StatKqmwze = await b16FileHqmwza.stat();
-      b16ImagesVqntza.add(
-        FileToolsFileInfo(
-          name: b16PathQxnvza.split(Platform.pathSeparator).last,
-          path: b16PathQxnvza,
-          size: b16StatKqmwze.size,
-          updateTime: b16StatKqmwze.modified.millisecondsSinceEpoch,
-        ),
-      );
-    }
-    final FileToolsFileInfo b16ResultPqnvze =
-        await FlutterPreviewFile.generatePdfFromImages(
-          imageList: b16ImagesVqntza,
-          onProgress: (double b16ValueKqmwze) {
-            b16ProgressVqntza = b16ValueKqmwze.clamp(0, 1);
-            update();
-          },
+    try {
+      final List<FileToolsFileInfo> b16ImagesVqntza = <FileToolsFileInfo>[];
+      for (final String b16PathQxnvza in b16ImagePathsQxnvza) {
+        final File b16FileHqmwza = File(b16PathQxnvza);
+        final FileStat b16StatKqmwze = await b16FileHqmwza.stat();
+        b16ImagesVqntza.add(
+          FileToolsFileInfo(
+            name: b16PathQxnvza.split(Platform.pathSeparator).last,
+            path: b16PathQxnvza,
+            size: b16StatKqmwze.size,
+            updateTime: b16StatKqmwze.modified.millisecondsSinceEpoch,
+          ),
         );
-    b16ProgressVqntza = 1;
-    update();
-    B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
-      b16RouteNameYweqpn: B16RoutersAddressFjeifjeo.b16ProcessResultRoutePqnvze,
-      b16ArgumentsKstjva: <String, dynamic>{'b16FileInfo': b16ResultPqnvze},
-    );
+      }
+      final FileToolsFileInfo b16ResultPqnvze =
+          await FlutterPreviewFile.generatePdfFromImages(
+            imageList: b16ImagesVqntza,
+            onProgress: (double b16ValueKqmwze) {
+              if (isClosed) return;
+              b16ProgressVqntza = b16ValueKqmwze.clamp(0, 1);
+              update();
+            },
+          );
+      if (isClosed) return;
+      b16ProgressVqntza = 1;
+      update();
+      B16RoutersHepFjeifjoe.b16ReplaceNamedZxplrt<void>(
+        b16RouteNameYweqpn:
+            B16RoutersAddressFjeifjeo.b16ProcessResultRoutePqnvze,
+        b16ArgumentsKstjva: <String, dynamic>{'b16FileInfo': b16ResultPqnvze},
+      );
+    } catch (b16ErrorKqmwze) {
+      if (isClosed ||
+          b16ErrorKqmwze.toString().contains('generate_pdf_replaced')) {
+        return;
+      }
+      rethrow;
+    } finally {
+      if (!isClosed) {
+        b16GeneratingHqmwza = false;
+      }
+    }
   }
 }
